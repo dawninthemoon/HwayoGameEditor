@@ -4,8 +4,10 @@ using UnityEngine;
 
 public abstract class SlideableUI : MonoBehaviour, ISetupable
 {
-    [SerializeField] protected float _disableX = 0f, _activeX = 0f;
-    private RectTransform _rectTransform;
+    [SerializeField] float _disableX = 0f, _activeX = 0f;
+    [SerializeField] float _slideDuration = 0.5f;
+    RectTransform _rectTransform;
+    Coroutine _coroutine;
     public virtual void Initalize() {
         _rectTransform = GetComponent<RectTransform>();
     }
@@ -18,18 +20,19 @@ public abstract class SlideableUI : MonoBehaviour, ISetupable
 
     public void SlideOut() {
         gameObject.SetActive(true);
-        StartCoroutine(ExecuteSlide(_rectTransform, _disableX, _activeX, true));
+        if (_coroutine != null) StopCoroutine(_coroutine);
+        _coroutine = StartCoroutine(ExecuteSlide(_rectTransform, _disableX, _activeX, true));
     }
 
     public void SlideIn() {
         if (gameObject.activeSelf)
-            StartCoroutine(ExecuteSlide(_rectTransform, _disableX, _activeX, false));
+            _coroutine = StartCoroutine(ExecuteSlide(_rectTransform, _disableX, _activeX, false));
     }
 
     IEnumerator ExecuteSlide(RectTransform target, float disableX, float activeX, bool isSlideOut) {
         float timeAgo = 0f;
         while (timeAgo <= 1f) {
-            timeAgo += Time.deltaTime * 5f;
+            timeAgo += Time.deltaTime / _slideDuration;
 
             float startX = isSlideOut ? disableX : activeX;
             float endX = isSlideOut ? activeX : disableX;

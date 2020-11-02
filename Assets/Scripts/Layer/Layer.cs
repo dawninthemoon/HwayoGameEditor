@@ -6,14 +6,10 @@ namespace CustomTilemap {
     public enum LayerType { Tile, Entity }
     public class Layer {
         public string LayerName { get; set; }
-        public LayerType Type { get; private set; }
         public int LayerIndex { get; private set; }
-        public int DropdownValue { get; set; }
         Grid<TileObject> _grid;
-
-        public Layer(string layerName, LayerType type, int layerIndex, int width, int height, float cellSize, Vector3 originPosition) {
+        public Layer(string layerName, int layerIndex, int width, int height, float cellSize, Vector3 originPosition) {
             LayerName = layerName;
-            Type = type;
             LayerIndex = layerIndex;
             _grid = new Grid<TileObject>(width, height, cellSize, originPosition, (Grid<TileObject> g, int x, int y) => new TileObject(g, x, y));
         }

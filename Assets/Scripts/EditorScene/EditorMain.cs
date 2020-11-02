@@ -28,6 +28,12 @@ public class EditorMain : MonoBehaviour {
         );
     }
 
+    public void DisableAllProjectWindows() {
+        foreach (var window in _projectWindows) {
+            window.SlideIn();
+        }
+    }
+
     public void OnTilesetChanged(TilemapVisual tilemapVisual) {
         var spr = _tilesetModel.GetTilesetSprite(tilemapVisual.GetTileSetName());
         _editorView.TilesetPreivewImage.sprite = spr;
@@ -38,14 +44,12 @@ public class EditorMain : MonoBehaviour {
     }
 
     void Update() {
-        if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1)) return;
+        if (!Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1)) return;
 
         bool isOnUI = CheckMousePositionIsOnUI();
 
-        if (!isOnUI) {
-            foreach (var window in _projectWindows) {
-                window.SlideIn();
-            }
+        if (!isOnUI && (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))) {
+            DisableAllProjectWindows();
         }
 
         if (Input.GetMouseButton(0) && !isOnUI) {

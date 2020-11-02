@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using HSVPicker;
 
 public class EditorView : MonoBehaviour {
     [SerializeField] Image _tilesetPreviewImage = null;
@@ -18,4 +19,13 @@ public class EditorView : MonoBehaviour {
 
     [SerializeField] Transform _tileLayerInfo = null;
     public Transform TileLayerInfo { get { return _tileLayerInfo; } }
+
+    [SerializeField] ColorPicker _entityColorPicker = null;
+    public ColorPicker EntityColorPicker { get { return _entityColorPicker; } }
+
+    [SerializeField] InputField _entityNameInputField = null;
+    public InputField EntityNameInputField { get { return _entityNameInputField; } }
+
+    [SerializeField] Dropdown _entityVisualDropdown = null;
+    public Dropdown EntityVisualDropdown { get { return _entityVisualDropdown; } }
 }

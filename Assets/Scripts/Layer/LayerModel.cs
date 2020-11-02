@@ -32,8 +32,13 @@ namespace CustomTilemap {
             _currentLayers[_selectedLayerIndex].SetTileIndex(worldPosition, tileIndex);
         }
 
-        public Layer GetCurrentTilemapLayer() {
-            return _currentLayers[_selectedLayerIndex];
+        public Layer GetSelectedLayer() {
+            for (int i = 0; i < _currentLayers.Count; ++i) {
+                if (_currentLayers[i].LayerIndex == _selectedLayerIndex) {
+                    return _currentLayers[i];
+                }
+            }
+            return null;
         }
 
         public void AddButtonOnClick(Button button, int layerIndex, TilemapVisual tilemapVisual, System.Action callback) {
