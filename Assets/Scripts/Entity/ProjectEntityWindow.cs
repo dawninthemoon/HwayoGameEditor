@@ -32,6 +32,8 @@ public class ProjectEntityWindow : SlideableUI {
 
         var inputField = Instantiate(_fieldInputFieldPrefab, _fieldPickerContentTransform);
         inputField.text = fieldName;
+
+        entity.AddField(fieldName);
     }
 
     public void CreateEntity() {
@@ -47,26 +49,26 @@ public class ProjectEntityWindow : SlideableUI {
         button.onClick.AddListener(() => {
             _selectedEntityID = index;
             OnEntityButtonDown(entity);
-            HighlightButton(button.GetComponent<Image>());
+            HighlightEntity(button.GetComponent<Image>());
         });
 
-        _entityModel.AddEntity(entity, _numOfEntities);
+        _entityModel.AddEntity(entity, index);
         ++_numOfEntities;
     }
 
-    void HighlightButton(Image buttonImage) {
+    void HighlightImage(Image buttonImage) {
         if (_selectedEntityButtonImage != null)
             _selectedEntityButtonImage.color = new Color(0.2117647f, 0.2f, 0.2745098f);
         buttonImage.color = new Color(1f, 0.7626624f, 0.2122642f);
     }
 
     void HighlightEntity(Image buttonImage) {
-        HighlightButton(buttonImage);
+        HighlightImage(buttonImage);
         _selectedEntityButtonImage = buttonImage;
     }
 
     void HighlightInputField(Image buttonImage) {
-        HighlightButton(buttonImage);
+        HighlightImage(buttonImage);
     }
 
     void OnEntityButtonDown(Entity entity) {
@@ -74,6 +76,7 @@ public class ProjectEntityWindow : SlideableUI {
         _editorView.EntityColorPicker.CurrentColor = entity.EntityColor;
         _editorView.EntityNameInputField.text = entity.EntityName;
         _editorView.EntityVisualDropdown.value = entity.TextureIndex;
+        _editorVisualPreview.color = entity.EntityColor;
         _ignoreCallback = false;
     }
 
