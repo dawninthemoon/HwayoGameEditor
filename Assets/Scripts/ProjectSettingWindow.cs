@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Aroma;
 
 public class ProjectSettingWindow : SlideableUI {
-    static readonly string DefaultGridSizeKey = "DefaultGridSize";
+    [SerializeField] InputField _inputField = null;
+
+    void Awake() {
+        if (!PlayerPrefs.HasKey(GridUtility.DefaultGridSizeKey)) {
+             PlayerPrefs.SetInt(GridUtility.DefaultGridSizeKey, 16);
+        }
+    }
 
     public override void Initalize() {
         base.Initalize();
-        if (!PlayerPrefs.HasKey(DefaultGridSizeKey)) {
-             PlayerPrefs.SetInt(DefaultGridSizeKey, 16);
-        }
+        _inputField.text = PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey).ToString();
         gameObject.SetActive(false);
     }
 
@@ -18,7 +23,7 @@ public class ProjectSettingWindow : SlideableUI {
         int value;
         string text = inputField.text;
         if (int.TryParse(text, out value)) {
-            PlayerPrefs.SetInt(DefaultGridSizeKey, value);
+            PlayerPrefs.SetInt(GridUtility.DefaultGridSizeKey, value);
         }
     }
 }

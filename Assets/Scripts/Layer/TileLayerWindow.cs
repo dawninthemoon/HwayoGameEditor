@@ -34,7 +34,7 @@ namespace CustomTilemap {
             string tilesetName = dropdown.options[dropdown.value].text;
             var layer = _layerModel.GetSelectedLayer() as TileLayer;
             layer.DropdownValue = dropdown.value;
-            _tilesetModel.ChangeTileset(tilesetName, layer.LayerIndex);
+            _tilesetModel.ChangeTileset(tilesetName, layer.LayerID);
             _editorView.TilesetPickerImage.sprite = _tilesetModel.GetTilesetSprite(tilesetName);
         }
 
@@ -43,7 +43,7 @@ namespace CustomTilemap {
 
             var layer = _layerModel.GetSelectedLayer();
             layer.LayerName = inputField.text;
-            Button button = _projectLayerWindow.GetButtonByIndex(layer.LayerIndex);
+            Button button = _projectLayerWindow.GetButtonByIndex(layer.LayerID);
             button.GetComponentInChildren<Text>().text = layer.LayerName;
         }
     }

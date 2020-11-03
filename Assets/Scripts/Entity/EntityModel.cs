@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +14,10 @@ namespace CustomTilemap {
 
         public Entity GetEntityByID(int id) {
             return _entityDictionary[id];
+        }
+
+        public void DeleteEntityByID(int entityID) {
+            _entityDictionary.Remove(entityID);
         }
     }
 }

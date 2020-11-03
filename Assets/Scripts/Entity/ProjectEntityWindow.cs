@@ -16,7 +16,7 @@ public class ProjectEntityWindow : SlideableUI {
     static readonly string DefaultEntityName = "Default Entity";
     static readonly string DefaultFieldName = "Field";
     int _numOfEntities;
-    int _selectedEntityID;
+    int _selectedEntityID = -1;
     Image _selectedEntityButtonImage;
     bool _ignoreCallback;
 
@@ -42,8 +42,10 @@ public class ProjectEntityWindow : SlideableUI {
         var button = Instantiate(_entityButtonPrefab, _entityPickerContentTransform);
         button.GetComponentInChildren<Text>().text = DefaultEntityName + " " + _numOfEntities.ToString();
 
-        if (_entityModel.IsEntityEmpty())
+        if (_entityModel.IsEntityEmpty()) {
+            _selectedEntityID = 0;
             HighlightEntity(button.GetComponent<Image>());
+        }
 
         int index = _numOfEntities;
         button.onClick.AddListener(() => {
@@ -56,10 +58,23 @@ public class ProjectEntityWindow : SlideableUI {
         ++_numOfEntities;
     }
 
+    public void DeleteSelectedEntity() {
+        if (_selectedEntityID == -1) return;
+        _entityModel.DeleteEntityByID(_selectedEntityID);
+        var button = _selectedEntityButtonImage.GetComponent<Button>();
+        button.transform.SetParent(null);
+        button.gameObject.SetActive(false);
+        DestroyImmediate(button);
+        _selectedEntityID = -1;
+    }
+
     void HighlightImage(Image buttonImage) {
-        if (_selectedEntityButtonImage != null)
+        if (_selectedEntityButtonImage != null) {
             _selectedEntityButtonImage.color = new Color(0.2117647f, 0.2f, 0.2745098f);
+            _selectedEntityButtonImage.GetComponentInChildren<Text>().color = Color.white;
+        }
         buttonImage.color = new Color(1f, 0.7626624f, 0.2122642f);
+        buttonImage.GetComponentInChildren<Text>().color = Color.black;
     }
 
     void HighlightEntity(Image buttonImage) {

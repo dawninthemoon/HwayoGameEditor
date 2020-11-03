@@ -15,6 +15,7 @@ namespace CustomTilemap {
         Dictionary<int, Button> _buttons = new Dictionary<int, Button>();
         static readonly string DefaultTileLayerName = "Tile Layer";
         static readonly string DefaultEntityLayerName = "Entity Layer";
+        Image _selectedButtonImage;
         int _numOfLayers;
 
         public override void Initalize() {
@@ -25,15 +26,19 @@ namespace CustomTilemap {
         }
 
         public void CreateTileLayer() {
+            if (_layerModel.IsLayerEmpty())
+                _layerModel.SelectedLayerID = 0;
+
             var tilemapVisual = Instantiate(_tilemapVisualPrefab);
             tilemapVisual.Initalize(_tilesetModel.GetFirstMaterial());
             _tilesetModel.AddTilemapVisual(tilemapVisual);
 
-            var tilemapLayer = new TileLayer(DefaultTileLayerName + " " +_numOfLayers.ToString(), _numOfLayers, 16, 16, 16, Vector3.zero);
+            string name = DefaultTileLayerName + " " +_numOfLayers.ToString();
+            var tilemapLayer = new TileLayer(name, _numOfLayers, 16, Vector3.zero);
             tilemapLayer.SetTilemapVisual(tilemapVisual);
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
-            button.GetComponentInChildren<Text>().text = DefaultTileLayerName + _numOfLayers.ToString();
+            button.GetComponentInChildren<Text>().text = name;
             _buttons.Add(_numOfLayers, button);
 
             System.Action callback = () => {
@@ -49,14 +54,38 @@ namespace CustomTilemap {
         }
 
         public void CreateEntityLayer() {
-            var tilemapLayer = new EntityLayer(DefaultEntityLayerName + " " +_numOfLayers.ToString(), _numOfLayers, 16, 16, 16, Vector3.zero);
-            //tilemapLayer.SetTilemapVisual(tilemapVisual);
+            if (_layerModel.IsLayerEmpty())
+                _layerModel.SelectedLayerID = 0;
+
+            string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
+            var entityLayer = new EntityLayer(name, _numOfLayers, 16, Vector3.zero);
+            //entityLayer.SetTilemapVisual(tilemapVisual);
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
-            button.GetComponentInChildren<Text>().text = DefaultEntityLayerName + _numOfLayers.ToString();
+            button.GetComponentInChildren<Text>().text = name;
             _buttons.Add(_numOfLayers, button);
 
             ++_numOfLayers;
+        }
+
+        public void DeleteSelectedLayer() {
+            if (_layerModel.SelectedLayerID == -1) return;
+
+            int curID = _layerModel.SelectedLayerID;
+            var button = _buttons[curID];
+            
+            button.transform.SetParent(null);
+            button.gameObject.SetActive(false);
+            DestroyImmediate(button);
+
+            _layerModel.DeleteLayerByID(curID);
+            _layerModel.SelectedLayerID = -1;
+        }
+
+        void HighlightImage(Image buttonImage) {
+            if (_selectedButtonImage != null)
+                _selectedButtonImage.color = new Color(0.2117647f, 0.2f, 0.2745098f);
+            buttonImage.color = new Color(1f, 0.7626624f, 0.2122642f);
         }
 
         public Button GetButtonByIndex(int index) {

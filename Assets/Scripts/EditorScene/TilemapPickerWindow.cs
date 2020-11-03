@@ -17,7 +17,6 @@ namespace CustomTilemap {
         Vector3 _prevMouseScreenPos;
         ScrollRect _scrollRect;
         Vector2 _gridOriginPos, _gridEndPos;
-        Grid<int> _grid;
         OnTilemapPicked _onTilemapPicked;
 
         void Awake() {

@@ -44,8 +44,8 @@ public class EditorMain : MonoBehaviour {
     }
 
     void Update() {
-        if (!Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1)) return;
-
+        if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1)) return;
+        
         bool isOnUI = CheckMousePositionIsOnUI();
 
         if (!isOnUI && (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))) {

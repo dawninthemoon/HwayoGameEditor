@@ -6,12 +6,13 @@ namespace CustomTilemap {
     public enum LayerType { Tile, Entity }
     public class Layer {
         public string LayerName { get; set; }
-        public int LayerIndex { get; private set; }
-        Grid<TileObject> _grid;
-        public Layer(string layerName, int layerIndex, int width, int height, float cellSize, Vector3 originPosition) {
+        public int LayerID { get; private set; }
+        Grid _grid;
+
+        public Layer(string layerName, int layerIndex, float cellSize, Vector3 originPosition) {
             LayerName = layerName;
-            LayerIndex = layerIndex;
-            _grid = new Grid<TileObject>(width, height, cellSize, originPosition, (Grid<TileObject> g, int x, int y) => new TileObject(g, x, y));
+            LayerID = layerIndex;
+            _grid = new Grid(cellSize, originPosition, (Grid g, int x, int y) => new TileObject(g, x, y));
         }
 
         public void SetTileIndex(Vector3 worldPosition, int tileIndex) {
@@ -23,13 +24,17 @@ namespace CustomTilemap {
             tilemapVisual.SetGrid(this, _grid);
         }
 
-         public class TileObject {
-            Grid<TileObject> _grid;
+        public void ResizeGrid(Vector3 originPosition, int widthDelta, int heightDelta) {
+            _grid.ResizeGrid(originPosition, widthDelta, heightDelta);
+        }
+
+        public class TileObject {
+            Grid _grid;
             int _x;
             int _y;
             int _tileIndex;
 
-            public TileObject(Grid<TileObject> grid, int x, int y) {
+            public TileObject(Grid grid, int x, int y) {
                 _grid = grid;
                 _x = x;
                 _y = y;

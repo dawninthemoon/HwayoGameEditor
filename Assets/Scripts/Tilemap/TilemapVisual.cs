@@ -11,7 +11,7 @@ namespace CustomTilemap {
 
         [SerializeField] float _tileSize = 1f;
 
-        private Grid<Layer.TileObject> _grid;
+        private Grid _grid;
         private Mesh _mesh;
         private bool _updateMesh;
         private Dictionary<int, UVCoords> _uvCoordsDictionary;
@@ -53,7 +53,7 @@ namespace CustomTilemap {
             }
         }
         
-        public void SetGrid(Layer tilemap, Grid<Layer.TileObject> grid) {
+        public void SetGrid(Layer tilemap, Grid grid) {
             this._grid = grid;
             UpdateHeatMapVisual();
 
@@ -64,7 +64,7 @@ namespace CustomTilemap {
             _updateMesh = true;
         }
 
-        private void Grid_OnGridValueChanged(object sender, Grid<Layer.TileObject>.OnGridObjectChangedEventArgs e) {
+        private void Grid_OnGridValueChanged(object sender, Grid.OnGridObjectChangedEventArgs e) {
             _updateMesh = true;
         }
 
