@@ -56,7 +56,6 @@ namespace CustomTilemap {
         public void SetGrid(Layer tilemap, Grid grid) {
             this._grid = grid;
             UpdateHeatMapVisual();
-
             grid.OnGridObjectChanged += Grid_OnGridValueChanged;
         }
 
@@ -76,11 +75,12 @@ namespace CustomTilemap {
             }
         }
 
-        private void UpdateHeatMapVisual() {
+        public void UpdateHeatMapVisual() {
+            _mesh.Clear();
             MeshUtils.CreateEmptyMeshArrays(_grid.GetWidth() * _grid.GetHeight(), out Vector3[] vertices, out Vector2[] uv, out int[] triangles);
-
-            for (int x = 0; x < _grid.GetWidth(); x++) {
-                for (int y = 0; y < _grid.GetHeight(); y++) {
+            
+            for (int x = 0; x < _grid.GetWidth(); ++x) {
+                for (int y = 0; y < _grid.GetHeight(); ++y) {
                     int index = x * _grid.GetHeight() + y;
                     Vector3 quadSize = new Vector3(1, 1) * _grid.GetCellSize();
 

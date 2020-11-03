@@ -1,9 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Aroma;
 
 public class GridScaler : MonoBehaviour {
+    public static bool ScalerDraging;
     bool _draging;
     public Vector2 StartPosition { get; private set; }
     public delegate void OnScalerChanged(GridScaler scaler);
@@ -19,11 +20,13 @@ public class GridScaler : MonoBehaviour {
     }
 
     void OnMouseDown() {
+        ScalerDraging = true;
         _draging = true;
         StartPosition = transform.position;
     }
 
     void OnMouseUp() {
+        ScalerDraging = false;
         _draging = false;
         _onScalerChangedCallback(this);
     }
@@ -36,6 +39,8 @@ public class GridScaler : MonoBehaviour {
     public void GetWHDelta(out int wDelta, out int hDelta, GridScaler scaler) {
         Vector2 startPos = StartPosition;
         Vector2 endPos = Utility.GetMouseWorldPosition();
+
+        
         Vector2 delta = endPos - StartPosition;
 
         wDelta = Mathf.FloorToInt(delta.x / 16f);

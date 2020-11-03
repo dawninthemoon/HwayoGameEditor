@@ -44,6 +44,7 @@ public class EditorMain : MonoBehaviour {
     }
 
     void Update() {
+        if (GridScaler.ScalerDraging) return;
         if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1)) return;
         
         bool isOnUI = CheckMousePositionIsOnUI();

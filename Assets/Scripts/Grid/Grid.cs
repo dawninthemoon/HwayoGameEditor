@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Aroma;
 
 namespace CustomTilemap {
     public class Grid {
@@ -15,9 +16,8 @@ namespace CustomTilemap {
         private float cellSize;
         private Vector3 _originPosition;
         private Layer.TileObject[,] _gridArray;
-        Func<Grid, int, int, Layer.TileObject> _createGridObjectCallback;
 
-        public Grid(float cellSize, Vector3 originPosition, Func<Grid, int, int, Layer.TileObject> createGridObject) {
+        public Grid(float cellSize, Vector3 originPosition) {
             this.cellSize = cellSize;
             this._originPosition = originPosition;
 
@@ -27,40 +27,39 @@ namespace CustomTilemap {
 
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
-                    _gridArray[x, y] = createGridObject(this, x, y);
+                   _gridArray[x, y] = TileObjectPool.GetInstance().GetTileObject(this, x, y);
                 }
             }
-            _createGridObjectCallback = createGridObject;
-
-            //OnGridObjectChanged += (object sender, OnGridObjectChangedEventArgs eventArgs) => { };
         }
 
         public void ResizeGrid(Vector3 originPosition, int widthDelta, int heightDelta) {
-            int width = LayerModel.CurrentGridHeight + widthDelta;
-            int height = LayerModel.CurrentGridHeight + heightDelta;
-            bool wChanged = !_originPosition.x.Equals(originPosition.x);
-            bool hChanged = !_originPosition.y.Equals(originPosition.y);
+            int prevWidth = LayerModel.CurrentGridWidth - widthDelta;
+            int prevHeight = LayerModel.CurrentGridHeight - heightDelta;
+            bool wChanged = !(Mathf.Abs(_originPosition.x - originPosition.x) < Mathf.Epsilon);
+            bool hChanged = !(Mathf.Abs(_originPosition.y - originPosition.y) < Mathf.Epsilon);
 
-            Layer.TileObject[,] gridArray = new Layer.TileObject[width, height];
-            for (int x = 0; x < width; x++) {
-                for (int y = 0; y < height; y++) {
-                    gridArray[x, y] = _createGridObjectCallback(this, x, y);
+            Layer.TileObject[,] gridArray = new Layer.TileObject[LayerModel.CurrentGridWidth, LayerModel.CurrentGridHeight];
+            
+            for (int x = 0; x < LayerModel.CurrentGridWidth; ++x) {
+                for (int y = 0; y < LayerModel.CurrentGridHeight; ++y) {
+                    gridArray[x, y] = TileObjectPool.GetInstance().GetTileObject(this, x, y);
                 }
             }
+            Debug.Log(LayerModel.CurrentGridWidth + ", " + LayerModel.CurrentGridHeight);
+            for (int x = 0; x < prevWidth; ++x) {
+                for (int y = 0; y < prevHeight; ++y) {
+                    int idx = _gridArray[x, y].GetTileIndex();
+                    TileObjectPool.GetInstance().ReturnObject(_gridArray[x, y]);
+                    if (idx == -1) continue;
 
-            if ((wChanged || hChanged)) {
-                for (int x = 0; x < LayerModel.CurrentGridWidth; ++x) {
-                    for (int y = 0; y < LayerModel.CurrentGridHeight; ++y) {
-                        int idx = _gridArray[x, y].GetTileIndex();
-                        if (idx == 0) continue;
+                    int alteredX = wChanged ? x + widthDelta : x;
+                    int alteredY = hChanged ? y + heightDelta : y;
 
-                        int alteredX = wChanged ? x : x + widthDelta;
-                        int alteredY = hChanged ? y : y + heightDelta;
-                        if (alteredX < 0 || alteredY < 0 || alteredX >= width || alteredY >= height)
-                            continue;
-
-                        gridArray[alteredX, alteredY].SetTileIndex(idx);
+                    if (alteredX < 0 || alteredY < 0 || alteredX >= LayerModel.CurrentGridWidth || alteredY >= LayerModel.CurrentGridHeight) {
+                        continue;
                     }
+
+                    gridArray[alteredX, alteredY].SetTileIndex(idx);
                 }
             }
 
@@ -112,6 +111,7 @@ namespace CustomTilemap {
                 return default(Layer.TileObject);
             }
         }
+        public int Sibal() => _gridArray.Length;
 
         public Layer.TileObject GetGridObject(Vector3 worldPosition) {
             int x, y;

@@ -22,13 +22,13 @@ namespace CustomTilemap {
         }
 
         public void ResizeAllLayers(Vector3 originPosition, int widthDelta, int heightDelta) {
+            LayerModel.CurrentGridWidth += widthDelta;
+            LayerModel.CurrentGridHeight += heightDelta;
+
             if (widthDelta == 0 && heightDelta == 0) return;
             foreach (var layer in _currentLayerDictionary.Values) {
                 layer.ResizeGrid(originPosition, widthDelta, heightDelta);
             }
-
-            LayerModel.CurrentGridWidth += widthDelta;
-            LayerModel.CurrentGridHeight += heightDelta;
             _onGridResized?.Invoke();
         }
 

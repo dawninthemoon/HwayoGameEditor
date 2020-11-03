@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CustomTilemap;
 
 namespace Aroma {
     public static class GridUtility {
@@ -13,6 +14,26 @@ namespace Aroma {
             y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
         }
     }
+
+    public class TileObjectPool : Singleton<TileObjectPool> {
+        ObjectPoolWithoutComponent<Layer.TileObject> _tileobjectPool;
+
+        public TileObjectPool() {
+            int gridSize = PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey);
+            _tileobjectPool = new ObjectPoolWithoutComponent<Layer.TileObject>(gridSize * gridSize * 2, () => new Layer.TileObject());
+        }
+
+        public Layer.TileObject GetTileObject(CustomTilemap.Grid grid, int x, int y) {
+            var tile = _tileobjectPool.GetObject();
+            tile.Initalize(grid, x, y);
+            return tile;
+        }
+
+        public void ReturnObject(Layer.TileObject tile) {
+            _tileobjectPool.ReturnObject(tile);
+        }
+    }
+
     public class LineUtility : Singleton<LineUtility> {
         ObjectPool<LineRenderer> _lineRendererPool;
         LineRenderer[] _rectRenderer;
