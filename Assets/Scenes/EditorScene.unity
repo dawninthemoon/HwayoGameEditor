@@ -421,7 +421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layerModel: {fileID: 1879874583}
-  _tilesetModel: {fileID: 1381385131}
   _editorView: {fileID: 122158467}
 --- !u!114 &48354841
 MonoBehaviour:
@@ -3696,6 +3695,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4823f8a221112f4c810e208d6e062e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _contentTrnasform: {fileID: 402725696}
+  _buttonPrefab: {fileID: 7410614998556687363, guid: 1b26fd92a080942448de773601e5eaad,
+    type: 3}
+  _entityModel: {fileID: 590431506}
 --- !u!1 &479785074
 GameObject:
   m_ObjectHideFlags: 0
@@ -8313,6 +8316,7 @@ MonoBehaviour:
   _tilesetModel: {fileID: 1381385131}
   _editorView: {fileID: 122158467}
   _tilemapPickerWindow: {fileID: 867677013}
+  _entityPickerWindow: {fileID: 467455397}
   _layerPicker: {fileID: 1421636746}
   _tileLayerWindow: {fileID: 48354840}
 --- !u!4 &1029183719
@@ -10735,7 +10739,9 @@ MonoBehaviour:
     type: 3}
   _tilesetModel: {fileID: 1381385131}
   _layerModel: {fileID: 1879874583}
-  _tilemapVisualPrefab: {fileID: 2817738408430319253, guid: c95248ec26a16704ca85e911e64763f0,
+  _tilesetVisualPrefab: {fileID: 2817738408430319253, guid: c95248ec26a16704ca85e911e64763f0,
+    type: 3}
+  _entityVisualPrefab: {fileID: 8979377179099820731, guid: 55c104058e9d7684196e9d3490f9a40a,
     type: 3}
   _entityModel: {fileID: 590431506}
 --- !u!114 &1424559339

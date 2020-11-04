@@ -5,8 +5,13 @@ using UnityEngine;
 using System.Linq;
 using Aroma;
 
+public interface IGridObject {
+    int GetIndex();
+    void SetIndex(int index);
+}
+
 namespace CustomTilemap {
-    public class Grid {
+    public class Grid<T> where T : IGridObject {
         public event EventHandler<OnGridObjectChangedEventArgs> OnGridObjectChanged;
         public class OnGridObjectChangedEventArgs : EventArgs {
             public int x;
@@ -15,19 +20,24 @@ namespace CustomTilemap {
 
         private float cellSize;
         private Vector3 _originPosition;
-        private Layer.TileObject[,] _gridArray;
+        private T[,] _gridArray;
+        Func<Grid<T>, int, int, T> _createObjectCallback;
+        Action<T> _returnObjectCallback;
 
-        public Grid(float cellSize, Vector3 originPosition) {
+        public Grid(float cellSize, Vector3 originPosition,Func<Grid<T>, int, int, T> createGridObject, Action<T> returnObject = null) {
             this.cellSize = cellSize;
             this._originPosition = originPosition;
 
             int width = LayerModel.CurrentGridWidth;
             int height = LayerModel.CurrentGridHeight;
-            _gridArray = new Layer.TileObject[width, height];
+            _gridArray = new T[width, height];
+
+            _createObjectCallback = createGridObject;
+            _returnObjectCallback = returnObject;
 
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
-                   _gridArray[x, y] = TileObjectPool.GetInstance().GetTileObject(this, x, y);
+                   _gridArray[x, y] = _createObjectCallback(this, x, y);
                 }
             }
         }
@@ -38,18 +48,18 @@ namespace CustomTilemap {
             bool wChanged = !(Mathf.Abs(_originPosition.x - originPosition.x) < Mathf.Epsilon);
             bool hChanged = !(Mathf.Abs(_originPosition.y - originPosition.y) < Mathf.Epsilon);
 
-            Layer.TileObject[,] gridArray = new Layer.TileObject[LayerModel.CurrentGridWidth, LayerModel.CurrentGridHeight];
+            T[,] gridArray = new T[LayerModel.CurrentGridWidth, LayerModel.CurrentGridHeight];
             
             for (int x = 0; x < LayerModel.CurrentGridWidth; ++x) {
                 for (int y = 0; y < LayerModel.CurrentGridHeight; ++y) {
-                    gridArray[x, y] = TileObjectPool.GetInstance().GetTileObject(this, x, y);
+                    gridArray[x, y] = _createObjectCallback(this, x, y);
                 }
             }
             
             for (int x = 0; x < prevWidth; ++x) {
                 for (int y = 0; y < prevHeight; ++y) {
-                    int idx = _gridArray[x, y].GetTileIndex();
-                    TileObjectPool.GetInstance().ReturnObject(_gridArray[x, y]);
+                    int idx = _gridArray[x, y].GetIndex();
+                    _returnObjectCallback?.Invoke(_gridArray[x, y]);
                     if (idx == -1) continue;
 
                     int alteredX = wChanged ? x + widthDelta : x;
@@ -59,12 +69,12 @@ namespace CustomTilemap {
                         continue;
                     }
 
-                    gridArray[alteredX, alteredY].SetTileIndex(idx);
+                    gridArray[alteredX, alteredY].SetIndex(idx);
                 }
             }
 
             _originPosition = originPosition;
-            _gridArray = gridArray.Clone() as Layer.TileObject[,];
+            _gridArray = gridArray.Clone() as T[,];
         }
 
         public int GetWidth() {
@@ -87,7 +97,7 @@ namespace CustomTilemap {
             Aroma.GridUtility.GetXY(worldPosition, out x, out y, cellSize, _originPosition);
         }
 
-        public void SetGridObject(int x, int y, Layer.TileObject value) {
+        public void SetGridObject(int x, int y, T value) {
             if (x >= 0 && y >= 0 && x < LayerModel.CurrentGridWidth && y < LayerModel.CurrentGridHeight) {
                 _gridArray[x, y] = value;
                 OnGridObjectChanged?.Invoke(this, new OnGridObjectChangedEventArgs { x = x, y = y });
@@ -98,21 +108,21 @@ namespace CustomTilemap {
             OnGridObjectChanged?.Invoke(this, new OnGridObjectChangedEventArgs { x = x, y = y });
         }
 
-        public void SetGridObject(Vector3 worldPosition, Layer.TileObject value) {
+        public void SetGridObject(Vector3 worldPosition, T value) {
             int x, y;
             GetXY(worldPosition, out x, out y);
             SetGridObject(x, y, value);
         }
 
-        public Layer.TileObject GetGridObject(int x, int y) {
+        public T GetGridObject(int x, int y) {
             if (x >= 0 && y >= 0 && x < LayerModel.CurrentGridWidth && y < LayerModel.CurrentGridHeight) {
                 return _gridArray[x, y];
             } else {
-                return default(Layer.TileObject);
+                return default(T);
             }
         }
 
-        public Layer.TileObject GetGridObject(Vector3 worldPosition) {
+        public T GetGridObject(Vector3 worldPosition) {
             int x, y;
             GetXY(worldPosition, out x, out y);
             return GetGridObject(x, y);

@@ -92,6 +92,11 @@ public class ProjectEntityWindow : SlideableUI {
         _editorView.EntityNameInputField.text = entity.EntityName;
         _editorView.EntityVisualDropdown.value = entity.TextureIndex;
         _editorVisualPreview.color = entity.EntityColor;
+
+        var uvRect = _editorVisualPreview.uvRect;
+        uvRect.x = _uvRectXArr[entity.TextureIndex];
+        _editorVisualPreview.uvRect = uvRect;
+
         _ignoreCallback = false;
     }
 

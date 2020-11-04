@@ -55,6 +55,7 @@ public class EditorMain : MonoBehaviour {
             DisableAllProjectWindows();
         }
 
+        if (_layerModel.SelectedLayerID == -1) return;
         if (Input.GetMouseButton(0) && !isOnUI) {
             Vector3 worldPosition = Utility.GetMouseWorldPosition();
             _layerModel.SetTile(worldPosition, _selectedTileIndex);

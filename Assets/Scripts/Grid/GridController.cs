@@ -125,8 +125,6 @@ namespace CustomTilemap {
                     (GridUtility.GetWorldPosition(0, LayerModel.CurrentGridHeight, _cellSize, _originPosition).y -
                     GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition).y) * 0.5f;
 
-                Debug.Log(halfWidth);
-
                 if (index % 2 == 0) {
                     p00 = new Vector2(p.x - halfWidth, p.y);
                     p10 = new Vector2(p.x + halfWidth, p.y);

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 namespace CustomTilemap {
     public class TileLayerWindow : MonoBehaviour {
         [SerializeField] LayerModel _layerModel = null;
-        [SerializeField] TilesetModel _tilesetModel = null;
         [SerializeField] EditorView _editorView = null;
         ProjectLayerWindow _projectLayerWindow;
         bool _ignoreCallback;

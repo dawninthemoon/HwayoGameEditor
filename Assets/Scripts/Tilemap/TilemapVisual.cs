@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace CustomTilemap {
-    public class TilemapVisual : MonoBehaviour {
-        private struct UVCoords {
+    public abstract class TilemapVisual : MonoBehaviour {
+        protected struct UVCoords {
             public Vector2 uv00;
             public Vector2 uv11;
         }
 
-        [SerializeField] float _tileSize = 1f;
-
-        private Grid _grid;
-        private Mesh _mesh;
-        private bool _updateMesh;
-        private Dictionary<int, UVCoords> _uvCoordsDictionary;
+        [SerializeField] protected float _tileSize = 16f;
+        protected Mesh _mesh;
+        protected bool _updateMesh;
+        protected Dictionary<int, UVCoords> _uvCoordsDictionary;
         MeshRenderer _meshRenderer;
         public string GetTileSetName() {
             return _meshRenderer.material.mainTexture.name;
         }
-        void Awake() {
+        protected virtual void Awake() {
             _meshRenderer = GetComponent<MeshRenderer>();
         }
 
@@ -53,21 +51,7 @@ namespace CustomTilemap {
             }
         }
         
-        public void SetGrid(Layer tilemap, Grid grid) {
-            this._grid = grid;
-            UpdateHeatMapVisual();
-            grid.OnGridObjectChanged += Grid_OnGridValueChanged;
-        }
-
-        private void Tilemap_OnLoaded(object sender, System.EventArgs e) {
-            _updateMesh = true;
-        }
-
-        private void Grid_OnGridValueChanged(object sender, Grid.OnGridObjectChangedEventArgs e) {
-            _updateMesh = true;
-        }
-
-        private void LateUpdate() {
+        protected virtual void LateUpdate() {
             if (_mesh == null) return;
             if (_updateMesh) { 
                 _updateMesh = false;
@@ -75,35 +59,7 @@ namespace CustomTilemap {
             }
         }
 
-        public void UpdateHeatMapVisual() {
-            _mesh.Clear();
-            MeshUtils.CreateEmptyMeshArrays(_grid.GetWidth() * _grid.GetHeight(), out Vector3[] vertices, out Vector2[] uv, out int[] triangles);
-            
-            for (int x = 0; x < _grid.GetWidth(); ++x) {
-                for (int y = 0; y < _grid.GetHeight(); ++y) {
-                    int index = x * _grid.GetHeight() + y;
-                    Vector3 quadSize = new Vector3(1, 1) * _grid.GetCellSize();
-
-                    Layer.TileObject gridObject = _grid.GetGridObject(x, y);
-                    int tileIndex = gridObject.GetTileIndex();
-                    Vector2 gridUV00, gridUV11;
-                    if (tileIndex == -1) {
-                        gridUV00 = Vector2.zero;
-                        gridUV11 = Vector2.zero;
-                        quadSize = Vector3.zero;
-                    } else {
-                        UVCoords uvCoords = _uvCoordsDictionary[tileIndex];
-                        gridUV00 = uvCoords.uv00;
-                        gridUV11 = uvCoords.uv11;
-                    }
-                    MeshUtils.AddToMeshArrays(vertices, uv, triangles, index, _grid.GetWorldPosition(x, y) + quadSize * .5f, 0f, quadSize, gridUV00, gridUV11);
-                }
-            }
-
-            _mesh.vertices = vertices;
-            _mesh.uv = uv;
-            _mesh.triangles = triangles;
-        }
+        public abstract void UpdateHeatMapVisual();
     }
 }
 

@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2817738408430319254}
-  - component: {fileID: 2817738408430319253}
+  - component: {fileID: 8979377179099820731}
   - component: {fileID: 2817738408430319252}
   - component: {fileID: 2817738408430319255}
   m_Layer: 0
-  m_Name: TilemapVisual
+  m_Name: EntityVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2817738408430319253
+--- !u!114 &8979377179099820731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2817738408430319241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a224c0653f7484196e125d4f121a7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 42984b68698790940ad3b22ac11e1ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tileSize: 16

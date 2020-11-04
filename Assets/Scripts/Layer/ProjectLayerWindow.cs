@@ -9,7 +9,8 @@ namespace CustomTilemap {
         [SerializeField] Button _layerButtonPrefab = null;
         [SerializeField] TilesetModel _tilesetModel = null;
         [SerializeField] LayerModel _layerModel = null;
-        [SerializeField] TilemapVisual _tilemapVisualPrefab = null;
+        [SerializeField] TilesetVisual _tilesetVisualPrefab = null;
+        [SerializeField] EntityVisual _entityVisualPrefab = null;
         [SerializeField] EntityModel _entityModel = null;
         TileLayerWindow _tileLayerWindow;
         EntityLayerWindow _entityLayerWindow;
@@ -34,13 +35,13 @@ namespace CustomTilemap {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
 
-            var tilemapVisual = Instantiate(_tilemapVisualPrefab);
-            tilemapVisual.Initalize(_tilesetModel.GetFirstMaterial());
-            _tilesetModel.AddTilemapVisual(tilemapVisual);
+            var tilesetVisual = Instantiate(_tilesetVisualPrefab);
+            tilesetVisual.Initalize(_tilesetModel.GetFirstMaterial());
+            _tilesetModel.AddTilesetVisual(tilesetVisual);
 
             string name = DefaultTileLayerName + " " +_numOfLayers.ToString();
             var tilemapLayer = new TileLayer(name, _numOfLayers, 16, Vector3.zero);
-            tilemapLayer.SetTilemapVisual(tilemapVisual);
+            tilemapLayer.Visual = tilesetVisual;
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
             button.GetComponentInChildren<Text>().text = name;
@@ -66,20 +67,19 @@ namespace CustomTilemap {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
 
-            var tilemapVisual = Instantiate(_tilemapVisualPrefab);
-            tilemapVisual.Initalize(_tilesetModel.EntityVisualMaterial);
-            _tilesetModel.AddTilemapVisual(tilemapVisual);
+            var entityVisual = Instantiate(_entityVisualPrefab);
+            entityVisual.Initalize(_tilesetModel.EntityVisualMaterial);
 
             string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
             var entityLayer = new EntityLayer(name, _numOfLayers, 16, Vector3.zero);
-            entityLayer.SetTilemapVisual(tilemapVisual);
+            entityLayer.Visual = entityVisual;
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
             button.GetComponentInChildren<Text>().text = name;
             _buttons.Add(_numOfLayers, button);
 
             int index = _numOfLayers;
-            System.Action callback = () => { OnEntityButtonClick(entityLayer); };
+            System.Action callback = () => { OnEntityButtonClick(entityLayer); _layerModel.SelectedLayerID = index; };
             button.onClick.AddListener(() => { _selectedLayerIndex = index; });
             _layerModel.AddButtonOnClick(button, entityLayer, callback);
             _layerModel.AddLayer(entityLayer, button, callback);

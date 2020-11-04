@@ -16,20 +16,20 @@ namespace Aroma {
     }
 
     public class TileObjectPool : Singleton<TileObjectPool> {
-        ObjectPoolWithoutComponent<Layer.TileObject> _tileobjectPool;
+        ObjectPoolWithoutComponent<TileLayer.TileObject> _tileobjectPool;
 
         public TileObjectPool() {
             int gridSize = PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey);
-            _tileobjectPool = new ObjectPoolWithoutComponent<Layer.TileObject>(gridSize * gridSize * 2, () => new Layer.TileObject());
+            _tileobjectPool = new ObjectPoolWithoutComponent<TileLayer.TileObject>(gridSize * gridSize * 2, () => new TileLayer.TileObject());
         }
 
-        public Layer.TileObject GetTileObject(CustomTilemap.Grid grid, int x, int y) {
+        public TileLayer.TileObject GetTileObject(CustomTilemap.Grid<TileLayer.TileObject> grid, int x, int y) {
             var tile = _tileobjectPool.GetObject();
             tile.Initalize(grid, x, y);
             return tile;
         }
 
-        public void ReturnObject(Layer.TileObject tile) {
+        public void ReturnObject(TileLayer.TileObject tile) {
             _tileobjectPool.ReturnObject(tile);
         }
     }

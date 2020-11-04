@@ -6,24 +6,17 @@ using UnityEngine.UI;
 
 namespace CustomTilemap {
     public class TilesetModel : MonoBehaviour {
-        List<TilemapVisual> _currentTilemapVisuals;
+        List<TilesetVisual> _currentTilemapVisuals;
         Dictionary<string, Material> _currentTilesetMaterials;
         Dictionary<string, Sprite> _currentTilesetSprites;
         public Material EntityVisualMaterial { get; private set; }
         int _selectedTilesetIndex;
         public static string DefaultTilesetName;
         void Awake() {
-            _currentTilemapVisuals = new List<TilemapVisual>();
+            _currentTilemapVisuals = new List<TilesetVisual>();
             _currentTilesetMaterials = new Dictionary<string, Material>();
             _currentTilesetSprites = new Dictionary<string, Sprite>();
             EntityVisualMaterial = Resources.Load<Material>("EntityVisual/EntityVisual");
-        }
-
-        public TilemapVisual GetTilemapVisual(string tilesetName) {
-            foreach (var visual in _currentTilemapVisuals) {
-                if (visual.Equals(tilesetName)) return visual;
-            }
-            return null;
         }
 
         public void ChangeTileset(string tilesetName, int layerIndex) {
@@ -33,11 +26,6 @@ namespace CustomTilemap {
 
         public Material GetMaterialByName(string name) {
             return _currentTilesetMaterials[name];
-        }
-        
-        public TilemapVisual GetFirstTilemapVisual() {
-            TilemapVisual visual = (_currentTilemapVisuals.Count == 0) ? null : _currentTilemapVisuals[0];
-            return visual;
         }
 
         public Material GetFirstMaterial() {
@@ -61,7 +49,7 @@ namespace CustomTilemap {
             _selectedTilesetIndex = index;
         }
 
-        public void AddTilemapVisual(TilemapVisual visual) {
+        public void AddTilesetVisual(TilesetVisual visual) {
             _currentTilemapVisuals.Add(visual);
         }
 
