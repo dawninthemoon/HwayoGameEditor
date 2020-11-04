@@ -5,9 +5,9 @@ using Aroma;
 
 namespace CustomTilemap {
     public class EntityLayer : Layer {
-        Dictionary<Vector2, Entity> _entityDictionary;
         EntityModel _entityModel;
         Grid<EntityObject> _grid;
+        EntityEditWindow _entityEditWindow;
         EntityVisual _entityVisual;
         public EntityVisual Visual {
             get { return _entityVisual; }
@@ -19,12 +19,14 @@ namespace CustomTilemap {
 
         public EntityLayer(string layerName, int layerIndex, float cellSize, Vector3 originPosition)
         : base(layerName, layerIndex, cellSize, originPosition) { 
-            _entityDictionary = new Dictionary<Vector2, Entity>();
             _grid = new Grid<EntityObject>(cellSize, originPosition, (Grid<EntityObject> g, int x, int y) => new EntityObject(g, x, y));
         }
 
         public void SetEntityModel(EntityModel model) {
             _entityModel = model;
+        }
+        public void SetEntityEditWindow(EntityEditWindow window) {
+            _entityEditWindow = window;
         }
 
         public override void SetTileIndex(Vector3 worldPosition, int entityID) {
@@ -34,24 +36,20 @@ namespace CustomTilemap {
             if (entityObject == null) return;
 
             var selectedEntity = _entityModel.GetEntityByID(entityID);
-            
-            int index = entityObject.GetIndex();
-            entityObject?.SetIndex(selectedEntity.TextureIndex);
-
-            int x, y;
-            _grid.GetXY(worldPosition, out x, out y);
-            Vector2 xy = new Vector2(x, y);
-            if (index == -1) {
-                AddEntityToDictionary();
+            if (entityObject.GetIndex() == -1) {
+                entityObject.EntityID = entityID;
+                entityObject.EntityName = selectedEntity.EntityName;
+                entityObject.SetIndex(selectedEntity.TextureIndex);
+                entityObject.SetFieldNames(selectedEntity.Fields);
             }
             else {
-                _entityDictionary.Remove(xy);
-                AddEntityToDictionary();
-            }
-            void AddEntityToDictionary() {
-                if (entityID == -1) return;
-                var entity = _entityModel.GetEntityByID(entityID);
-                _entityDictionary.Add(xy, entity);
+                if (entityID == -1) {
+                    entityObject.EntityID = -1;
+                    entityObject.SetIndex(-1);
+                }
+                else {
+                    _entityEditWindow.EnableWindow(entityObject);
+                }
             }
         }
 
@@ -64,7 +62,11 @@ namespace CustomTilemap {
             int _x;
             int _y;
             int _textureIndex;
-            List<KeyValuePair<string, string>> _fields;
+            public string EntityName { get; set; }
+            public int EntityID { get; set; }
+            Dictionary<string, string> _fields = new Dictionary<string, string>();
+            public Dictionary<string, string> Fields { get { return _fields; } }
+
             public EntityObject(Grid<EntityObject> grid, int x, int y) {
                 _grid = grid;
                 _x = x;
@@ -77,6 +79,13 @@ namespace CustomTilemap {
             public void SetIndex(int index) {
                 _textureIndex = index;
                 _grid.TriggerGridObjectChanged(_x, _y);
+            }
+
+            public void SetFieldNames(List<string> fieldNames) {
+                _fields.Clear();
+                for (int i = 0; i < fieldNames.Count; ++i) {
+                    _fields.Add(fieldNames[i], null);
+                }
             }
         }
     }

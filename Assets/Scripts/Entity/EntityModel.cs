@@ -22,6 +22,7 @@ namespace CustomTilemap {
         }
 
         public Entity GetEntityByID(int id) {
+            if (id < 0) return null;
             return _entityDictionary[id];
         }
 

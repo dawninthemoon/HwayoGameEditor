@@ -11,17 +11,26 @@ public class ProjectEntityWindow : SlideableUI {
     [SerializeField] EntityModel _entityModel = null;
     [SerializeField] EditorView _editorView = null;
     [SerializeField] Button _entityButtonPrefab = null;
-    [SerializeField] InputField _fieldInputFieldPrefab = null;
+    [SerializeField] Button _fieldButtonPrefab = null;
+    [SerializeField] GameObject _fieldInputFieldRect = null;
+    InputField _fieldInputField;
     float[] _uvRectXArr = new float[3] { 0f, 0.34f, 0.67f };
     static readonly string DefaultEntityName = "Default Entity";
-    static readonly string DefaultFieldName = "Field";
+    static readonly string DefaultFieldName = "Default Field";
     int _numOfEntities;
     int _selectedEntityID = -1;
+    int _selectedFieldID = -1;
     Image _selectedEntityButtonImage;
     bool _ignoreCallback;
+    ObjectPool<Button> _fieldButtonPool;
+    List<Button> _entityFieldButtons = new List<Button>();
+    string _prevFieldName = null;
 
     public override void Initalize() {
         base.Initalize();
+        _fieldInputField = _fieldInputFieldRect.GetComponentInChildren<InputField>();
+        _fieldInputField.text = DefaultFieldName + " 0";
+        _fieldButtonPool = new ObjectPool<Button>(5, () => Instantiate(_fieldButtonPrefab, _fieldPickerContentTransform));
         gameObject.SetActive(false);
     }
 
@@ -29,16 +38,58 @@ public class ProjectEntityWindow : SlideableUI {
         Entity entity = _entityModel.GetEntityByID(_selectedEntityID);
         int fieldID = entity.GetFieldCount();
         string fieldName = DefaultFieldName + " " + fieldID;
-
-        var inputField = Instantiate(_fieldInputFieldPrefab, _fieldPickerContentTransform);
-        inputField.text = fieldName;
+        SetField(fieldName, 0);
 
         entity.AddField(fieldName);
     }
 
-    public void CreateEntity() {
-        var entity = new Entity(DefaultEntityName + " " + _numOfEntities.ToString(), 0, Color.white);
+    public void RemoveField() {
+        if (_selectedFieldID == -1) return;
 
+        var button = _entityFieldButtons[_selectedFieldID];
+        button.transform.SetParent(null);
+        _fieldButtonPool.ReturnObject(button);
+        _entityFieldButtons.RemoveAt(_selectedEntityID);
+    }
+
+    void SetField(string fieldName, int id) {
+        var button = _fieldButtonPool.GetObject();
+        button.transform.SetParent(_fieldPickerContentTransform);
+
+        button.GetComponentInChildren<Text>().text = fieldName;
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(() => {
+            _ignoreCallback = true;
+            _fieldInputFieldRect.SetActive(true);
+            _selectedFieldID = id;
+            _fieldInputField.text = fieldName;
+            _prevFieldName = fieldName;
+            _ignoreCallback = false;
+        });
+
+        _entityFieldButtons.Add(button);
+    }
+
+    public void OnFieldNameChanged() {
+        if (_ignoreCallback) return;
+        string fieldName = _fieldInputField.text;
+        var entity = _entityModel.GetEntityByID(_selectedEntityID);
+        entity.ChangeFieldName(_prevFieldName, fieldName);
+
+        Debug.Log(_prevFieldName + ", " + fieldName);
+        foreach (var button in _entityFieldButtons) {
+            var text = button.GetComponentInChildren<Text>();
+            if (text.text.Equals(_prevFieldName)) {
+                text.text = fieldName;
+                break;
+            }
+        }
+        _prevFieldName = fieldName;
+    }
+
+    public void CreateEntity() {
+        var entity = new Entity(DefaultEntityName + " " + _numOfEntities.ToString(), 0, _numOfEntities, Color.white);
+        
         var button = Instantiate(_entityButtonPrefab, _entityPickerContentTransform);
         button.GetComponentInChildren<Text>().text = DefaultEntityName + " " + _numOfEntities.ToString();
 
@@ -96,6 +147,15 @@ public class ProjectEntityWindow : SlideableUI {
         var uvRect = _editorVisualPreview.uvRect;
         uvRect.x = _uvRectXArr[entity.TextureIndex];
         _editorVisualPreview.uvRect = uvRect;
+
+        foreach (var button in _entityFieldButtons) {
+            button.transform.SetParent(null);
+            _fieldButtonPool.ReturnObject(button);
+        }
+        _entityFieldButtons.Clear();
+        for (int i = 0; i < entity.Fields.Count; ++i) {
+            SetField(entity.Fields[i], i);
+        }
 
         _ignoreCallback = false;
     }

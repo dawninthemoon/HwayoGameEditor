@@ -12,6 +12,7 @@ namespace CustomTilemap {
         [SerializeField] TilesetVisual _tilesetVisualPrefab = null;
         [SerializeField] EntityVisual _entityVisualPrefab = null;
         [SerializeField] EntityModel _entityModel = null;
+        [SerializeField] EntityEditWindow _entityEditWindow = null;
         TileLayerWindow _tileLayerWindow;
         EntityLayerWindow _entityLayerWindow;
         Dictionary<int, Button> _buttons = new Dictionary<int, Button>();
@@ -72,6 +73,7 @@ namespace CustomTilemap {
 
             string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
             var entityLayer = new EntityLayer(name, _numOfLayers, 16, Vector3.zero);
+            entityLayer.SetEntityEditWindow(_entityEditWindow);
             entityLayer.Visual = entityVisual;
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
