@@ -48,7 +48,11 @@ namespace CustomTilemap {
         }
 
         void OnScalerChanging(GridScaler scaler) {
-            if (_layerModel.IsLayerEmpty() || !CanResizeGrid(scaler.ScalerIndex)) return;
+            if (_layerModel.IsLayerEmpty()) return;
+            if (!CanResizeGrid(scaler.ScalerIndex)) {
+                Aroma.LineUtility.GetInstance().DisableRect();
+                return;
+            }
 
             Vector2 p00, p10, p11, p01;
             GetRectPoints(scaler.ScalerIndex, out p00, out p10, out p11, out p01);
@@ -57,8 +61,9 @@ namespace CustomTilemap {
         }
 
         void OnScalerChanged(GridScaler scaler) {
-            if (_layerModel.IsLayerEmpty() || !CanResizeGrid(scaler.ScalerIndex)) return;
+            if (_layerModel.IsLayerEmpty()) return;
             Aroma.LineUtility.GetInstance().DisableRect();
+            if (!CanResizeGrid(scaler.ScalerIndex)) return;
             
             Vector2 p00, p10, p11, p01;
             GetRectPoints(scaler.ScalerIndex, out p00, out p10, out p11, out p01);
@@ -114,22 +119,24 @@ namespace CustomTilemap {
                 int parallelIndex = (index + 2) % 4 + 4;
                 Vector2 p = _vertexes[parallelIndex];
                 float halfWidth = 
-                    (GridUtility.GetWorldPosition(LayerModel.CurrentGridWidth, 0, _cellSize, _originPosition) - 
-                    GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition)).x * 0.5f;
+                    (GridUtility.GetWorldPosition(LayerModel.CurrentGridWidth, 0, _cellSize, _originPosition).x - 
+                    GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition).x) * 0.5f;
                 float halfHeight = 
-                    (GridUtility.GetWorldPosition(0, LayerModel.CurrentGridHeight, _cellSize, _originPosition) -
-                    GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition)).y * 0.5f;
+                    (GridUtility.GetWorldPosition(0, LayerModel.CurrentGridHeight, _cellSize, _originPosition).y -
+                    GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition).y) * 0.5f;
+
+                Debug.Log(halfWidth);
 
                 if (index % 2 == 0) {
                     p00 = new Vector2(p.x - halfWidth, p.y);
                     p10 = new Vector2(p.x + halfWidth, p.y);
-                    p11 = new Vector2(cursorPos.x + halfWidth, cursorPos.y);
-                    p01 = new Vector2(cursorPos.x - halfWidth, cursorPos.y);
+                    p11 = new Vector2(p.x + halfWidth, cursorPos.y);
+                    p01 = new Vector2(p.x - halfWidth, cursorPos.y);
                 }
                 else {
                     p00 = new Vector2(p.x, p.y + halfHeight);
-                    p10 = new Vector2(cursorPos.x, cursorPos.y + halfHeight);
-                    p11 = new Vector2(cursorPos.x, cursorPos.y - halfHeight);
+                    p10 = new Vector2(cursorPos.x, p.y + halfHeight);
+                    p11 = new Vector2(cursorPos.x, p.y - halfHeight);
                     p01 = new Vector2(p.x, p.y - halfHeight);
                 }
             }

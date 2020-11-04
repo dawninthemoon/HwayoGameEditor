@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +45,7 @@ namespace CustomTilemap {
                     gridArray[x, y] = TileObjectPool.GetInstance().GetTileObject(this, x, y);
                 }
             }
-            Debug.Log(LayerModel.CurrentGridWidth + ", " + LayerModel.CurrentGridHeight);
+            
             for (int x = 0; x < prevWidth; ++x) {
                 for (int y = 0; y < prevHeight; ++y) {
                     int idx = _gridArray[x, y].GetTileIndex();
@@ -83,7 +83,7 @@ namespace CustomTilemap {
             return Aroma.GridUtility.GetWorldPosition(x, y, cellSize, _originPosition);
         }
 
-        private void GetXY(Vector3 worldPosition, out int x, out int y) {
+        public void GetXY(Vector3 worldPosition, out int x, out int y) {
             Aroma.GridUtility.GetXY(worldPosition, out x, out y, cellSize, _originPosition);
         }
 
@@ -111,7 +111,6 @@ namespace CustomTilemap {
                 return default(Layer.TileObject);
             }
         }
-        public int Sibal() => _gridArray.Length;
 
         public Layer.TileObject GetGridObject(Vector3 worldPosition) {
             int x, y;

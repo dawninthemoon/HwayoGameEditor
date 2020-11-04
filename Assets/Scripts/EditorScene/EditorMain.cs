@@ -10,6 +10,9 @@ public class EditorMain : MonoBehaviour {
     [SerializeField] TilesetModel _tilesetModel = null;
     [SerializeField] EditorView _editorView = null;
     [SerializeField] TilemapPickerWindow _tilemapPickerWindow = null;
+    [SerializeField] EntityPickerWindow _entityPickerWindow = null;
+    [SerializeField] LayerPicker _layerPicker = null;
+    [SerializeField] TileLayerWindow _tileLayerWindow = null;
     int _selectedTileIndex = 0;
     SlideableUI[] _projectWindows;
 
@@ -20,12 +23,11 @@ public class EditorMain : MonoBehaviour {
             _projectWindows[i] = projectWindows[i].GetComponent<SlideableUI>();
             _projectWindows[i].Initalize();
         }
-        _layerModel.SetOnTilesetChanged(OnTilesetChanged);
+        _tileLayerWindow.SetOnTilesetChanged(OnTilesetChanged);
+        _layerPicker.SetOnTilesetChanged(OnTilesetChanged);
 
-        _tilemapPickerWindow.AddOnTilemapPicked((int index) => {
-                _selectedTileIndex = index;
-            }
-        );
+        _tilemapPickerWindow.AddOnTilemapPicked((int index) => { _selectedTileIndex = index; });
+        _entityPickerWindow.SetOnEntityPicked((int index) => { _selectedTileIndex = index; });
     }
 
     public void DisableAllProjectWindows() {
@@ -34,8 +36,8 @@ public class EditorMain : MonoBehaviour {
         }
     }
 
-    public void OnTilesetChanged(TilemapVisual tilemapVisual) {
-        var spr = _tilesetModel.GetTilesetSprite(tilemapVisual.GetTileSetName());
+    public void OnTilesetChanged(TileLayer tileLayer) {
+        var spr = _tilesetModel.GetTilesetSprite(tileLayer.TilesetName);
         _editorView.TilesetPreivewImage.sprite = spr;
         _editorView.TilesetPickerImage.sprite = spr;
         _editorView.TilesetPickerImage.rectTransform.sizeDelta = new Vector2(spr.texture.width, spr.texture.height);

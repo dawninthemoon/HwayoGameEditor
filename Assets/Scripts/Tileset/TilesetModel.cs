@@ -9,11 +9,14 @@ namespace CustomTilemap {
         List<TilemapVisual> _currentTilemapVisuals;
         Dictionary<string, Material> _currentTilesetMaterials;
         Dictionary<string, Sprite> _currentTilesetSprites;
+        public Material EntityVisualMaterial { get; private set; }
         int _selectedTilesetIndex;
+        public static string DefaultTilesetName;
         void Awake() {
             _currentTilemapVisuals = new List<TilemapVisual>();
             _currentTilesetMaterials = new Dictionary<string, Material>();
             _currentTilesetSprites = new Dictionary<string, Sprite>();
+            EntityVisualMaterial = Resources.Load<Material>("EntityVisual/EntityVisual");
         }
 
         public TilemapVisual GetTilemapVisual(string tilesetName) {

@@ -10,7 +10,10 @@ namespace CustomTilemap {
         [SerializeField] EditorView _editorView = null;
         ProjectLayerWindow _projectLayerWindow;
         bool _ignoreCallback;
-
+        OnTilesetChanged _onTilesetChanged;
+        public void SetOnTilesetChanged(OnTilesetChanged callback) {
+            _onTilesetChanged = callback;
+        }
         void Start() {
             _projectLayerWindow = GetComponentInParent<ProjectLayerWindow>();
         }
@@ -30,18 +33,19 @@ namespace CustomTilemap {
 
         public void OnTilesetDropdownChanged(Dropdown dropdown) {
             if (_ignoreCallback) return;
-
             string tilesetName = dropdown.options[dropdown.value].text;
-            var layer = _layerModel.GetSelectedLayer() as TileLayer;
+            var layer = _layerModel.GetLayerByIndex(_projectLayerWindow.SelectedLayerIDInWindow) as TileLayer;
             layer.DropdownValue = dropdown.value;
-            _tilesetModel.ChangeTileset(tilesetName, layer.LayerID);
-            _editorView.TilesetPickerImage.sprite = _tilesetModel.GetTilesetSprite(tilesetName);
+            layer.TilesetName = tilesetName;
+
+            if (_layerModel.SelectedLayerID == _projectLayerWindow.SelectedLayerIDInWindow)
+                _onTilesetChanged(layer);
         }
 
         public void OnLayerNameInputFieldChanged(InputField inputField) {
             if (_ignoreCallback) return;
 
-            var layer = _layerModel.GetSelectedLayer();
+            var layer = _layerModel.GetLayerByIndex(_projectLayerWindow.SelectedLayerIDInWindow);
             layer.LayerName = inputField.text;
             Button button = _projectLayerWindow.GetButtonByIndex(layer.LayerID);
             button.GetComponentInChildren<Text>().text = layer.LayerName;

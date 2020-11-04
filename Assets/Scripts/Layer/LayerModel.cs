@@ -5,12 +5,12 @@ using UnityEngine.UI;
 using Aroma;
 
 namespace CustomTilemap {
-    public delegate void OnTilesetChanged(TilemapVisual tilemapVisual);
+    public delegate void OnTilesetChanged(TileLayer tileLayer);
     public class LayerModel : MonoBehaviour {
+        [SerializeField] LayerPicker _layerPicker = null;
         Dictionary<int, Layer> _currentLayerDictionary;
         Image _selectedButtonImage;
         public int SelectedLayerID { get; set; } = -1;
-        OnTilesetChanged _onTilesetChanged;
         public static int CurrentGridWidth;
         public static int CurrentGridHeight;
         OnGridResized _onGridResized;
@@ -37,20 +37,20 @@ namespace CustomTilemap {
         }
 
         public bool IsLayerEmpty() => (_currentLayerDictionary.Count == 0);
+        public int NumOfLayers() => _currentLayerDictionary.Count;
 
-        public void SetOnTilesetChanged(OnTilesetChanged callback) {
-            _onTilesetChanged = callback;
-        }
-
-        public void AddLayer(Layer layer, Button button, TilemapVisual visual, System.Action callback) {
-            if (_currentLayerDictionary.Count == 0) {
-                OnButtonClick(button, 0, visual, callback);
-            }
+        public void AddLayer(Layer layer, Button button, System.Action callback) {
             _currentLayerDictionary.Add(layer.LayerID, layer);
+            _layerPicker.AddLayerButton(this, layer);
+
+            if (_currentLayerDictionary.Count == 1) {
+                OnButtonClick(button, layer, callback);
+            }
         }
 
         public void DeleteLayerByID(int layerID) {
             _currentLayerDictionary.Remove(layerID);
+            _layerPicker.DeleteLayerButton(layerID);
         }
 
         public void SetTile(Vector3 worldPosition, int tileIndex) {
@@ -59,32 +59,34 @@ namespace CustomTilemap {
         }
 
         public Layer GetSelectedLayer() {
-            for (int i = 0; i < _currentLayerDictionary.Count; ++i) {
-                if (_currentLayerDictionary[i].LayerID == SelectedLayerID) {
+            return GetLayerByIndex(SelectedLayerID);
+        }
+
+        public Layer GetLayerByIndex(int index) {
+             for (int i = 0; i < _currentLayerDictionary.Count; ++i) {
+                if (_currentLayerDictionary[i].LayerID == index) {
                     return _currentLayerDictionary[i];
                 }
             }
             return null;
         }
 
-        public void AddButtonOnClick(Button button, int layerID, TilemapVisual tilemapVisual, System.Action callback) {
+        public void AddButtonOnClick(Button button, Layer layer, System.Action callback) {
             button.onClick.AddListener(() => { 
-                OnButtonClick(button, layerID, tilemapVisual, callback);
+                OnButtonClick(button, layer, callback);
             });
         }
 
-        void OnButtonClick(Button button, int layerID, TilemapVisual tilemapVisual, System.Action callback) {
+        void OnButtonClick(Button button, Layer layer, System.Action callback) {
             if (_selectedButtonImage != null) {
                 _selectedButtonImage.color = new Color(0.2117647f, 0.2f, 0.2745098f);
                 _selectedButtonImage.GetComponentInChildren<Text>().color = Color.white;
             }
-            SelectedLayerID = layerID;
             _selectedButtonImage = button.image;
 
             button.image.color = new Color(1f, 0.7626624f, 0.2122642f);
             _selectedButtonImage.GetComponentInChildren<Text>().color = Color.black;
 
-            _onTilesetChanged(tilemapVisual);
             callback();
         }
     }

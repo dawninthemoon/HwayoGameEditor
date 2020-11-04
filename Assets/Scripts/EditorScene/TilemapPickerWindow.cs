@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using Aroma;
 
 namespace CustomTilemap {
-    public delegate void OnTilemapPicked(int index);
+    public delegate void OnPicked(int index);
 
     public class TilemapPickerWindow : MonoBehaviour {
         [SerializeField] Image _tilemapImage = null;
@@ -17,7 +17,7 @@ namespace CustomTilemap {
         Vector3 _prevMouseScreenPos;
         ScrollRect _scrollRect;
         Vector2 _gridOriginPos, _gridEndPos;
-        OnTilemapPicked _onTilemapPicked;
+        OnPicked _onTilemapPicked;
 
         void Awake() {
             _transform = GetComponent<RectTransform>();
@@ -120,7 +120,7 @@ namespace CustomTilemap {
             _transform.sizeDelta = new Vector2(DefaultWidth, _transform.sizeDelta.y);
         }
 
-        public void AddOnTilemapPicked(OnTilemapPicked e) {
+        public void AddOnTilemapPicked(OnPicked e) {
             _onTilemapPicked += e;
         }
     }

@@ -20,6 +20,7 @@ public class ProjectTilesetsWindow : SlideableUI {
         if (tilesetMaterials == null || tilesetMaterials.Length == 0) return;
 
         _tilesetModel.SetTilesets(tilesetMaterials, tilesetSprites);
+        TilesetModel.DefaultTilesetName = tilesetSprites[0].name;
 
         for (int i = 0; i < tilesetMaterials.Length; ++i) {
             int index = i;

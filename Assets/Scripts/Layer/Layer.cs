@@ -9,7 +9,8 @@ namespace CustomTilemap {
         public string LayerName { get; set; }
         public int LayerID { get; private set; }
         TilemapVisual _tilemapVisual;
-        Grid _grid;
+        public TilemapVisual Visual { get {return _tilemapVisual;}}
+        protected Grid _grid;
 
         public Layer(string layerName, int layerIndex, float cellSize, Vector3 originPosition) {
             LayerName = layerName;
@@ -17,7 +18,7 @@ namespace CustomTilemap {
             _grid = new Grid(cellSize, originPosition);
         }
 
-        public void SetTileIndex(Vector3 worldPosition, int tileIndex) {
+        public virtual void SetTileIndex(Vector3 worldPosition, int tileIndex) {
             TileObject tilemapObject = _grid.GetGridObject(worldPosition);
             tilemapObject?.SetTileIndex(tileIndex);
         }
