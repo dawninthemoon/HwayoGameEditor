@@ -45,6 +45,9 @@ TagManager:
   - name: Tilemap
     uniqueID: 1085489763
     locked: 0
+  - name: CollisionLine
+    uniqueID: 3645061891
+    locked: 0
   - name: UI
     uniqueID: 1944953013
     locked: 0

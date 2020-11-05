@@ -13,6 +13,16 @@ namespace Aroma {
             x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
             y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
         }
+
+        public static Vector2 ClampPosition(Vector2 position, float cellSize) {
+            Vector2 p00 = GridUtility.GetWorldPosition(0, LayerModel.CurrentGridHeight, cellSize, LayerModel.CurrentOriginPosition);
+            Vector2 p11 = GridUtility.GetWorldPosition(LayerModel.CurrentGridWidth, 0, cellSize, LayerModel.CurrentOriginPosition);
+            
+            position.x = Mathf.Clamp(position.x, p00.x, p11.x);
+            position.y = Mathf.Clamp(position.y, p11.y, p00.y);
+            
+            return position;
+        }
     }
 
     public class TileObjectPool : Singleton<TileObjectPool> {
@@ -38,12 +48,9 @@ namespace Aroma {
         ObjectPool<LineRenderer> _lineRendererPool;
         LineRenderer[] _rectRenderer;
         Material _gpuInstancing;
-        Dictionary<KeyValuePair<Vector3, Vector3>, LineRenderer> _overlapCheckDic;
-
         public LineUtility() {
             _gpuInstancing = Resources.Load<Material>("Others/GPUInstancing");
             int gridSize = PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey);
-            _overlapCheckDic = new Dictionary<KeyValuePair<Vector3, Vector3>, LineRenderer>();
             _lineRendererPool = new ObjectPool<LineRenderer>(gridSize, CreateLineRenderer);
             _rectRenderer = new LineRenderer[4] {
                 CreateLineRenderer(),
@@ -85,14 +92,7 @@ namespace Aroma {
         }
 
         public void DrawLine(Vector3 start, Vector3 end, Color color, float width = 0.5f) {
-            LineRenderer lr;
-            var pair = new KeyValuePair<Vector3, Vector3>(start, end);
-            if (_overlapCheckDic.TryGetValue(pair, out lr)) {
-                _lineRendererPool.ReturnObject(lr);
-                _overlapCheckDic.Remove(pair);
-            }
-            lr = _lineRendererPool.GetObject();
-            _overlapCheckDic.Add(pair, lr);
+            var lr = _lineRendererPool.GetObject();
             DrawLine(lr, start, end, color, width);
         }
 

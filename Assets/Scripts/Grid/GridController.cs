@@ -12,6 +12,7 @@ namespace CustomTilemap {
         float _cellSize = 16;
         Vector3 _originPosition;
         Vector3[] _vertexes = new Vector3[8];
+        Vector3[] _gridScalerPos = new Vector3[8];
         Vector3[] _units;
         static readonly Vector2 DefaultColliderSize = new Vector2(16f, 16f);
         GridScaler[] _gridScalers;
@@ -22,6 +23,16 @@ namespace CustomTilemap {
                 _gridScalers[i] = Instantiate(_gridScalerPrefab, _vertexes[i], Quaternion.identity).GetComponent<GridScaler>();
                 _gridScalers[i].SetCallbackFunc(OnScalerChanging, OnScalerChanged);
             }
+
+            _gridScalerPos[0] = new Vector2(-1f, 1f) * _cellSize;
+            _gridScalerPos[1] = Vector2.one * _cellSize;
+            _gridScalerPos[2] = new Vector3(1f, -1f) * _cellSize;
+            _gridScalerPos[3] = -Vector2.one * _cellSize;
+            _gridScalerPos[4] = Vector2.up * _cellSize;
+            _gridScalerPos[5] = Vector2.right * _cellSize;
+            _gridScalerPos[6] = Vector2.down * _cellSize;
+            _gridScalerPos[7] = Vector2.left * _cellSize;
+
             DrawGridLine();
             UpdateGridScalers();
 
@@ -36,13 +47,13 @@ namespace CustomTilemap {
             _vertexes[1] = GridUtility.GetWorldPosition(width, height, _cellSize, _originPosition);
             _vertexes[2] = GridUtility.GetWorldPosition(width, 0, _cellSize, _originPosition);
             _vertexes[3] = GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition);
-            
+
             for (int i = 0; i < _vertexes.Length / 2; ++i) {
                 _vertexes[i + 4] = (_vertexes[(i + 1) % 4] - _vertexes[i]) * 0.5f + _vertexes[i];
             }
             
             for (int i = 0; i < _vertexes.Length; ++i) {
-                _gridScalers[i].transform.position = _vertexes[i];
+                _gridScalers[i].transform.position = _vertexes[i] + _gridScalerPos[i];
                 _gridScalers[i].ScalerIndex = i;
             }
         }
@@ -99,7 +110,7 @@ namespace CustomTilemap {
         }
 
         void GetRectPoints(int index, out Vector2 p00, out Vector2 p10, out Vector2 p11, out Vector2 p01) {
-            Vector3 cur = Utility.GetMouseWorldPosition();
+            Vector3 cur = Utility.GetMouseWorldPosition() - _gridScalerPos[index];
             if (index >= 4) {
                 if (index % 2 == 0) cur.x = _vertexes[index].x;
                 else cur.y = _vertexes[index].y;

@@ -8,12 +8,10 @@ namespace CustomTilemap {
     public abstract class Layer {
         public string LayerName { get; set; }
         public int LayerID { get; private set; }
-
         public Layer(string layerName, int layerIndex) {
             LayerName = layerName;
             LayerID = layerIndex;
         }
-
         public abstract void SetTileIndex(Vector3 worldPosition, int textureIndex);
 
         public abstract void ResizeGrid(Vector3 originPosition, int widthDelta, int heightDelta);

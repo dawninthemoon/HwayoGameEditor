@@ -9,6 +9,7 @@ namespace CustomTilemap {
     public class LayerModel : MonoBehaviour {
         [SerializeField] LayerPicker _layerPicker = null;
         Dictionary<int, Layer> _currentLayerDictionary;
+        public Dictionary<int, Layer> CurrentLayerDictionary { get; set; }
         Image _selectedButtonImage;
         public int SelectedLayerID { get; set; } = -1;
         public static int CurrentGridWidth;

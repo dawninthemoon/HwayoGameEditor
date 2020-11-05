@@ -18,11 +18,10 @@ namespace CustomTilemap {
         }
 
         public override void SetTileIndex(Vector3 worldPosition, int textureIndex) {
-            Vector3 p00 = GridUtility.GetWorldPosition(0, LayerModel.CurrentGridHeight, _cellSize, LayerModel.CurrentOriginPosition);
-            Vector3 p11 = GridUtility.GetWorldPosition(LayerModel.CurrentGridWidth, 0, _cellSize, LayerModel.CurrentOriginPosition);
-            if (p00.x > worldPosition.x || p00.y < worldPosition.y || p11.x < worldPosition.x || p11.y > worldPosition.y) return;
+            worldPosition.z = 0f;
+            worldPosition = GridUtility.ClampPosition(worldPosition, _cellSize);
 
-            if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            if (Input.GetKey(KeyCode.LeftShift)) {
                 int x, y;
                 GridUtility.GetXY(worldPosition, out x, out y, _cellSize, LayerModel.CurrentOriginPosition);
                 worldPosition = GridUtility.GetWorldPosition(x, y, _cellSize, LayerModel.CurrentOriginPosition);
