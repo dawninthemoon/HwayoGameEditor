@@ -33,7 +33,7 @@ namespace Aroma {
             _tileobjectPool = new ObjectPoolWithoutComponent<TileLayer.TileObject>(gridSize * gridSize * 2, () => new TileLayer.TileObject());
         }
 
-        public TileLayer.TileObject GetTileObject(CustomTilemap.Grid<TileLayer.TileObject> grid, int x, int y) {
+        public TileLayer.TileObject GetTileObject(CustomTilemap.CustomGrid<TileLayer.TileObject> grid, int x, int y) {
             var tile = _tileobjectPool.GetObject();
             tile.Initalize(grid, x, y);
             return tile;

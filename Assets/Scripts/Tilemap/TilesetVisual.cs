@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace CustomTilemap {
     public class TilesetVisual : TilemapVisual {
-        Grid<TileLayer.TileObject> _grid;
+        CustomGrid<TileLayer.TileObject> _grid;
         protected override void Awake() {
             base.Awake();
         }
-        public void SetGrid(Layer tilemap, Grid<TileLayer.TileObject> grid) {
+        public void SetGrid(Layer tilemap, CustomGrid<TileLayer.TileObject> grid) {
             this._grid = grid;
             UpdateHeatMapVisual();
             grid.OnGridObjectChanged += Grid_OnGridValueChanged;
@@ -18,7 +18,7 @@ namespace CustomTilemap {
             _updateMesh = true;
         }
 
-        private void Grid_OnGridValueChanged(object sender, Grid<TileLayer.TileObject>.OnGridObjectChangedEventArgs e) {
+        private void Grid_OnGridValueChanged(object sender, CustomGrid<TileLayer.TileObject>.OnGridObjectChangedEventArgs e) {
             _updateMesh = true;
         }
 
@@ -29,7 +29,7 @@ namespace CustomTilemap {
         public override void UpdateHeatMapVisual() {
             _mesh.Clear();
             MeshUtils.CreateEmptyMeshArrays(_grid.GetWidth() * _grid.GetHeight(), out Vector3[] vertices, out Vector2[] uv, out int[] triangles);
-            
+
             for (int x = 0; x < _grid.GetWidth(); ++x) {
                 for (int y = 0; y < _grid.GetHeight(); ++y) {
                     int index = x * _grid.GetHeight() + y;

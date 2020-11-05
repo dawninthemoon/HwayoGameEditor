@@ -5,10 +5,15 @@ using UnityEngine;
 namespace CustomTilemap {
     public delegate void OnEntityAdded(int id, Entity entity);
     public class EntityModel : MonoBehaviour {
-        Dictionary<int, Entity> _entityDictionary = new Dictionary<int, Entity>();
+        Dictionary<int, Entity> _entityDictionary;
         public Dictionary<int, Entity> EntityDictionary { get { return _entityDictionary;} }
         OnEntityAdded _onEntityAdded;
         public int SelectedIndex { get; set; } = -1;
+        static string DictionarySaveKey = "Key_EntityModel_Dictionary";
+
+        void Awake() {
+            _entityDictionary = ES3.Load(DictionarySaveKey, new Dictionary<int, Entity>());
+        }
         
         public void SetOnEntityAdded(OnEntityAdded callback) {
             _onEntityAdded = callback;
@@ -19,6 +24,7 @@ namespace CustomTilemap {
         public void AddEntity(Entity entity, int id) {
             _entityDictionary.Add(id, entity);
             _onEntityAdded(id, entity);
+            ES3.Save(DictionarySaveKey, _entityDictionary);
         }
 
         public Entity GetEntityByID(int id) {
@@ -28,6 +34,11 @@ namespace CustomTilemap {
 
         public void DeleteEntityByID(int entityID) {
             _entityDictionary.Remove(entityID);
+            ES3.Save(DictionarySaveKey, _entityDictionary);
+        }
+
+        public void SaveDictionary() {
+            ES3.Save(DictionarySaveKey, _entityDictionary);
         }
     }
 }

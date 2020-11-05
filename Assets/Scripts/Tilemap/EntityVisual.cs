@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace CustomTilemap {
     public class EntityVisual : TilemapVisual {
-        private Grid<EntityLayer.EntityObject> _grid;
+        private CustomGrid<EntityLayer.EntityObject> _grid;
         protected override void Awake() {
             base.Awake();
         }
-        public void SetGrid(Layer tilemap, Grid<EntityLayer.EntityObject> grid) {
-            this._grid = grid;
+        public void SetGrid(Layer tilemap, CustomGrid<EntityLayer.EntityObject> grid) {
+            _grid = grid;
             UpdateHeatMapVisual();
             grid.OnGridObjectChanged += Grid_OnGridValueChanged;
         }
@@ -18,7 +18,7 @@ namespace CustomTilemap {
             _updateMesh = true;
         }
 
-        private void Grid_OnGridValueChanged(object sender, Grid<EntityLayer.EntityObject>.OnGridObjectChangedEventArgs e) {
+        private void Grid_OnGridValueChanged(object sender, CustomGrid<EntityLayer.EntityObject>.OnGridObjectChangedEventArgs e) {
             _updateMesh = true;
         }
 
@@ -34,7 +34,6 @@ namespace CustomTilemap {
                 for (int y = 0; y < _grid.GetHeight(); ++y) {
                     int index = x * _grid.GetHeight() + y;
                     Vector3 quadSize = new Vector3(1, 1) * _grid.GetCellSize();
-
                     EntityLayer.EntityObject gridObject = _grid.GetGridObject(x, y);
                     int textureIndex = gridObject.GetIndex();
                     Vector2 gridUV00, gridUV11;

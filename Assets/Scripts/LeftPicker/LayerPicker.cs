@@ -13,6 +13,7 @@ public class LayerPicker : MonoBehaviour {
     Dictionary<int, Button> _buttons = new Dictionary<int, Button>();
     Image _selectedButtonImage;
     OnTilesetChanged _onTilesetChanged;
+
     public void SetOnTilesetChanged(OnTilesetChanged callback) {
         _onTilesetChanged = callback;
     }

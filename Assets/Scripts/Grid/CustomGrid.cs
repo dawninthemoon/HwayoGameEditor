@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Aroma;
+using CustomTilemap;
 
 public interface IGridObject {
     int GetIndex();
     void SetIndex(int index);
+    void SetGrid(object grid);
 }
 
 namespace CustomTilemap {
-    public class Grid<T> where T : IGridObject {
+    public class CustomGrid<T> where T : IGridObject {
         public event EventHandler<OnGridObjectChangedEventArgs> OnGridObjectChanged;
         public class OnGridObjectChangedEventArgs : EventArgs {
             public int x;
@@ -20,10 +22,19 @@ namespace CustomTilemap {
 
         private float cellSize;
         private T[,] _gridArray;
-        Func<Grid<T>, int, int, T> _createObjectCallback;
+        public T[,] GridArray { 
+            get { return _gridArray; }
+            set { 
+                _gridArray = value; 
+                foreach (var obj in _gridArray) {
+                    obj.SetGrid(this);
+                }
+            } 
+        }
+        Func<CustomGrid<T>, int, int, T> _createObjectCallback;
         Action<T> _returnObjectCallback;
 
-        public Grid(float cellSize, Func<Grid<T>, int, int, T> createGridObject, Action<T> returnObject = null) {
+        public CustomGrid(float cellSize, Func<CustomGrid<T>, int, int, T> createGridObject, Action<T> returnObject = null) {
             this.cellSize = cellSize;
 
             int width = LayerModel.CurrentGridWidth;

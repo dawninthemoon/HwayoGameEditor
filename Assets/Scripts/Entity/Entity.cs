@@ -11,6 +11,10 @@ namespace CustomTilemap {
         List<string> _fields;
         public List<string> Fields { get { return _fields; } }
 
+        public Entity() {
+            _fields = new List<string>();
+        }
+
         public Entity(string name, int textureIndex, int id, Color color) {
             EntityName = name;
             TextureIndex = textureIndex;

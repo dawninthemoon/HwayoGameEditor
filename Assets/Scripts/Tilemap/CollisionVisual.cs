@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Aroma;
 
 namespace CustomTilemap {
@@ -81,6 +82,7 @@ namespace CustomTilemap {
 
         void OnDrawGizmos() {
             if (_layerModel.SelectedLayerID != LayerID) return;
+            if (EventSystem.current.IsPointerOverGameObject()) return;
 
             Vector2 mousePosition = Utility.GetMouseWorldPosition();
             mousePosition = GridUtility.ClampPosition(mousePosition, _cellSize);

@@ -7,7 +7,7 @@ namespace CustomTilemap {
     public class CollisionLayer : Layer {
         float _cellSize;
         CollisionVisual _visual;
-
+        public CollisionLayer() { }
         public CollisionLayer(string layerName, int layerIndex, float cellSize) 
         : base(layerName, layerIndex) {
             _cellSize = cellSize;

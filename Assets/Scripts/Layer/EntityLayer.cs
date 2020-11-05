@@ -6,7 +6,7 @@ using Aroma;
 namespace CustomTilemap {
     public class EntityLayer : Layer {
         EntityModel _entityModel;
-        Grid<EntityObject> _grid;
+        CustomGrid<EntityObject> _grid;
         EntityEditWindow _entityEditWindow;
         EntityVisual _entityVisual;
         public EntityVisual Visual {
@@ -16,10 +16,14 @@ namespace CustomTilemap {
                 _entityVisual.SetGrid(this, _grid);
             }
         }
-
+        EntityObject[,] _gridArray;
+        public EntityLayer() {
+            _grid = new CustomGrid<EntityObject>(16, (CustomGrid<EntityObject> g, int x, int y) => new EntityObject(g, x, y));
+        }
         public EntityLayer(string layerName, int layerIndex, float cellSize)
         : base(layerName, layerIndex) { 
-            _grid = new Grid<EntityObject>(cellSize, (Grid<EntityObject> g, int x, int y) => new EntityObject(g, x, y));
+            _grid = new CustomGrid<EntityObject>(cellSize, (CustomGrid<EntityObject> g, int x, int y) => new EntityObject(g, x, y));
+            _gridArray = _grid.GridArray;
         }
 
         public void SetEntityModel(EntityModel model) {
@@ -27,6 +31,9 @@ namespace CustomTilemap {
         }
         public void SetEntityEditWindow(EntityEditWindow window) {
             _entityEditWindow = window;
+        }
+        public void LoadGridArray() {
+            _grid.GridArray = _gridArray;
         }
 
         public override void SetTileIndex(Vector3 worldPosition, int entityID) {
@@ -58,7 +65,7 @@ namespace CustomTilemap {
         }
 
         public class EntityObject : IGridObject {
-            Grid<EntityObject> _grid;
+            CustomGrid<EntityObject> _grid;
             int _x;
             int _y;
             int _textureIndex;
@@ -66,8 +73,9 @@ namespace CustomTilemap {
             public int EntityID { get; set; }
             Dictionary<string, string> _fields = new Dictionary<string, string>();
             public Dictionary<string, string> Fields { get { return _fields; } }
+            public EntityObject() { }
 
-            public EntityObject(Grid<EntityObject> grid, int x, int y) {
+            public EntityObject(CustomGrid<EntityObject> grid, int x, int y) {
                 _grid = grid;
                 _x = x;
                 _y = y;
@@ -79,6 +87,9 @@ namespace CustomTilemap {
             public void SetIndex(int index) {
                 _textureIndex = index;
                 _grid.TriggerGridObjectChanged(_x, _y);
+            }
+            public void SetGrid(object grid) {
+                _grid = grid as CustomGrid<EntityObject>;
             }
 
             public void SetFieldNames(List<string> fieldNames) {

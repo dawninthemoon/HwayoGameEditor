@@ -15,6 +15,10 @@ public class EntityPickerWindow : MonoBehaviour {
     void Start() {
         _buttons = new Dictionary<int, Button>();
         _entityModel.SetOnEntityAdded(CreateButton);
+
+        foreach (var entity in _entityModel.EntityDictionary.Values) {
+            CreateButton(entity.EntityID, entity);
+        }
     }
 
     public void SetOnEntityPicked(OnPicked callback) {

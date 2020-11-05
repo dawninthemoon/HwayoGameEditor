@@ -16,6 +16,7 @@ namespace CustomTilemap {
         TileLayerWindow _tileLayerWindow;
         EntityLayerWindow _entityLayerWindow;
         CollisionLayerWindow _collisionLayerWindow;
+        Image _selectedButtonImage;
         Dictionary<int, Button> _buttons = new Dictionary<int, Button>();
         static readonly string DefaultTileLayerName = "Tile Layer";
         static readonly string DefaultEntityLayerName = "Entity Layer";
@@ -31,35 +32,60 @@ namespace CustomTilemap {
             _collisionLayerWindow = GetComponentInChildren<CollisionLayerWindow>(true);
             gameObject.SetActive(false);
 
-            CreateEntityLayer();
+            int max = -1;
+            foreach (var layer in _layerModel.CurrentLayerDictionary.Values) {
+                if (layer is TileLayer) {
+                    TileLayer tilemapLayer = layer as TileLayer;
+                    tilemapLayer.LoadGridArray();
+                    CreateButtonByTileLayer(layer as TileLayer);
+                }
+                else if (layer is EntityLayer) {
+                    EntityLayer entityLayer = layer as EntityLayer;
+                    entityLayer.LoadGridArray();
+                    CreateButtonByEntityLayer(entityLayer);
+                }
+                else if (layer is CollisionLayer) {
+                    CreateButtonByCollisionLayer(layer as CollisionLayer);
+                }
+                max = Mathf.Max(layer.LayerID, max);
+            }
+            _numOfLayers = max + 1;
+
+            if (_layerModel.CurrentLayerDictionary.Count == 0)
+                CreateEntityLayer();
+
             (_layerModel.GetLayerByIndex(0) as EntityLayer).SetEntityModel(_entityModel);
         }
-
         public void CreateTileLayer() {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
 
+            string name = DefaultTileLayerName + " " +_numOfLayers.ToString();
+            var tilemapLayer = new TileLayer(name, _numOfLayers, 16);
+            
+            CreateButtonByTileLayer(tilemapLayer);
+            _layerModel.AddLayer(tilemapLayer);
+
+            ++_numOfLayers;
+        }
+        void CreateButtonByTileLayer(TileLayer tilemapLayer) {
             var tilesetVisual = Instantiate(_tilesetVisualPrefab);
             tilesetVisual.Initalize(_tilesetModel.GetFirstMaterial());
             _tilesetModel.AddTilesetVisual(tilesetVisual);
 
-            string name = DefaultTileLayerName + " " +_numOfLayers.ToString();
-            var tilemapLayer = new TileLayer(name, _numOfLayers, 16);
             tilemapLayer.Visual = tilesetVisual;
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
-            button.GetComponentInChildren<Text>().text = name;
-            _buttons.Add(_numOfLayers, button);
+            button.GetComponentInChildren<Text>().text = tilemapLayer.LayerName;
+            _buttons.Add(tilemapLayer.LayerID, button);
 
-            int index = _numOfLayers;
+            int index = tilemapLayer.LayerID;
             System.Action callback = () => { OnTileLayerButtonClick(tilemapLayer); };
-            button.onClick.AddListener(() => { _selectedLayerIndex = index; });
-            _layerModel.AddButtonOnClick(button, tilemapLayer, callback);
-            _layerModel.AddLayer(tilemapLayer, button, callback);
-            
-            ++_numOfLayers;
+            button.onClick.AddListener(() => { 
+                _selectedLayerIndex = index; 
+                OnLayerButtonClick(button, tilemapLayer, callback);
+            });
         }
-
         void OnTileLayerButtonClick(TileLayer tilemapLayer) {
             _entityLayerWindow.gameObject.SetActive(false);
             _tileLayerWindow.gameObject.SetActive(true);
@@ -72,25 +98,31 @@ namespace CustomTilemap {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
 
+            string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
+            var entityLayer = new EntityLayer(name, _numOfLayers, 16);
+
+            CreateButtonByEntityLayer(entityLayer);
+            _layerModel.AddLayer(entityLayer);
+
+            ++_numOfLayers;
+        }
+
+        void CreateButtonByEntityLayer(EntityLayer entityLayer) {
             var entityVisual = Instantiate(_entityVisualPrefab);
             entityVisual.Initalize(_tilesetModel.EntityVisualMaterial);
 
-            string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
-            var entityLayer = new EntityLayer(name, _numOfLayers, 16);
             entityLayer.SetEntityEditWindow(_entityEditWindow);
             entityLayer.Visual = entityVisual;
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
-            button.GetComponentInChildren<Text>().text = name;
-            _buttons.Add(_numOfLayers, button);
+            button.GetComponentInChildren<Text>().text = entityLayer.LayerName;
+            _buttons.Add(entityLayer.LayerID, button);
 
-            int index = _numOfLayers;
-            System.Action callback = () => { _layerModel.SelectedLayerID = index; OnEntityButtonClick(entityLayer); };
-            button.onClick.AddListener(() => { _selectedLayerIndex = index; });
-            _layerModel.AddButtonOnClick(button, entityLayer, callback);
-            _layerModel.AddLayer(entityLayer, button, callback);
-
-            ++_numOfLayers;
+            System.Action callback = () => { _layerModel.SelectedLayerID = entityLayer.LayerID; OnEntityButtonClick(entityLayer); };
+            button.onClick.AddListener(() => { 
+                _selectedLayerIndex = entityLayer.LayerID;
+                OnLayerButtonClick(button, entityLayer, callback);
+            });
         }
 
         void OnEntityButtonClick(EntityLayer entityLayer) {
@@ -107,25 +139,31 @@ namespace CustomTilemap {
             string name = DefaultCollisionLayerName + " " + _numOfLayers.ToString();
             var collisionLayer = new CollisionLayer(name, _numOfLayers, 16);
 
+            CreateButtonByCollisionLayer(collisionLayer);
+            _layerModel.AddLayer(collisionLayer);
+
+            ++_numOfLayers;
+        }
+
+        void CreateButtonByCollisionLayer(CollisionLayer collisionLayer) {
             CollisionVisual visual = new GameObject("CollisionVisual").AddComponent<CollisionVisual>();
             visual.SetLayerModel(_layerModel);
-            visual.LayerID = _numOfLayers;
+            visual.LayerID = collisionLayer.LayerID;
             collisionLayer.SetCollisionVisual(visual);
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
-            button.GetComponentInChildren<Text>().text = name;
-            _buttons.Add(_numOfLayers, button);
+            button.GetComponentInChildren<Text>().text = collisionLayer.LayerName;
+            _buttons.Add(collisionLayer.LayerID, button);
 
-            int index = _numOfLayers;
+            int index = collisionLayer.LayerID;
             System.Action callback = () => { 
                 _layerModel.SelectedLayerID = index; 
                 OnCollisionButtonClick(collisionLayer);
             };
-            button.onClick.AddListener(() => { _selectedLayerIndex = index; });
-            _layerModel.AddButtonOnClick(button, collisionLayer, callback);
-            _layerModel.AddLayer(collisionLayer, button, callback);
-
-            ++_numOfLayers;
+            button.onClick.AddListener(() => { 
+                _selectedLayerIndex = index; 
+                OnLayerButtonClick(button, collisionLayer, callback);
+            });
         }
 
         void OnCollisionButtonClick(CollisionLayer collisionLayer) {
@@ -133,6 +171,19 @@ namespace CustomTilemap {
             _tileLayerWindow.gameObject.SetActive(false);
             _collisionLayerWindow.gameObject.SetActive(true);
             _entityLayerWindow.SetInputFieldTextWithIgnoreCallback(collisionLayer);
+        }
+
+        void OnLayerButtonClick(Button button, Layer layer, System.Action callback) {
+            if (_selectedButtonImage != null) {
+                _selectedButtonImage.color = new Color(0.2117647f, 0.2f, 0.2745098f);
+                _selectedButtonImage.GetComponentInChildren<Text>().color = Color.white;
+            }
+            _selectedButtonImage = button.image;
+
+            button.image.color = new Color(1f, 0.7626624f, 0.2122642f);
+            _selectedButtonImage.GetComponentInChildren<Text>().color = Color.black;
+
+            callback();
         }
 
         public void DeleteSelectedLayer() {

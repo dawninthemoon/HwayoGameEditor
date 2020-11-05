@@ -7,8 +7,9 @@ namespace CustomTilemap {
     public class TileLayer : Layer {
         public int DropdownValue { get; set; }
         public string TilesetName { get; set; }
-        Grid<TileObject> _grid;
+        CustomGrid<TileObject> _grid;
         TilesetVisual _tilesetVisual;
+        TileObject[,] _gridArray;
         public TilesetVisual  Visual { 
             get { return _tilesetVisual; }
             set {
@@ -16,11 +17,17 @@ namespace CustomTilemap {
                 _tilesetVisual.SetGrid(this, _grid);
             }
         }
-
+        public TileLayer() {
+            _grid = new CustomGrid<TileObject>(16, (CustomGrid<TileObject> g, int x, int y) => TileObjectPool.GetInstance().GetTileObject(g, x, y));
+        }
         public TileLayer(string layerName, int layerIndex, float cellSize)
         : base(layerName, layerIndex) {
             TilesetName = TilesetModel.DefaultTilesetName;
-            _grid = new Grid<TileObject>(cellSize, (Grid<TileObject> g, int x, int y) => TileObjectPool.GetInstance().GetTileObject(g, x, y));
+            _grid = new CustomGrid<TileObject>(cellSize, (CustomGrid<TileObject> g, int x, int y) => TileObjectPool.GetInstance().GetTileObject(g, x, y));
+            _gridArray = _grid.GridArray;
+        }
+        public void LoadGridArray() {
+            _grid.GridArray = _gridArray;
         }
 
         public override void SetTileIndex(Vector3 worldPosition, int tileIndex) {
@@ -33,7 +40,7 @@ namespace CustomTilemap {
         }
 
         public class TileObject : IGridObject {
-            Grid<TileObject> _grid;
+            CustomGrid<TileObject> _grid;
             int _x;
             int _y;
             int _textureIndex;
@@ -42,18 +49,22 @@ namespace CustomTilemap {
                 _textureIndex = -1;
             }
 
-            public TileObject(Grid<TileObject> grid, int x, int y) {
+            public TileObject(CustomGrid<TileObject> grid, int x, int y) {
                 _grid = grid;
                 _x = x;
                 _y = y;
                 _textureIndex = -1;
             }
 
-            public void Initalize(Grid<TileObject> grid, int x, int y) {
+            public void Initalize(CustomGrid<TileObject> grid, int x, int y) {
                 _grid = grid;
                 _x = x;
                 _y = y;
                 _textureIndex = -1;
+            }
+
+            public void SetGrid(object grid) {
+                _grid = grid as CustomGrid<TileObject>;
             }
 
             public void SetIndex(int tileIndex) {

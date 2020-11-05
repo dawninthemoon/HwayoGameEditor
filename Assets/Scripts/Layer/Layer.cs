@@ -8,6 +8,7 @@ namespace CustomTilemap {
     public abstract class Layer {
         public string LayerName { get; set; }
         public int LayerID { get; private set; }
+        public Layer() { }
         public Layer(string layerName, int layerIndex) {
             LayerName = layerName;
             LayerID = layerIndex;

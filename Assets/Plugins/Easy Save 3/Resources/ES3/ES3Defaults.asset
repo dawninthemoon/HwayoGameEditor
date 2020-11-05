@@ -18,7 +18,7 @@ MonoBehaviour:
     encryptionType: 0
     compressionType: 0
     encryptionPassword: password
-    directory: 0
+    directory: 1
     format: 0
     prettyPrint: 1
     bufferSize: 2048
@@ -29,9 +29,9 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
+    - Assembly-CSharp-firstpass
     - HSVPicker
     - Assembly-CSharp
-    - Assembly-CSharp-firstpass
     - HSVPicker.Editors
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
