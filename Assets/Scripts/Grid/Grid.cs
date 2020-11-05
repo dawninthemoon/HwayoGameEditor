@@ -19,14 +19,12 @@ namespace CustomTilemap {
         }
 
         private float cellSize;
-        private Vector3 _originPosition;
         private T[,] _gridArray;
         Func<Grid<T>, int, int, T> _createObjectCallback;
         Action<T> _returnObjectCallback;
 
-        public Grid(float cellSize, Vector3 originPosition,Func<Grid<T>, int, int, T> createGridObject, Action<T> returnObject = null) {
+        public Grid(float cellSize, Func<Grid<T>, int, int, T> createGridObject, Action<T> returnObject = null) {
             this.cellSize = cellSize;
-            this._originPosition = originPosition;
 
             int width = LayerModel.CurrentGridWidth;
             int height = LayerModel.CurrentGridHeight;
@@ -45,8 +43,8 @@ namespace CustomTilemap {
         public void ResizeGrid(Vector3 originPosition, int widthDelta, int heightDelta) {
             int prevWidth = LayerModel.CurrentGridWidth - widthDelta;
             int prevHeight = LayerModel.CurrentGridHeight - heightDelta;
-            bool wChanged = !(Mathf.Abs(_originPosition.x - originPosition.x) < Mathf.Epsilon);
-            bool hChanged = !(Mathf.Abs(_originPosition.y - originPosition.y) < Mathf.Epsilon);
+            bool wChanged = !(Mathf.Abs(LayerModel.CurrentOriginPosition.x - originPosition.x) < Mathf.Epsilon);
+            bool hChanged = !(Mathf.Abs(LayerModel.CurrentOriginPosition.y - originPosition.y) < Mathf.Epsilon);
 
             T[,] gridArray = new T[LayerModel.CurrentGridWidth, LayerModel.CurrentGridHeight];
             
@@ -73,7 +71,6 @@ namespace CustomTilemap {
                 }
             }
 
-            _originPosition = originPosition;
             _gridArray = gridArray.Clone() as T[,];
         }
 
@@ -90,11 +87,11 @@ namespace CustomTilemap {
         }
 
         public Vector3 GetWorldPosition(int x, int y) {
-            return Aroma.GridUtility.GetWorldPosition(x, y, cellSize, _originPosition);
+            return Aroma.GridUtility.GetWorldPosition(x, y, cellSize, LayerModel.CurrentOriginPosition);
         }
 
         public void GetXY(Vector3 worldPosition, out int x, out int y) {
-            Aroma.GridUtility.GetXY(worldPosition, out x, out y, cellSize, _originPosition);
+            Aroma.GridUtility.GetXY(worldPosition, out x, out y, cellSize, LayerModel.CurrentOriginPosition);
         }
 
         public void SetGridObject(int x, int y, T value) {

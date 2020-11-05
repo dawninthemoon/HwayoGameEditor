@@ -13,6 +13,7 @@ namespace CustomTilemap {
         public int SelectedLayerID { get; set; } = -1;
         public static int CurrentGridWidth;
         public static int CurrentGridHeight;
+        public static Vector3 CurrentOriginPosition;
         OnGridResized _onGridResized;
 
         void Awake() {
@@ -29,6 +30,7 @@ namespace CustomTilemap {
             foreach (var layer in _currentLayerDictionary.Values) {
                 layer.ResizeGrid(originPosition, widthDelta, heightDelta);
             }
+            CurrentOriginPosition = originPosition;
             _onGridResized?.Invoke();
         }
 

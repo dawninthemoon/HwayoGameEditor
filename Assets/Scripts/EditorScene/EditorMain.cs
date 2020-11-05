@@ -23,8 +23,8 @@ public class EditorMain : MonoBehaviour {
             _projectWindows[i] = projectWindows[i].GetComponent<SlideableUI>();
             _projectWindows[i].Initalize();
         }
-        _tileLayerWindow.SetOnTilesetChanged(OnTilesetChanged);
         _layerPicker.SetOnTilesetChanged(OnTilesetChanged);
+        _tileLayerWindow.SetOnTilesetChanged(_layerPicker.ChangeTileset);
 
         _tilemapPickerWindow.AddOnTilemapPicked((int index) => { _selectedTileIndex = index; });
         _entityPickerWindow.SetOnEntityPicked((int index) => { _selectedTileIndex = index; });

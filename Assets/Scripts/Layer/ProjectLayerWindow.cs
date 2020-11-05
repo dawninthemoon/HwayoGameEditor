@@ -15,9 +15,11 @@ namespace CustomTilemap {
         [SerializeField] EntityEditWindow _entityEditWindow = null;
         TileLayerWindow _tileLayerWindow;
         EntityLayerWindow _entityLayerWindow;
+        CollisionLayerWindow _collisionLayerWindow;
         Dictionary<int, Button> _buttons = new Dictionary<int, Button>();
         static readonly string DefaultTileLayerName = "Tile Layer";
         static readonly string DefaultEntityLayerName = "Entity Layer";
+        static readonly string DefaultCollisionLayerName = "Collision Layer";
         int _selectedLayerIndex;
         public int SelectedLayerIDInWindow { get { return _selectedLayerIndex;} }
         int _numOfLayers;
@@ -26,6 +28,7 @@ namespace CustomTilemap {
             base.Initalize();
             _tileLayerWindow = GetComponentInChildren<TileLayerWindow>(true);
             _entityLayerWindow = GetComponentInChildren<EntityLayerWindow>(true);
+            _collisionLayerWindow = GetComponentInChildren<CollisionLayerWindow>(true);
             gameObject.SetActive(false);
 
             CreateEntityLayer();
@@ -41,7 +44,7 @@ namespace CustomTilemap {
             _tilesetModel.AddTilesetVisual(tilesetVisual);
 
             string name = DefaultTileLayerName + " " +_numOfLayers.ToString();
-            var tilemapLayer = new TileLayer(name, _numOfLayers, 16, Vector3.zero);
+            var tilemapLayer = new TileLayer(name, _numOfLayers, 16);
             tilemapLayer.Visual = tilesetVisual;
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
@@ -60,6 +63,7 @@ namespace CustomTilemap {
         void OnTileLayerButtonClick(TileLayer tilemapLayer) {
             _entityLayerWindow.gameObject.SetActive(false);
             _tileLayerWindow.gameObject.SetActive(true);
+            _collisionLayerWindow.gameObject.SetActive(false);
             _tileLayerWindow.SetDropdownValueWithIgnoreCallback(tilemapLayer);
             _tileLayerWindow.SetInputFieldTextWithIgnoreCallback(tilemapLayer);
         }
@@ -72,7 +76,7 @@ namespace CustomTilemap {
             entityVisual.Initalize(_tilesetModel.EntityVisualMaterial);
 
             string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
-            var entityLayer = new EntityLayer(name, _numOfLayers, 16, Vector3.zero);
+            var entityLayer = new EntityLayer(name, _numOfLayers, 16);
             entityLayer.SetEntityEditWindow(_entityEditWindow);
             entityLayer.Visual = entityVisual;
 
@@ -81,7 +85,7 @@ namespace CustomTilemap {
             _buttons.Add(_numOfLayers, button);
 
             int index = _numOfLayers;
-            System.Action callback = () => { OnEntityButtonClick(entityLayer); _layerModel.SelectedLayerID = index; };
+            System.Action callback = () => { _layerModel.SelectedLayerID = index; OnEntityButtonClick(entityLayer); };
             button.onClick.AddListener(() => { _selectedLayerIndex = index; });
             _layerModel.AddButtonOnClick(button, entityLayer, callback);
             _layerModel.AddLayer(entityLayer, button, callback);
@@ -90,9 +94,45 @@ namespace CustomTilemap {
         }
 
         void OnEntityButtonClick(EntityLayer entityLayer) {
-            _entityLayerWindow.gameObject.SetActive(false);
-            _tileLayerWindow.gameObject.SetActive(true);
+            _entityLayerWindow.gameObject.SetActive(true);
+            _tileLayerWindow.gameObject.SetActive(false);
+            _collisionLayerWindow.gameObject.SetActive(false);
             _entityLayerWindow.SetInputFieldTextWithIgnoreCallback(entityLayer);
+        }
+
+        public void CreateCollisionLayer() {
+            if (_layerModel.IsLayerEmpty())
+                _selectedLayerIndex = 0;
+
+            string name = DefaultCollisionLayerName + " " + _numOfLayers.ToString();
+            var collisionLayer = new CollisionLayer(name, _numOfLayers, 16);
+
+            CollisionVisual visual = new GameObject("CollisionVisual").AddComponent<CollisionVisual>();
+            visual.SetLayerModel(_layerModel);
+            visual.LayerID = _numOfLayers;
+            collisionLayer.SetCollisionVisual(visual);
+
+            var button = Instantiate(_layerButtonPrefab, _contentTransform);
+            button.GetComponentInChildren<Text>().text = name;
+            _buttons.Add(_numOfLayers, button);
+
+            int index = _numOfLayers;
+            System.Action callback = () => { 
+                _layerModel.SelectedLayerID = index; 
+                OnCollisionButtonClick(collisionLayer);
+            };
+            button.onClick.AddListener(() => { _selectedLayerIndex = index; });
+            _layerModel.AddButtonOnClick(button, collisionLayer, callback);
+            _layerModel.AddLayer(collisionLayer, button, callback);
+
+            ++_numOfLayers;
+        }
+
+        void OnCollisionButtonClick(CollisionLayer collisionLayer) {
+             _entityLayerWindow.gameObject.SetActive(false);
+            _tileLayerWindow.gameObject.SetActive(false);
+            _collisionLayerWindow.gameObject.SetActive(true);
+            _entityLayerWindow.SetInputFieldTextWithIgnoreCallback(collisionLayer);
         }
 
         public void DeleteSelectedLayer() {

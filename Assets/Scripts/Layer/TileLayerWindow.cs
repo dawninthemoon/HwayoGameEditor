@@ -37,8 +37,9 @@ namespace CustomTilemap {
             layer.DropdownValue = dropdown.value;
             layer.TilesetName = tilesetName;
 
-            if (_layerModel.SelectedLayerID == _projectLayerWindow.SelectedLayerIDInWindow)
+            if (_layerModel.SelectedLayerID == _projectLayerWindow.SelectedLayerIDInWindow) {
                 _onTilesetChanged(layer);
+            }
         }
 
         public void OnLayerNameInputFieldChanged(InputField inputField) {

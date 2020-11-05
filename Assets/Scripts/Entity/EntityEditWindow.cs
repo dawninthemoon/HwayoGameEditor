@@ -10,6 +10,7 @@ public class EntityEditWindow : MonoBehaviour {
     Transform _contentParent;
     ObjectPool<Transform> _fieldObjPool;
     List<Transform> _currentFields;
+    int _prevID = -1;
     
     void Start() {
         _contentParent = transform.GetChild(0);
@@ -18,6 +19,7 @@ public class EntityEditWindow : MonoBehaviour {
     }
 
     public void EnableWindow(EntityLayer.EntityObject selected) {
+        if (selected.EntityID == _prevID) return;
         _contentParent.gameObject.SetActive(true);
 
         _titleText.text = selected.EntityName;
@@ -31,6 +33,7 @@ public class EntityEditWindow : MonoBehaviour {
         foreach (var field in selected.Fields) {
             AddField(selected, field.Key);
         }
+        _prevID = selected.EntityID;
     }
 
     void AddField(EntityLayer.EntityObject selected, string fieldName) {

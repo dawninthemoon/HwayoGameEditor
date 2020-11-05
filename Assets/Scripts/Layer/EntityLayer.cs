@@ -17,9 +17,9 @@ namespace CustomTilemap {
             }
         }
 
-        public EntityLayer(string layerName, int layerIndex, float cellSize, Vector3 originPosition)
-        : base(layerName, layerIndex, cellSize, originPosition) { 
-            _grid = new Grid<EntityObject>(cellSize, originPosition, (Grid<EntityObject> g, int x, int y) => new EntityObject(g, x, y));
+        public EntityLayer(string layerName, int layerIndex, float cellSize)
+        : base(layerName, layerIndex) { 
+            _grid = new Grid<EntityObject>(cellSize, (Grid<EntityObject> g, int x, int y) => new EntityObject(g, x, y));
         }
 
         public void SetEntityModel(EntityModel model) {
@@ -30,7 +30,7 @@ namespace CustomTilemap {
         }
 
         public override void SetTileIndex(Vector3 worldPosition, int entityID) {
-            if (_entityModel.SelectedIndex == -1) return;
+            if (_entityModel.SelectedIndex == -1 || (!Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1))) return;
 
             EntityObject entityObject = _grid.GetGridObject(worldPosition);
             if (entityObject == null) return;

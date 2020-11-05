@@ -17,10 +17,10 @@ namespace CustomTilemap {
             }
         }
 
-        public TileLayer(string layerName, int layerIndex, float cellSize, Vector3 originPosition)
-        : base(layerName, layerIndex, cellSize, originPosition) {
+        public TileLayer(string layerName, int layerIndex, float cellSize)
+        : base(layerName, layerIndex) {
             TilesetName = TilesetModel.DefaultTilesetName;
-            _grid = new Grid<TileObject>(cellSize, originPosition, (Grid<TileObject> g, int x, int y) => TileObjectPool.GetInstance().GetTileObject(g, x, y));
+            _grid = new Grid<TileObject>(cellSize, (Grid<TileObject> g, int x, int y) => TileObjectPool.GetInstance().GetTileObject(g, x, y));
         }
 
         public override void SetTileIndex(Vector3 worldPosition, int tileIndex) {

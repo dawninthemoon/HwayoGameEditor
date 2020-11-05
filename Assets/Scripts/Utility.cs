@@ -38,10 +38,12 @@ namespace Aroma {
         ObjectPool<LineRenderer> _lineRendererPool;
         LineRenderer[] _rectRenderer;
         Material _gpuInstancing;
+        Dictionary<KeyValuePair<Vector3, Vector3>, LineRenderer> _overlapCheckDic;
 
         public LineUtility() {
             _gpuInstancing = Resources.Load<Material>("Others/GPUInstancing");
             int gridSize = PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey);
+            _overlapCheckDic = new Dictionary<KeyValuePair<Vector3, Vector3>, LineRenderer>();
             _lineRendererPool = new ObjectPool<LineRenderer>(gridSize, CreateLineRenderer);
             _rectRenderer = new LineRenderer[4] {
                 CreateLineRenderer(),
@@ -50,6 +52,8 @@ namespace Aroma {
                 CreateLineRenderer(),
             };
         }
+
+        public Material GetMaterial() => _gpuInstancing;
 
         public void ClearAllLines() {
             _lineRendererPool.Clear();
@@ -81,7 +85,14 @@ namespace Aroma {
         }
 
         public void DrawLine(Vector3 start, Vector3 end, Color color, float width = 0.5f) {
-            var lr = _lineRendererPool.GetObject();
+            LineRenderer lr;
+            var pair = new KeyValuePair<Vector3, Vector3>(start, end);
+            if (_overlapCheckDic.TryGetValue(pair, out lr)) {
+                _lineRendererPool.ReturnObject(lr);
+                _overlapCheckDic.Remove(pair);
+            }
+            lr = _lineRendererPool.GetObject();
+            _overlapCheckDic.Add(pair, lr);
             DrawLine(lr, start, end, color, width);
         }
 

@@ -19,9 +19,9 @@ namespace CustomTilemap {
             EntityVisualMaterial = Resources.Load<Material>("EntityVisual/EntityVisual");
         }
 
-        public void ChangeTileset(string tilesetName, int layerIndex) {
+        public void ChangeTileset(string tilesetName, TilemapVisual visual) {
             Material material = _currentTilesetMaterials[tilesetName];
-            _currentTilemapVisuals[layerIndex].Initalize(material);
+            visual.Initalize(material);
         }
 
         public Material GetMaterialByName(string name) {

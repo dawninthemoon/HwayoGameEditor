@@ -76,7 +76,6 @@ public class ProjectEntityWindow : SlideableUI {
         var entity = _entityModel.GetEntityByID(_selectedEntityID);
         entity.ChangeFieldName(_prevFieldName, fieldName);
 
-        Debug.Log(_prevFieldName + ", " + fieldName);
         foreach (var button in _entityFieldButtons) {
             var text = button.GetComponentInChildren<Text>();
             if (text.text.Equals(_prevFieldName)) {

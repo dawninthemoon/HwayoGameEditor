@@ -45,20 +45,24 @@ public class LayerPicker : MonoBehaviour {
         layerModel.SelectedLayerID = layer.LayerID;
         HighlightButton(button);
         if (layer is TileLayer) {
-            TileLayer tileLayer = layer as TileLayer;
-
-            _tilemapPicker.gameObject.SetActive(true);
-            _entityPicker.gameObject.SetActive(false);
-
-            if (!tileLayer.Visual.GetTileSetName().Equals(tileLayer.TilesetName)) {
-                _tilesetModel.ChangeTileset(tileLayer.TilesetName, layer.LayerID);
-            }
-            _onTilesetChanged(tileLayer);
+            ChangeTileset(layer as TileLayer);
         }
         else if (layer is EntityLayer) {
             _tilemapPicker.gameObject.SetActive(false);
             _entityPicker.gameObject.SetActive(true);
         }
+    }
+
+    public void ChangeTileset(TileLayer layer) {
+        TileLayer tileLayer = layer;
+
+        _tilemapPicker.gameObject.SetActive(true);
+        _entityPicker.gameObject.SetActive(false);
+
+        if (!tileLayer.Visual.GetTileSetName().Equals(tileLayer.TilesetName)) {
+            _tilesetModel.ChangeTileset(tileLayer.TilesetName, tileLayer.Visual);
+        }
+        _onTilesetChanged(tileLayer);
     }
 
     void HighlightButton(Button button) {
