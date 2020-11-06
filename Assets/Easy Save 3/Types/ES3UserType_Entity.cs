@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("<EntityName>k__BackingField", "<TextureIndex>k__BackingField", "<EntityColor>k__BackingField", "<EntityID>k__BackingField", "_fields")]
+	[ES3PropertiesAttribute("<EntityName>k__BackingField", "<TextureIndex>k__BackingField", "<EntityColor>k__BackingField", "<EntityID>k__BackingField", "<FieldSequence>k__BackingField", "_fields")]
 	public class ES3UserType_Entity : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -20,6 +20,7 @@ namespace ES3Types
 			writer.WritePrivateField("<TextureIndex>k__BackingField", instance);
 			writer.WritePrivateField("<EntityColor>k__BackingField", instance);
 			writer.WritePrivateField("<EntityID>k__BackingField", instance);
+			writer.WritePrivateField("<FieldSequence>k__BackingField", instance);
 			writer.WritePrivateField("_fields", instance);
 		}
 
@@ -42,6 +43,9 @@ namespace ES3Types
 					break;
 					case "<EntityID>k__BackingField":
 					reader.SetPrivateField("<EntityID>k__BackingField", reader.Read<System.Int32>(), instance);
+					break;
+					case "<FieldSequence>k__BackingField":
+					reader.SetPrivateField("<FieldSequence>k__BackingField", reader.Read<System.Int32>(), instance);
 					break;
 					case "_fields":
 					reader.SetPrivateField("_fields", reader.Read<System.Collections.Generic.List<System.String>>(), instance);

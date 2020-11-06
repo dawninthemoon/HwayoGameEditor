@@ -28,4 +28,7 @@ public class EditorView : MonoBehaviour {
 
     [SerializeField] Dropdown _entityVisualDropdown = null;
     public Dropdown EntityVisualDropdown { get { return _entityVisualDropdown; } }
+
+    [SerializeField] EntityEditWindow _entityEditWindow = null;
+    public EntityEditWindow EntityEditWindow { get { return _entityEditWindow; } }
 }

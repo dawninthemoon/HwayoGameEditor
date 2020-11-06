@@ -56,6 +56,7 @@ public class EditorMain : MonoBehaviour {
 
         if (!isOnUI && (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))) {
             DisableAllProjectWindows();
+            _editorView.EntityEditWindow.DisableWindow();
         }
 
         if (_layerModel.SelectedLayerID == -1) return;

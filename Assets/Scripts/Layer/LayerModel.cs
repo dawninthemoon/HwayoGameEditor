@@ -38,20 +38,7 @@ namespace CustomTilemap {
             CurrentGridHeight = ES3.Load(GridHeightKey + "_" + LevelModel.CurrentLevelID.ToString(), defaultGridSize);
 
             if (_currentLayerDictionary != null) {
-                foreach (var layer in _currentLayerDictionary.Values) {
-                    if (layer is TileLayer) {
-                        var visual = (layer as TileLayer).Visual;
-                        DestroyImmediate(visual.gameObject);
-                    }
-                    else if (layer is EntityLayer) {
-                        var visual = (layer as EntityLayer).Visual;
-                        DestroyImmediate(visual.gameObject);
-                    }
-                    else if (layer is CollisionLayer) {
-                        var visual = (layer as CollisionLayer).Visual;
-                        DestroyImmediate(visual.gameObject);
-                    }
-                }
+                RemoveAllVisuals();
             }
 
             _currentLayerDictionary = ES3.Load(keyName, new Dictionary<int, Layer>());
@@ -89,6 +76,34 @@ namespace CustomTilemap {
         public void SaveLayer() {
             string keyName = LayerDictionaryKey + "_" + LevelModel.CurrentLevelID;
             ES3.Save(keyName, _currentLayerDictionary);
+        }
+
+        void RemoveAllVisuals() {
+            foreach (var layer in _currentLayerDictionary.Values) {
+                if (layer is TileLayer) {
+                    var visual = (layer as TileLayer).Visual;
+                    if (visual != null)
+                        DestroyImmediate(visual.gameObject);
+                }
+                else if (layer is EntityLayer) {
+                    var visual = (layer as EntityLayer).Visual;
+                    if (visual != null)
+                        DestroyImmediate(visual.gameObject);
+                }
+                else if (layer is CollisionLayer) {
+                    var visual = (layer as CollisionLayer).Visual;
+                    if (visual != null)
+                        DestroyImmediate(visual.gameObject);
+                }
+            }
+        }
+
+        public void DeleteLayerSaves() {
+            RemoveAllVisuals();
+            string keyName = LayerDictionaryKey + "_" + LevelModel.CurrentLevelID;
+            ES3.DeleteKey(GridWidthKey + "_" + LevelModel.CurrentLevelID.ToString());
+            ES3.DeleteKey(GridHeightKey + "_" + LevelModel.CurrentLevelID.ToString());
+            ES3.DeleteKey(keyName);
         }
 
         public void AddLayer(Layer layer) {

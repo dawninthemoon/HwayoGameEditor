@@ -40,7 +40,7 @@ public class ProjectLevelWindow : SlideableUI {
     }
 
     public void CreateLevel() {
-        string levelName = DefaultLevelName + " " + _numOfLevels.ToString();
+        string levelName = DefaultLevelName;
         Level level = new Level(_numOfLevels, levelName);
 
         CreateButtonByLevel(level);

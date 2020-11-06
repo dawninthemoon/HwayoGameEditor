@@ -56,6 +56,8 @@ namespace CustomTilemap {
 
         public void RemoveLevelByID(int id) {
             if (_levelDictionary.TryGetValue(id, out Level level)) {
+                _entityModel.DeleteEntitySaves();
+                _layerModel.DeleteLayerSaves();
                 _levelDictionary.Remove(id);
                 SaveLevel();
             }

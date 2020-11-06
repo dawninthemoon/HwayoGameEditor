@@ -29,6 +29,11 @@ namespace CustomTilemap {
             _projectEntityWindow.LoadEntites();
         }
 
+        public void DeleteEntitySaves() {
+            string keyName = DictionarySaveKey + "_" + LevelModel.CurrentLevelID;
+            ES3.DeleteKey(keyName);
+        }
+
         public void SaveEntites() {
             string keyName = DictionarySaveKey + "_" + LevelModel.CurrentLevelID;
             ES3.Save(keyName, _entityDictionary);

@@ -8,6 +8,7 @@ namespace CustomTilemap {
         public int TextureIndex { get; set; }
         public Color EntityColor { get; set; }
         public int EntityID { get; set; }
+        public int FieldSequence { get; set; }
         List<string> _fields;
         public List<string> Fields { get { return _fields; } }
 

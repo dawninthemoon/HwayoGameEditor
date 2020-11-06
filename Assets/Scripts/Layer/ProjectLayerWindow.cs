@@ -68,7 +68,7 @@ namespace CustomTilemap {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
 
-            string name = DefaultTileLayerName + " " +_numOfLayers.ToString();
+            string name = DefaultTileLayerName;
             var tilemapLayer = new TileLayer(name, _numOfLayers, 16);
             
             CreateButtonByTileLayer(tilemapLayer);
@@ -108,7 +108,7 @@ namespace CustomTilemap {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
 
-            string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
+            string name = DefaultEntityLayerName;
             var entityLayer = new EntityLayer(name, _numOfLayers, 16);
             entityLayer.SetEntityModel(_entityModel);
 
@@ -147,7 +147,7 @@ namespace CustomTilemap {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
 
-            string name = DefaultCollisionLayerName + " " + _numOfLayers.ToString();
+            string name = DefaultCollisionLayerName;
             var collisionLayer = new CollisionLayer(name, _numOfLayers, 16);
 
             CreateButtonByCollisionLayer(collisionLayer);

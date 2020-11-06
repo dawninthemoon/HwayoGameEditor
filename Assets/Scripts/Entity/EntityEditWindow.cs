@@ -36,6 +36,11 @@ public class EntityEditWindow : MonoBehaviour {
         _prevID = selected.EntityID;
     }
 
+    public void DisableWindow() {
+        _prevID = -1;
+        _contentParent.gameObject.SetActive(false);
+    }
+
     void AddField(EntityLayer.EntityObject selected, string fieldName) {
         var fieldObj = _fieldObjPool.GetObject();
         var inputField = fieldObj.GetComponentInChildren<InputField>();
