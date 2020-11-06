@@ -3,42 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace CustomTilemap {
-    public delegate void OnEntityAdded(int id, Entity entity);
+    public delegate void OnEntityAdded(Entity entity);
     public class EntityModel : MonoBehaviour {
+        EntityPickerWindow _pickerWindow;
         Dictionary<int, Entity> _entityDictionary;
         public Dictionary<int, Entity> EntityDictionary { get { return _entityDictionary;} }
-        OnEntityAdded _onEntityAdded;
         public int SelectedIndex { get; set; } = -1;
         static string DictionarySaveKey = "Key_EntityModel_Dictionary";
+        ProjectEntityWindow _projectEntityWindow;
 
         void Awake() {
-            _entityDictionary = ES3.Load(DictionarySaveKey, new Dictionary<int, Entity>());
+            _pickerWindow = GameObject.Find("EntityPickerRect").GetComponent<EntityPickerWindow>();
+            _pickerWindow.gameObject.SetActive(false);
+            _projectEntityWindow = GameObject.Find("Project Entities").GetComponent<ProjectEntityWindow>();
+            LoadEntities();
         }
-        
-        public void SetOnEntityAdded(OnEntityAdded callback) {
-            _onEntityAdded = callback;
+
+        public void LoadEntities() {
+            string keyName = DictionarySaveKey + "_" + LevelModel.CurrentLevelID;
+            _entityDictionary = ES3.Load(keyName , new Dictionary<int, Entity>());
+            _pickerWindow.DeleteAllButtons();
+            foreach (var entity in _entityDictionary.Values) {
+                _pickerWindow.AddButton(entity);
+            }
+            _projectEntityWindow.LoadEntites();
+        }
+
+        public void SaveEntites() {
+            string keyName = DictionarySaveKey + "_" + LevelModel.CurrentLevelID;
+            ES3.Save(keyName, _entityDictionary);
         }
 
         public bool IsEntityEmpty() => (_entityDictionary.Count == 0);
 
         public void AddEntity(Entity entity, int id) {
             _entityDictionary.Add(id, entity);
-            _onEntityAdded(id, entity);
-            ES3.Save(DictionarySaveKey, _entityDictionary);
+            _pickerWindow.AddButton(entity);
+            SaveEntites();
         }
 
         public Entity GetEntityByID(int id) {
-            if (id < 0) return null;
-            return _entityDictionary[id];
+            if (_entityDictionary.TryGetValue(id, out Entity entity)) {
+                return entity;
+            }
+            return null;
         }
 
         public void DeleteEntityByID(int entityID) {
             _entityDictionary.Remove(entityID);
-            ES3.Save(DictionarySaveKey, _entityDictionary);
-        }
-
-        public void SaveDictionary() {
-            ES3.Save(DictionarySaveKey, _entityDictionary);
+            _pickerWindow.DeleteButton(entityID);
+            SaveEntites();
         }
     }
 }

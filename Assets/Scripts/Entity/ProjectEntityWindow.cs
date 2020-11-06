@@ -32,15 +32,29 @@ public class ProjectEntityWindow : SlideableUI {
         _fieldInputField = _fieldInputFieldRect.GetComponentInChildren<InputField>();
         _fieldInputField.text = DefaultFieldName + " 0";
         _fieldButtonPool = new ObjectPool<Button>(5, () => Instantiate(_fieldButtonPrefab, _fieldPickerContentTransform));
-        
+        gameObject.SetActive(false);
+    }
+
+    public void LoadEntites() {
+        foreach (var button in _entityFieldButtons.Values) {
+            button.transform.SetParent(null);
+            _fieldButtonPool.ReturnObject(button);
+        }
+        _entityFieldButtons.Clear();
+        for (int i = 0; i < _entityPickerContentTransform.childCount; ++i) {
+            var button = _entityPickerContentTransform.GetChild(i);
+            button.SetParent(null);
+            DestroyImmediate(button.gameObject);
+            --i;
+        }
+
+        _selectedEntityID = _selectedFieldID = -1;
         int max = -1;
         foreach (var entity in _entityModel.EntityDictionary.Values) {
             CreateButtonByEntity(entity);
             max = Mathf.Max(entity.EntityID, max);
         }
         _numOfEntities = max + 1;
-        
-        gameObject.SetActive(false);
     }
 
     public void AddField() {
@@ -50,7 +64,7 @@ public class ProjectEntityWindow : SlideableUI {
         SetField(fieldName, fieldID);
 
         entity.AddField(fieldName);
-        _entityModel.SaveDictionary();
+        _entityModel.SaveEntites();
     }
 
     public void RemoveField() {
@@ -66,7 +80,7 @@ public class ProjectEntityWindow : SlideableUI {
         foreach (var btn in _entityFieldButtons.Values) {
             entity.Fields.Add(btn.GetComponentInChildren<Text>().text);
         }
-        _entityModel.SaveDictionary();
+        _entityModel.SaveEntites();
     }
 
     void SetField(string fieldName, int id) {
@@ -127,9 +141,11 @@ public class ProjectEntityWindow : SlideableUI {
     public void DeleteSelectedEntity() {
         if (_selectedEntityID == -1) return;
         _entityModel.DeleteEntityByID(_selectedEntityID);
+
         var button = _selectedEntityButtonImage.GetComponent<Button>();
         button.transform.SetParent(null);
         button.gameObject.SetActive(false);
+
         DestroyImmediate(button);
         _selectedEntityID = -1;
     }
@@ -199,6 +215,7 @@ public class ProjectEntityWindow : SlideableUI {
         if (_ignoreCallback) return;
         _editorVisualPreview.color = colorPicker.CurrentColor;
         Entity entity = _entityModel.GetEntityByID(_selectedEntityID);
+        if (entity == null) return;
         entity.EntityColor = colorPicker.CurrentColor;
     }
 }

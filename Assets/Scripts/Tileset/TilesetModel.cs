@@ -8,6 +8,7 @@ namespace CustomTilemap {
     public class TilesetModel : MonoBehaviour {
         List<TilesetVisual> _currentTilemapVisuals;
         Dictionary<string, Material> _currentTilesetMaterials;
+        public Dictionary<string, Material> CurrentTilesetMaterials { get { return _currentTilesetMaterials; } }
         Dictionary<string, Sprite> _currentTilesetSprites;
         public Material EntityVisualMaterial { get; private set; }
         int _selectedTilesetIndex;
@@ -17,6 +18,14 @@ namespace CustomTilemap {
             _currentTilesetMaterials = new Dictionary<string, Material>();
             _currentTilesetSprites = new Dictionary<string, Sprite>();
             EntityVisualMaterial = Resources.Load<Material>("EntityVisual/EntityVisual");
+
+            var tilesetMaterials = Resources.LoadAll<Material>("Tileset/");
+            var tilesetSprites = Resources.LoadAll<Sprite>("Tileset/");
+
+            if (tilesetMaterials == null || tilesetMaterials.Length == 0) return;
+            
+            DefaultTilesetName = tilesetSprites[0].name;
+            SetTilesets(tilesetMaterials, tilesetSprites);
         }
 
         public void ChangeTileset(string tilesetName, TilemapVisual visual) {

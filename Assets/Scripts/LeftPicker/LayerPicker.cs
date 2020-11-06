@@ -33,6 +33,15 @@ public class LayerPicker : MonoBehaviour {
         _buttons.Add(layer.LayerID, button);
     }
 
+    public void DeleteAllLayerButtons() {
+        foreach (var button in _buttons.Values) {
+            button.transform.SetParent(null);
+            button.gameObject.SetActive(false);
+            DestroyImmediate(button);
+        }
+        _buttons.Clear();
+    }
+
     public void DeleteLayerButton(int curID) {
         var button = _buttons[curID];
         _buttons.Remove(curID);

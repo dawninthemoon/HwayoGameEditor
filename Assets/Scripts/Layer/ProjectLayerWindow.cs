@@ -31,18 +31,27 @@ namespace CustomTilemap {
             _entityLayerWindow = GetComponentInChildren<EntityLayerWindow>(true);
             _collisionLayerWindow = GetComponentInChildren<CollisionLayerWindow>(true);
             gameObject.SetActive(false);
+        }
+
+        public void LoadLayers() {
+            foreach (var button in _buttons.Values) {
+                button.transform.SetParent(null);
+                DestroyImmediate(button);
+            }
+            _buttons.Clear();
 
             int max = -1;
             foreach (var layer in _layerModel.CurrentLayerDictionary.Values) {
                 if (layer is TileLayer) {
                     TileLayer tilemapLayer = layer as TileLayer;
                     tilemapLayer.LoadGridArray();
-                    CreateButtonByTileLayer(layer as TileLayer);
+                    CreateButtonByTileLayer(tilemapLayer);
                 }
                 else if (layer is EntityLayer) {
                     EntityLayer entityLayer = layer as EntityLayer;
                     entityLayer.LoadGridArray();
                     CreateButtonByEntityLayer(entityLayer);
+                    entityLayer.SetEntityModel(_entityModel);
                 }
                 else if (layer is CollisionLayer) {
                     CreateButtonByCollisionLayer(layer as CollisionLayer);
@@ -53,9 +62,8 @@ namespace CustomTilemap {
 
             if (_layerModel.CurrentLayerDictionary.Count == 0)
                 CreateEntityLayer();
-
-            (_layerModel.GetLayerByIndex(0) as EntityLayer).SetEntityModel(_entityModel);
         }
+
         public void CreateTileLayer() {
             if (_layerModel.IsLayerEmpty())
                 _selectedLayerIndex = 0;
@@ -70,9 +78,11 @@ namespace CustomTilemap {
         }
         void CreateButtonByTileLayer(TileLayer tilemapLayer) {
             var tilesetVisual = Instantiate(_tilesetVisualPrefab);
-            tilesetVisual.Initalize(_tilesetModel.GetFirstMaterial());
-            _tilesetModel.AddTilesetVisual(tilesetVisual);
 
+            string name = tilemapLayer.TilesetName;
+            Material material = (name != null) ? _tilesetModel.GetMaterialByName(name) : _tilesetModel.GetFirstMaterial();
+            tilesetVisual.Initalize(material);
+            _tilesetModel.AddTilesetVisual(tilesetVisual);
             tilemapLayer.Visual = tilesetVisual;
 
             var button = Instantiate(_layerButtonPrefab, _contentTransform);
@@ -100,6 +110,7 @@ namespace CustomTilemap {
 
             string name = DefaultEntityLayerName + " " +_numOfLayers.ToString();
             var entityLayer = new EntityLayer(name, _numOfLayers, 16);
+            entityLayer.SetEntityModel(_entityModel);
 
             CreateButtonByEntityLayer(entityLayer);
             _layerModel.AddLayer(entityLayer);

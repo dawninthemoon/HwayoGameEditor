@@ -42,8 +42,9 @@ namespace CustomTilemap {
             EntityObject entityObject = _grid.GetGridObject(worldPosition);
             if (entityObject == null) return;
 
-            var selectedEntity = _entityModel.GetEntityByID(entityID);
-            if (entityObject.GetIndex() == -1) {
+            if ((entityObject.GetIndex() == -1) && (entityID != -1)) {
+                var selectedEntity = _entityModel.GetEntityByID(entityID);
+                if (selectedEntity == null) return;
                 entityObject.EntityID = entityID;
                 entityObject.EntityName = selectedEntity.EntityName;
                 entityObject.SetIndex(selectedEntity.TextureIndex);

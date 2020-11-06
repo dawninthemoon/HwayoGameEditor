@@ -4,9 +4,13 @@ using UnityEngine;
 
 namespace CustomTilemap {
     public class Level {
-        List<Layer> _layerLists;
+        public int LevelID { get; set; }
+        public string LevelName { get; set; }
         public Level() {
-            _layerLists = new List<Layer>();
+        }
+        public Level(int id, string levelName) {
+            LevelID = id;
+            LevelName = levelName;
         }
     }
 }

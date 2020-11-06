@@ -17,7 +17,7 @@ namespace CustomTilemap {
         static readonly Vector2 DefaultColliderSize = new Vector2(16f, 16f);
         GridScaler[] _gridScalers;
 
-        void Start() {
+        void Awake() {
             _gridScalers = new GridScaler[8];
             for (int i = 0; i < _gridScalers.Length; ++i) {
                 _gridScalers[i] = Instantiate(_gridScalerPrefab, _vertexes[i], Quaternion.identity).GetComponent<GridScaler>();
@@ -33,10 +33,12 @@ namespace CustomTilemap {
             _gridScalerPos[6] = Vector2.down * _cellSize;
             _gridScalerPos[7] = Vector2.left * _cellSize;
 
+            _layerModel.SetOnGridResized(UpdateGridLine);
+        }
+
+        void Start() {
             DrawGridLine();
             UpdateGridScalers();
-
-            _layerModel.SetOnGridResized(UpdateGridLine);
         }
 
         void UpdateGridScalers() {

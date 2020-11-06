@@ -16,6 +16,14 @@ public class EditorMain : MonoBehaviour {
     int _selectedTileIndex = 0;
     SlideableUI[] _projectWindows;
 
+    void Awake() {
+        _layerPicker.SetOnTilesetChanged(OnTilesetChanged);
+        _tileLayerWindow.SetOnTilesetChanged(_layerPicker.ChangeTileset);
+
+        _tilemapPickerWindow.AddOnTilemapPicked((int index) => { _selectedTileIndex = index; });
+        _entityPickerWindow.SetOnEntityPicked((int index) => { _selectedTileIndex = index; });
+    }
+
     void Start() {
         var projectWindows = GameObject.FindGameObjectsWithTag("ProjectWindow");
         _projectWindows = new SlideableUI[projectWindows.Length];
@@ -23,11 +31,6 @@ public class EditorMain : MonoBehaviour {
             _projectWindows[i] = projectWindows[i].GetComponent<SlideableUI>();
             _projectWindows[i].Initalize();
         }
-        _layerPicker.SetOnTilesetChanged(OnTilesetChanged);
-        _tileLayerWindow.SetOnTilesetChanged(_layerPicker.ChangeTileset);
-
-        _tilemapPickerWindow.AddOnTilemapPicked((int index) => { _selectedTileIndex = index; });
-        _entityPickerWindow.SetOnEntityPicked((int index) => { _selectedTileIndex = index; });
     }
 
     public void DisableAllProjectWindows() {

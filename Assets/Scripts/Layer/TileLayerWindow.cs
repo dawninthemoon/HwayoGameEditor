@@ -10,6 +10,7 @@ namespace CustomTilemap {
         ProjectLayerWindow _projectLayerWindow;
         bool _ignoreCallback;
         OnTilesetChanged _onTilesetChanged;
+
         public void SetOnTilesetChanged(OnTilesetChanged callback) {
             _onTilesetChanged = callback;
         }

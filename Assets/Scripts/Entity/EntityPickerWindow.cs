@@ -12,22 +12,17 @@ public class EntityPickerWindow : MonoBehaviour {
     Dictionary<int, Button> _buttons;
     Image _selectedEntityButtonImage;
 
-    void Start() {
+    void Awake() {
         _buttons = new Dictionary<int, Button>();
-        _entityModel.SetOnEntityAdded(CreateButton);
-
-        foreach (var entity in _entityModel.EntityDictionary.Values) {
-            CreateButton(entity.EntityID, entity);
-        }
     }
 
     public void SetOnEntityPicked(OnPicked callback) {
         _onPicked = callback;
     }
 
-    void CreateButton(int id, Entity entity) {
+    public void AddButton(Entity entity) {
         var button = Instantiate(_buttonPrefab, _contentTrnasform);
-        _buttons.Add(id, button);
+        _buttons.Add(entity.EntityID, button);
 
         int index = entity.TextureIndex;
         Color color = entity.EntityColor;
@@ -42,10 +37,31 @@ public class EntityPickerWindow : MonoBehaviour {
         });
 
         void OnButtonClick() {
-            _onPicked(id);
-            _entityModel.SelectedIndex = id;
+            _onPicked(entity.EntityID);
+            _entityModel.SelectedIndex = entity.EntityID;
             HighlightImage(button.GetComponent<Image>());
         }
+    }
+
+    public void DeleteAllButtons() {
+        foreach (var button in _buttons.Values) {
+            button.transform.SetParent(null);
+            button.gameObject.SetActive(false);
+            DestroyImmediate(button);
+        }
+        _buttons.Clear();
+    }
+
+    public void DeleteButton(int curID) {
+        if (_buttons.TryGetValue(curID, out Button button)) {
+            _buttons.Remove(curID);
+                
+            button.transform.SetParent(null);
+            button.gameObject.SetActive(false);
+            DestroyImmediate(button);
+        }
+        else
+            Debug.Log("Key not exists");
     }
 
     void HighlightImage(Image buttonImage) {

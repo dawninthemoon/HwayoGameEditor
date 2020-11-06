@@ -6,22 +6,27 @@ using Aroma;
 
 namespace CustomTilemap {
     public class CollisionVisual : MonoBehaviour {
-        List<Vector2> _points = new List<Vector2>();
+        List<Vector2> _points;
         int _cellSize = 16;
         public int LayerID { get; set; }
         public LayerModel _layerModel;
         LineRenderer _lineRenderer;
         float _rectSize;
-        bool _complete;
+        public bool Complete { get; private set; }
 
-        void Start() {
+        void Awake() {
             _rectSize = _cellSize / 4f;
             _lineRenderer = CreateLineRenderer();
+        }
+        public void SetPointsList(List<Vector2> list) {
+            _points = list;
+            if (_points.Count > 0) Complete = true;
         }
 
         LineRenderer CreateLineRenderer() {
             GameObject obj = new GameObject("LineRenderer");
             var lr = obj.AddComponent<LineRenderer>();
+            lr.transform.SetParent(transform);
             lr.material = Aroma.LineUtility.GetInstance().GetMaterial();
             lr.startColor = lr.endColor = Color.green;
             lr.sortingLayerName = "CollisionLine";
@@ -31,35 +36,34 @@ namespace CustomTilemap {
         public void SetLayerModel(LayerModel layerModel) {
             _layerModel = layerModel;
         }
-        
-        public bool IsPointsEmpty() => (_points.Count == 0);
-
-        public void AddPoint(Vector3 point) {
-            if (_complete) return;
-            _points.Add(point);
-            _lineRenderer.positionCount = _points.Count + 1;
-            _lineRenderer.SetPosition(_points.Count - 1, point);
-        }
 
         void CompleteCollider() {
             _points.Add(_points[0]);
-            _lineRenderer.SetPosition(_points.Count - 1, _points[0]);
-            _complete = true;
+            Complete = true;
         }
 
         void Update() {
-            if (Input.GetMouseButtonDown(1) && (_points.Count > 0)) {
-                _points.RemoveAt(_points.Count - 1);
-                _lineRenderer.positionCount = _points.Count + 1;
-                _complete = false;
+            if (_points == null) return;
+            _lineRenderer.positionCount = _points.Count;
+            for (int i = 0; i < _points.Count; ++i) {
+                _lineRenderer.SetPosition(i, _points[i]);
             }
 
-            if (_complete) return;
+            if (Input.GetMouseButtonDown(1) && (_points.Count > 0)) {
+                _points.RemoveAt(_points.Count - 1);
+                Complete = false;
+            }
+
             if (_layerModel.SelectedLayerID != LayerID) {
-                if (_lineRenderer.positionCount == _points.Count + 1)
+                if (_points.Count <= 2) {
+                    _points.Clear();
+                }
+                else if (!Complete)
                     CompleteCollider();
                 return;
             }
+
+            if (Complete) return;
 
             if (Input.GetKeyDown(KeyCode.Space) && (_points.Count > 0)) {
                 CompleteCollider();
@@ -75,7 +79,8 @@ namespace CustomTilemap {
                 mousePosition = GridUtility.GetWorldPosition(x, y, _cellSize, LayerModel.CurrentOriginPosition);
             }
 
-            if (!IsPointsEmpty()) {
+            if (_points.Count > 0) {
+                ++_lineRenderer.positionCount;
                 _lineRenderer.SetPosition(_points.Count, mousePosition);
             }
         }
