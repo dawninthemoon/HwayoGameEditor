@@ -148,7 +148,7 @@ namespace CustomTilemap {
                 _selectedLayerIndex = 0;
 
             string name = DefaultCollisionLayerName;
-            var collisionLayer = new CollisionLayer(name, _numOfLayers, 16);
+            var collisionLayer = new CollisionLayer(name, _numOfLayers, 16, null);
 
             CreateButtonByCollisionLayer(collisionLayer);
             _layerModel.AddLayer(collisionLayer);
@@ -166,13 +166,12 @@ namespace CustomTilemap {
             button.GetComponentInChildren<Text>().text = collisionLayer.LayerName;
             _buttons.Add(collisionLayer.LayerID, button);
 
-            int index = collisionLayer.LayerID;
             System.Action callback = () => { 
-                _layerModel.SelectedLayerID = index; 
+                _layerModel.SelectedLayerID = collisionLayer.LayerID;
                 OnCollisionButtonClick(collisionLayer);
             };
             button.onClick.AddListener(() => { 
-                _selectedLayerIndex = index; 
+                _selectedLayerIndex = collisionLayer.LayerID;
                 OnLayerButtonClick(button, collisionLayer, callback);
             });
         }
@@ -181,7 +180,8 @@ namespace CustomTilemap {
              _entityLayerWindow.gameObject.SetActive(false);
             _tileLayerWindow.gameObject.SetActive(false);
             _collisionLayerWindow.gameObject.SetActive(true);
-            _entityLayerWindow.SetInputFieldTextWithIgnoreCallback(collisionLayer);
+            _collisionLayerWindow.SetInputFieldTextWithIgnoreCallback(collisionLayer);
+            _collisionLayerWindow.SetInputFieldTagWithoutCallback(collisionLayer);
         }
 
         void OnLayerButtonClick(Button button, Layer layer, System.Action callback) {

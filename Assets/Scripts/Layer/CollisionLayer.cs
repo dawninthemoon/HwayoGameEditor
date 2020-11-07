@@ -6,15 +6,17 @@ using Aroma;
 namespace CustomTilemap {
     public class CollisionLayer : Layer {
         float _cellSize;
+        public string Tag { get; set; }
         List<Vector2> _points;
         CollisionVisual _visual;
         public CollisionVisual Visual { get { return _visual; } }
         public CollisionLayer() {
             _points = new List<Vector2>();
         }
-        public CollisionLayer(string layerName, int layerIndex, float cellSize) 
+        public CollisionLayer(string layerName, int layerIndex, float cellSize, string tag) 
         : base(layerName, layerIndex) {
             _cellSize = cellSize;
+            Tag = tag;
             _points = new List<Vector2>();
         }
 

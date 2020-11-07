@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("_cellSize", "_points", "_visual", "<LayerName>k__BackingField", "<LayerID>k__BackingField")]
+	[ES3PropertiesAttribute("_cellSize", "<Tag>k__BackingField", "_points", "_visual", "<LayerName>k__BackingField", "<LayerID>k__BackingField")]
 	public class ES3UserType_CollisionLayer : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -17,6 +17,7 @@ namespace ES3Types
 			var instance = (CustomTilemap.CollisionLayer)obj;
 			
 			writer.WritePrivateField("_cellSize", instance);
+			writer.WritePrivateField("<Tag>k__BackingField", instance);
 			writer.WritePrivateField("_points", instance);
 			writer.WritePrivateFieldByRef("_visual", instance);
 			writer.WritePrivateField("<LayerName>k__BackingField", instance);
@@ -33,6 +34,9 @@ namespace ES3Types
 					
 					case "_cellSize":
 					reader.SetPrivateField("_cellSize", reader.Read<System.Single>(), instance);
+					break;
+					case "<Tag>k__BackingField":
+					reader.SetPrivateField("<Tag>k__BackingField", reader.Read<System.String>(), instance);
 					break;
 					case "_points":
 					reader.SetPrivateField("_points", reader.Read<System.Collections.Generic.List<UnityEngine.Vector2>>(), instance);

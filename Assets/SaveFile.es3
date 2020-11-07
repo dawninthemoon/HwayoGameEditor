@@ -1,49 +1,16 @@
 {
-	"Key_EntityModel_Dictionary_0" : {
-		"__type" : "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[CustomTilemap.Entity, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
-		"value" : {0:{
-				"<EntityName>k__BackingField" : "Default Entity",
-				"<TextureIndex>k__BackingField" : 0,
-				"<EntityColor>k__BackingField" : {
-					"r" : 1,
-					"g" : 1,
-					"b" : 1,
-					"a" : 1
-				},
-				"<EntityID>k__BackingField" : 0,
-				"<FieldSequence>k__BackingField" : 7,
-				"_fields" : [
-					"Default Field","Default Field","Default Field"
-				]
-			},1:{
-				"<EntityName>k__BackingField" : "Default Entity",
-				"<TextureIndex>k__BackingField" : 0,
-				"<EntityColor>k__BackingField" : {
-					"r" : 1,
-					"g" : 1,
-					"b" : 1,
-					"a" : 1
-				},
-				"<EntityID>k__BackingField" : 1,
-				"<FieldSequence>k__BackingField" : 5,
-				"_fields" : [
-					"Default Field","Default Field","Default Field"
-				]
-			}
-		}
-	},
 	"Key_LayerModel_LayerDictionary_0" : {
 		"__type" : "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[CustomTilemap.Layer, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
 		"value" : {0:{
 				"__type" : "CustomTilemap.EntityLayer,Assembly-CSharp",
 				"_entityModel" : {
-					"_ES3Ref" : "3947187927460207806"
+					"_ES3Ref" : "3735081517981803342"
 				},
 				"_entityEditWindow" : {
-					"_ES3Ref" : "2280222966887659062"
+					"_ES3Ref" : "8273830844280975016"
 				},
 				"_entityVisual" : {
-					"_ES3Ref" : "5419200341491095915"
+					"_ES3Ref" : "1096158696467588597"
 				},
 				"_gridArray" : [
 					[
@@ -2130,6 +2097,1128 @@
 				],
 				"<LayerName>k__BackingField" : "Entity Layer",
 				"<LayerID>k__BackingField" : 0
+			},1:{
+				"__type" : "CustomTilemap.TileLayer,Assembly-CSharp",
+				"<DropdownValue>k__BackingField" : 0,
+				"<TilesetName>k__BackingField" : "Tileset_Icevillage",
+				"_tilesetVisual" : {
+					"_ES3Ref" : "4638910898575769519"
+				},
+				"_gridArray" : [
+					[
+						{
+							"_x" : 0,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 0,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 1,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 1,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 2,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 4,
+							"_textureIndex" : 0
+						},{
+							"_x" : 2,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 2,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 3,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 2,
+							"_textureIndex" : 0
+						},{
+							"_x" : 3,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 6,
+							"_textureIndex" : 0
+						},{
+							"_x" : 3,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 3,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 4,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 1,
+							"_textureIndex" : 0
+						},{
+							"_x" : 4,
+							"_y" : 2,
+							"_textureIndex" : 0
+						},{
+							"_x" : 4,
+							"_y" : 3,
+							"_textureIndex" : 0
+						},{
+							"_x" : 4,
+							"_y" : 4,
+							"_textureIndex" : 0
+						},{
+							"_x" : 4,
+							"_y" : 5,
+							"_textureIndex" : 0
+						},{
+							"_x" : 4,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 4,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 5,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 2,
+							"_textureIndex" : 0
+						},{
+							"_x" : 5,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 4,
+							"_textureIndex" : 0
+						},{
+							"_x" : 5,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 5,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 6,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 6,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 7,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 4,
+							"_textureIndex" : 0
+						},{
+							"_x" : 7,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 7,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 8,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 8,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 9,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 9,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 10,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 10,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 11,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 11,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 12,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 12,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 13,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 13,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 14,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 14,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					],[
+						{
+							"_x" : 15,
+							"_y" : 0,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 1,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 2,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 3,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 4,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 5,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 6,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 7,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 8,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 9,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 10,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 11,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 12,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 13,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 14,
+							"_textureIndex" : -1
+						},{
+							"_x" : 15,
+							"_y" : 15,
+							"_textureIndex" : -1
+						}
+					]
+				],
+				"<LayerName>k__BackingField" : "Tile Layer",
+				"<LayerID>k__BackingField" : 1
+			},2:{
+				"__type" : "CustomTilemap.CollisionLayer,Assembly-CSharp",
+				"_cellSize" : 16,
+				"<Tag>k__BackingField" : "qqq",
+				"_points" : [
+					{
+						"x" : 128,
+						"y" : 112
+					},{
+						"x" : 144,
+						"y" : 144
+					},{
+						"x" : 176,
+						"y" : 80
+					}
+				],
+				"_visual" : {
+					"_ES3Ref" : "8873686164518654901"
+				},
+				"<LayerName>k__BackingField" : "Collision Layer",
+				"<LayerID>k__BackingField" : 2
+			}
+		}
+	},
+	"Key_EntityModel_Dictionary_0" : {
+		"__type" : "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[CustomTilemap.Entity, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
+		"value" : {2:{
+				"<EntityName>k__BackingField" : "Default Entity",
+				"<TextureIndex>k__BackingField" : 0,
+				"<EntityColor>k__BackingField" : {
+					"r" : 1,
+					"g" : 1,
+					"b" : 1,
+					"a" : 1
+				},
+				"<EntityID>k__BackingField" : 2,
+				"<FieldSequence>k__BackingField" : 8,
+				"_fields" : [
+					"Default Field","Default Field","Default Field","Default Field","Default Field","Default Field","Default Field","Default Field"
+				]
+			},1:{
+				"<EntityName>k__BackingField" : "Default Entity",
+				"<TextureIndex>k__BackingField" : 0,
+				"<EntityColor>k__BackingField" : {
+					"r" : 1,
+					"g" : 1,
+					"b" : 1,
+					"a" : 1
+				},
+				"<EntityID>k__BackingField" : 1,
+				"<FieldSequence>k__BackingField" : 5,
+				"_fields" : [
+					"Default Field","Default Field","Default Field"
+				]
 			}
 		}
 	}

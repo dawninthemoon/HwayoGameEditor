@@ -97,6 +97,7 @@ public class ProjectEntityWindow : SlideableUI {
             
         var button = _fieldButtonPool.GetObject();
         button.transform.SetParent(_fieldPickerContentTransform);
+        button.transform.localScale = Vector3.one;
         button.image.color = new Color(0.8980392f, 0.2470588f, 0f);
 
         button.GetComponentInChildren<Text>().text = fieldName;

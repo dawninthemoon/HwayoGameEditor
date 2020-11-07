@@ -70,6 +70,7 @@ namespace CustomTilemap {
             Vector2 mousePoint = Utility.GetMouseWorldPosition();
             int r, c;
             Vector3 newPos = GetPositionOnTilemap(mousePoint, out r, out c);
+            newPos.z = 0f;
 
             int cCounts = _tilemapImage.mainTexture.width / 16;
 
@@ -83,6 +84,7 @@ namespace CustomTilemap {
             int r, c;
 
             Vector3 newPos = GetPositionOnTilemap(initalPos, out r, out c);
+            newPos.z = 0f;
             _selectOutline.position = newPos;
 
             int cCounts = _tilemapImage.mainTexture.width / 16;
