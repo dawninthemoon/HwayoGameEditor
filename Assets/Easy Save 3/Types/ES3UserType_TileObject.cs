@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("_x", "_y", "_textureIndex")]
+	[ES3PropertiesAttribute("x", "y", "textureIndex")]
 	public class ES3UserType_TileObject : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -16,9 +16,9 @@ namespace ES3Types
 		{
 			var instance = (CustomTilemap.TileLayer.TileObject)obj;
 			
-			writer.WritePrivateField("_x", instance);
-			writer.WritePrivateField("_y", instance);
-			writer.WritePrivateField("_textureIndex", instance);
+			writer.WriteProperty("x", instance.x, ES3Type_int.Instance);
+			writer.WriteProperty("y", instance.y, ES3Type_int.Instance);
+			writer.WriteProperty("textureIndex", instance.textureIndex, ES3Type_int.Instance);
 		}
 
 		protected override void ReadObject<T>(ES3Reader reader, object obj)
@@ -29,15 +29,15 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
-					case "_x":
-					reader.SetPrivateField("_x", reader.Read<System.Int32>(), instance);
-					break;
-					case "_y":
-					reader.SetPrivateField("_y", reader.Read<System.Int32>(), instance);
-					break;
-					case "_textureIndex":
-					reader.SetPrivateField("_textureIndex", reader.Read<System.Int32>(), instance);
-					break;
+					case "x":
+						instance.x = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "y":
+						instance.y = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "textureIndex":
+						instance.textureIndex = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
 					default:
 						reader.Skip();
 						break;

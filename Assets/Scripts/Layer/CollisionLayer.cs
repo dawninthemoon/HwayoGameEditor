@@ -8,6 +8,7 @@ namespace CustomTilemap {
         float _cellSize;
         public string Tag { get; set; }
         List<Vector2> _points;
+        public List<Vector2> Points { get { return _points;} }
         CollisionVisual _visual;
         public CollisionVisual Visual { get { return _visual; } }
         public CollisionLayer() {

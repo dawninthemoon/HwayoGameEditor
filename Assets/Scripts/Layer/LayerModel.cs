@@ -70,7 +70,8 @@ namespace CustomTilemap {
         public bool IsLayerEmpty() => (_currentLayerDictionary.Count == 0);
         public int NumOfLayers() => _currentLayerDictionary.Count;
 
-        public void SaveAllLayers(int id) {
+        public void SaveAllLayers() {
+            int id = LevelModel.CurrentLevelID;
             ES3.Save(GridWidthKey + "_" + id.ToString(), CurrentGridWidth);
             ES3.Save(GridHeightKey + "_" + id.ToString(), CurrentGridHeight);
             ES3.Save(OriginPositionKey + "_" + id.ToString(), CurrentOriginPosition);

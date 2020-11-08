@@ -9,7 +9,7 @@ namespace CustomTilemap {
         Dictionary<int, Entity> _entityDictionary;
         public Dictionary<int, Entity> EntityDictionary { get { return _entityDictionary;} }
         public int SelectedIndex { get; set; } = -1;
-        static string DictionarySaveKey = "Key_EntityModel_Dictionary";
+        public static string DictionarySaveKey = "Key_EntityModel_Dictionary";
         ProjectEntityWindow _projectEntityWindow;
         List<string> _deletedKeys = new List<string>();
 
@@ -35,8 +35,10 @@ namespace CustomTilemap {
             _deletedKeys.Add(keyName);
         }
 
-        public void SaveEntites(int id) {
+        public void SaveEntites() {
+            int id = LevelModel.CurrentLevelID;
             string keyName = DictionarySaveKey + "_" +  id.ToString();
+            ES3.Save(keyName, _entityDictionary);
             foreach (var key in _deletedKeys) {
                 ES3.DeleteKey(key);
             }

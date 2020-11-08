@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("_x", "_y", "_textureIndex", "<EntityName>k__BackingField", "<EntityID>k__BackingField", "_fields")]
+	[ES3PropertiesAttribute("x", "y", "_textureIndex", "<EntityName>k__BackingField", "<EntityID>k__BackingField", "_fields")]
 	public class ES3UserType_EntityObject : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -16,8 +16,8 @@ namespace ES3Types
 		{
 			var instance = (CustomTilemap.EntityLayer.EntityObject)obj;
 			
-			writer.WritePrivateField("_x", instance);
-			writer.WritePrivateField("_y", instance);
+			writer.WriteProperty("x", instance.x, ES3Type_int.Instance);
+			writer.WriteProperty("y", instance.y, ES3Type_int.Instance);
 			writer.WritePrivateField("_textureIndex", instance);
 			writer.WritePrivateField("<EntityName>k__BackingField", instance);
 			writer.WritePrivateField("<EntityID>k__BackingField", instance);
@@ -32,12 +32,12 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
-					case "_x":
-					reader.SetPrivateField("_x", reader.Read<System.Int32>(), instance);
-					break;
-					case "_y":
-					reader.SetPrivateField("_y", reader.Read<System.Int32>(), instance);
-					break;
+					case "x":
+						instance.x = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "y":
+						instance.y = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
 					case "_textureIndex":
 					reader.SetPrivateField("_textureIndex", reader.Read<System.Int32>(), instance);
 					break;

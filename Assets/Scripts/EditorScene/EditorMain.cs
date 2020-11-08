@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using CustomTilemap;
 using Aroma;
+using SaveInformations;
+using System.IO;
 
 public class EditorMain : MonoBehaviour {
     [SerializeField] LevelModel _levelModel = null;
@@ -83,21 +85,68 @@ public class EditorMain : MonoBehaviour {
 
     public void ExportAll() {
         var levelDictionary = ES3.Load(LevelModel.LevelDictionaryKey, new Dictionary<int, Level>());
+        LevelInfo[] levelInformations = new LevelInfo[levelDictionary.Count];
+        int index = 0;
         foreach (var pair in levelDictionary) {
             int id = pair.Key;
-            var layerDictionary = ES3.Load(LayerModel.LayerDictionaryKey + "_" + id,ToString(), new Dictionary<int, Layer>());
+            var layerDic = ES3.Load(LayerModel.LayerDictionaryKey + "_" + id.ToString(), new Dictionary<int, Layer>());
+            var entityDic = ES3.Load(EntityModel.DictionarySaveKey + "_" + id.ToString(), new Dictionary<int, Entity>());
             int defaultGridSize = PlayerPrefs.HasKey(GridUtility.DefaultGridSizeKey) ? PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey) : 16;
             var width = ES3.Load(LayerModel.GridWidthKey + "_" + id.ToString(), defaultGridSize);
             var height = ES3.Load(LayerModel.GridHeightKey + "_" + id.ToString(), defaultGridSize);
+            var originPosition = ES3.Load(LayerModel.OriginPositionKey + "_" + id.ToString(), Vector3.zero);
+
+            List<TilesetInfo> tilesetInfoList = new List<TilesetInfo>();
+            List<EntityInfo> entityInfoList = new List<EntityInfo>();
+            List<ColliderInfo> colliderInfoList = new List<ColliderInfo>();
+            List<TileInfo> tileInfoList = new List<TileInfo>();
+            foreach (var layer in layerDic.Values) {
+                if (layer is TileLayer) {
+                    TileLayer tileLayer = layer as TileLayer;
+                    var tileObjects = tileLayer.GetTileObjects();
+                    tileInfoList.Clear();
+                    foreach (var obj in tileObjects) {
+                        tileInfoList.Add(new TileInfo(obj.y, obj.x, obj.textureIndex));
+                    }
+                    tilesetInfoList.Add(new TilesetInfo(tileInfoList.ToArray(), tileLayer.TilesetName));
+                }
+                else if (layer is EntityLayer) {
+                    var entityObjects = (layer as EntityLayer).GetTileObjects();
+                    foreach (var obj in entityObjects) {
+                        var fieldDic = obj.Fields;
+                        FieldInfo[] fieldInfo = new FieldInfo[fieldDic.Count];
+                        int i = 0;
+                        foreach (var fieldPair in fieldDic) {
+                            fieldInfo[i++] = new FieldInfo(fieldPair.Key, fieldPair.Value);
+                        }
+                        entityInfoList.Add(new EntityInfo(obj.y, obj.x, obj.EntityName, fieldInfo));
+                    }
+                }
+                else if (layer is CollisionLayer) {
+                    CollisionLayer collisionLayer = layer as CollisionLayer;
+                    colliderInfoList.Add(new ColliderInfo(collisionLayer.Tag, collisionLayer.Points.ToArray()));
+                }
+            }
+            levelInformations[index] = 
+            new LevelInfo(
+                pair.Value.LevelName,
+                width,
+                height,
+                originPosition, 
+                tilesetInfoList.ToArray(),
+                entityInfoList.ToArray(),
+                colliderInfoList.ToArray()
+            );
+            ++index;
         }
+        string jsonText = JsonHelper.ToJson<LevelInfo>(levelInformations, true);
+        File.WriteAllText(Application.dataPath + "/Saves/HwayoGameLevel.json", jsonText);
     }
 
     void SaveAll() {
         _levelModel.SaveLevel();
-        foreach (var id in _levelModel.LevelDictionary.Keys) {
-            _layerModel.SaveAllLayers(id);
-            _entityModel.SaveEntites(id);
-        }
+        _layerModel.SaveAllLayers();
+        _entityModel.SaveEntites();
         Debug.Log("Save Complete!");
     }
 }
