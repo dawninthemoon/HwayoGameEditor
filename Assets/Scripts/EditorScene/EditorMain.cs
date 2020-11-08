@@ -6,7 +6,9 @@ using CustomTilemap;
 using Aroma;
 
 public class EditorMain : MonoBehaviour {
+    [SerializeField] LevelModel _levelModel = null;
     [SerializeField] LayerModel _layerModel = null;
+    [SerializeField] EntityModel _entityModel = null;
     [SerializeField] TilesetModel _tilesetModel = null;
     [SerializeField] EditorView _editorView = null;
     [SerializeField] TilemapPickerWindow _tilemapPickerWindow = null;
@@ -49,6 +51,11 @@ public class EditorMain : MonoBehaviour {
     }
 
     void Update() {
+        if ((Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S)) ||
+            (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKey(KeyCode.S))) {
+            SaveAll();
+        }
+
         if (GridScaler.ScalerDraging) return;
         if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1)) return;
         
@@ -83,5 +90,14 @@ public class EditorMain : MonoBehaviour {
             var width = ES3.Load(LayerModel.GridWidthKey + "_" + id.ToString(), defaultGridSize);
             var height = ES3.Load(LayerModel.GridHeightKey + "_" + id.ToString(), defaultGridSize);
         }
+    }
+
+    void SaveAll() {
+        _levelModel.SaveLevel();
+        foreach (var id in _levelModel.LevelDictionary.Keys) {
+            _layerModel.SaveAllLayers(id);
+            _entityModel.SaveEntites(id);
+        }
+        Debug.Log("Save Complete!");
     }
 }

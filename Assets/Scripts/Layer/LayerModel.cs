@@ -20,12 +20,10 @@ namespace CustomTilemap {
         public static string LayerDictionaryKey = "Key_LayerModel_LayerDictionary";
         public static string GridWidthKey = "Key_LayerMode_GridWidth";
         public static string GridHeightKey = "Key_LayerMode_GridHeight";
+        public static string OriginPositionKey = "Key_GridPosition_OriginPosition";
+        List<string>[] _deletedKeyList =new List<string>[3] { new List<string>(), new List<string>(), new List<string>() };
 
         void Awake() {
-            int defaultGridSize = PlayerPrefs.HasKey(GridUtility.DefaultGridSizeKey) ? PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey) : 16;
-            CurrentGridWidth = ES3.Load(GridWidthKey + "_" + LevelModel.CurrentLevelID.ToString(), defaultGridSize);
-            CurrentGridHeight = ES3.Load(GridHeightKey + "_" + LevelModel.CurrentLevelID.ToString(), defaultGridSize);
-
             _projectLayerWindow = GameObject.Find("Project Layers").GetComponent<ProjectLayerWindow>();
             LoadLayers();
         }
@@ -36,7 +34,7 @@ namespace CustomTilemap {
             int defaultGridSize = PlayerPrefs.HasKey(GridUtility.DefaultGridSizeKey) ? PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey) : 16;
             CurrentGridWidth = ES3.Load(GridWidthKey + "_" + LevelModel.CurrentLevelID.ToString(), defaultGridSize);
             CurrentGridHeight = ES3.Load(GridHeightKey + "_" + LevelModel.CurrentLevelID.ToString(), defaultGridSize);
-
+            CurrentOriginPosition = ES3.Load(OriginPositionKey + "_" + LevelModel.CurrentLevelID.ToString(), Vector3.zero);
             if (_currentLayerDictionary != null) {
                 RemoveAllVisuals();
             }
@@ -53,8 +51,6 @@ namespace CustomTilemap {
         public void ResizeAllLayers(Vector3 originPosition, int widthDelta, int heightDelta) {
             CurrentGridWidth += widthDelta;
             CurrentGridHeight += heightDelta;
-            ES3.Save(GridWidthKey + "_" + LevelModel.CurrentLevelID.ToString(), CurrentGridWidth);
-            ES3.Save(GridHeightKey + "_" + LevelModel.CurrentLevelID.ToString(), CurrentGridHeight);
 
             if (widthDelta == 0 && heightDelta == 0) return;
             foreach (var layer in _currentLayerDictionary.Values) {
@@ -63,7 +59,8 @@ namespace CustomTilemap {
             CurrentOriginPosition = originPosition;
             _onGridResized?.Invoke();
 
-            SaveLayer();
+            string keyName = LayerDictionaryKey + "_" + LevelModel.CurrentLevelID.ToString();
+            ES3.Save(keyName, _currentLayerDictionary);
         }
 
         public void SetOnGridResized(OnGridResized callback) {
@@ -73,9 +70,20 @@ namespace CustomTilemap {
         public bool IsLayerEmpty() => (_currentLayerDictionary.Count == 0);
         public int NumOfLayers() => _currentLayerDictionary.Count;
 
-        public void SaveLayer() {
-            string keyName = LayerDictionaryKey + "_" + LevelModel.CurrentLevelID.ToString();
+        public void SaveAllLayers(int id) {
+            ES3.Save(GridWidthKey + "_" + id.ToString(), CurrentGridWidth);
+            ES3.Save(GridHeightKey + "_" + id.ToString(), CurrentGridHeight);
+            ES3.Save(OriginPositionKey + "_" + id.ToString(), CurrentOriginPosition);
+
+            string keyName = LayerDictionaryKey + "_" + id.ToString();
             ES3.Save(keyName, _currentLayerDictionary);
+
+            for (int i = 0; i < _deletedKeyList.Length; ++i) {
+                foreach (var key in _deletedKeyList[i]) {
+                    ES3.DeleteKey(key);
+                }
+                _deletedKeyList[i].Clear();
+            }
         }
 
         void RemoveAllVisuals() {
@@ -100,28 +108,24 @@ namespace CustomTilemap {
 
         public void DeleteLayerSaves() {
             RemoveAllVisuals();
-            string keyName = LayerDictionaryKey + "_" + LevelModel.CurrentLevelID;
-            ES3.DeleteKey(GridWidthKey + "_" + LevelModel.CurrentLevelID.ToString());
-            ES3.DeleteKey(GridHeightKey + "_" + LevelModel.CurrentLevelID.ToString());
-            ES3.DeleteKey(keyName);
+            _deletedKeyList[0].Add(GridWidthKey + "_" + LevelModel.CurrentLevelID.ToString());
+            _deletedKeyList[1].Add(GridHeightKey + "_" + LevelModel.CurrentLevelID.ToString());
+            _deletedKeyList[2].Add(LayerDictionaryKey + "_" + LevelModel.CurrentLevelID);
         }
 
         public void AddLayer(Layer layer) {
             _currentLayerDictionary.Add(layer.LayerID, layer);
             _layerPicker.AddLayerButton(this, layer);
-            SaveLayer();
         }
 
         public void DeleteLayerByID(int layerID) {
             _currentLayerDictionary.Remove(layerID);
             _layerPicker.DeleteLayerButton(layerID);
-            SaveLayer();
         }
 
         public void SetTile(Vector3 worldPosition, int tileIndex) {
             if (_currentLayerDictionary.Count == 0) return;
             _currentLayerDictionary[SelectedLayerID].SetTileIndex(worldPosition, tileIndex);
-            SaveLayer();
         }
 
         public Layer GetSelectedLayer() {

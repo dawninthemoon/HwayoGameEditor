@@ -4,13 +4,13 @@
 		"value" : {0:{
 				"__type" : "CustomTilemap.EntityLayer,Assembly-CSharp",
 				"_entityModel" : {
-					"_ES3Ref" : "705095939798897409"
+					"_ES3Ref" : "9188399758748062521"
 				},
 				"_entityEditWindow" : {
-					"_ES3Ref" : "6226023818683823518"
+					"_ES3Ref" : "9155677273970920154"
 				},
 				"_entityVisual" : {
-					"_ES3Ref" : "3097201089335633614"
+					"_ES3Ref" : "3152155078857160143"
 				},
 				"_gridArray" : [
 					[
@@ -142,22 +142,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 0,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -283,22 +267,6 @@
 						},{
 							"_x" : 1,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -434,22 +402,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 2,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -575,22 +527,6 @@
 						},{
 							"_x" : 3,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -726,22 +662,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 4,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -867,22 +787,6 @@
 						},{
 							"_x" : 5,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -1018,22 +922,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 6,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -1159,22 +1047,6 @@
 						},{
 							"_x" : 7,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -1310,22 +1182,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 8,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -1451,22 +1307,6 @@
 						},{
 							"_x" : 9,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -1602,22 +1442,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 10,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -1743,22 +1567,6 @@
 						},{
 							"_x" : 11,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -1894,22 +1702,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 12,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -2035,22 +1827,6 @@
 						},{
 							"_x" : 13,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -2186,22 +1962,6 @@
 							"<EntityID>k__BackingField" : 0,
 							"_fields" : {
 							}
-						},{
-							"_x" : 14,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
 						}
 					],[
 						{
@@ -2327,752 +2087,6 @@
 						},{
 							"_x" : 15,
 							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 16,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 16,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 17,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 17,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 18,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 18,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 19,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 19,
-							"_y" : 17,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 20,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 16,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 20,
-							"_y" : 17,
 							"_textureIndex" : -1,
 							"<EntityName>k__BackingField" : null,
 							"<EntityID>k__BackingField" : 0,
@@ -3088,10 +2102,22 @@
 				"_cellSize" : 16,
 				"<Tag>k__BackingField" : null,
 				"_points" : [
-					
+					{
+						"x" : 184.516968,
+						"y" : 63.59649
+					},{
+						"x" : 34.86115,
+						"y" : 32.806076
+					},{
+						"x" : 27.7005787,
+						"y" : 117.300735
+					},{
+						"x" : 184.516968,
+						"y" : 63.59649
+					}
 				],
 				"_visual" : {
-					"_ES3Ref" : "8755405289738723082"
+					"_ES3Ref" : "7473227698098028086"
 				},
 				"<LayerName>k__BackingField" : "Collision Layer",
 				"<LayerID>k__BackingField" : 1
@@ -3100,7 +2126,7 @@
 				"<DropdownValue>k__BackingField" : 0,
 				"<TilesetName>k__BackingField" : "Tileset_Icevillage",
 				"_tilesetVisual" : {
-					"_ES3Ref" : "4131947035338945746"
+					"_ES3Ref" : "86617473997199078"
 				},
 				"_gridArray" : [
 					[
@@ -3123,7 +2149,7 @@
 						},{
 							"_x" : 0,
 							"_y" : 4,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 0,
 							"_y" : 5,
@@ -3168,14 +2194,6 @@
 							"_x" : 0,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 0,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 0,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3197,7 +2215,7 @@
 						},{
 							"_x" : 1,
 							"_y" : 4,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 1,
 							"_y" : 5,
@@ -3242,14 +2260,6 @@
 							"_x" : 1,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 1,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 1,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3259,15 +2269,15 @@
 						},{
 							"_x" : 2,
 							"_y" : 1,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 2,
 							"_y" : 2,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 2,
 							"_y" : 3,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 2,
 							"_y" : 4,
@@ -3315,14 +2325,6 @@
 						},{
 							"_x" : 2,
 							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 2,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 2,
-							"_y" : 17,
 							"_textureIndex" : -1
 						}
 					],[
@@ -3390,14 +2392,6 @@
 							"_x" : 3,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 3,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 3,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3464,14 +2458,6 @@
 							"_x" : 4,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 4,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 4,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3485,7 +2471,7 @@
 						},{
 							"_x" : 5,
 							"_y" : 2,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 5,
 							"_y" : 3,
@@ -3493,7 +2479,7 @@
 						},{
 							"_x" : 5,
 							"_y" : 4,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 5,
 							"_y" : 5,
@@ -3501,11 +2487,11 @@
 						},{
 							"_x" : 5,
 							"_y" : 6,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 5,
 							"_y" : 7,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 5,
 							"_y" : 8,
@@ -3538,14 +2524,6 @@
 							"_x" : 5,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 5,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 5,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3559,7 +2537,7 @@
 						},{
 							"_x" : 6,
 							"_y" : 2,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 6,
 							"_y" : 3,
@@ -3583,7 +2561,7 @@
 						},{
 							"_x" : 6,
 							"_y" : 8,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 6,
 							"_y" : 9,
@@ -3611,14 +2589,6 @@
 						},{
 							"_x" : 6,
 							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 6,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 6,
-							"_y" : 17,
 							"_textureIndex" : -1
 						}
 					],[
@@ -3661,7 +2631,7 @@
 						},{
 							"_x" : 7,
 							"_y" : 9,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 7,
 							"_y" : 10,
@@ -3685,14 +2655,6 @@
 						},{
 							"_x" : 7,
 							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 7,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 7,
-							"_y" : 17,
 							"_textureIndex" : -1
 						}
 					],[
@@ -3703,7 +2665,7 @@
 						},{
 							"_x" : 8,
 							"_y" : 1,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 8,
 							"_y" : 2,
@@ -3760,14 +2722,6 @@
 							"_x" : 8,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 8,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 8,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3777,7 +2731,7 @@
 						},{
 							"_x" : 9,
 							"_y" : 1,
-							"_textureIndex" : -1
+							"_textureIndex" : 0
 						},{
 							"_x" : 9,
 							"_y" : 2,
@@ -3793,11 +2747,11 @@
 						},{
 							"_x" : 9,
 							"_y" : 5,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 9,
 							"_y" : 6,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 9,
 							"_y" : 7,
@@ -3834,14 +2788,6 @@
 							"_x" : 9,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 9,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 9,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3863,7 +2809,7 @@
 						},{
 							"_x" : 10,
 							"_y" : 4,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 10,
 							"_y" : 5,
@@ -3875,7 +2821,7 @@
 						},{
 							"_x" : 10,
 							"_y" : 7,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 10,
 							"_y" : 8,
@@ -3883,7 +2829,7 @@
 						},{
 							"_x" : 10,
 							"_y" : 9,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 10,
 							"_y" : 10,
@@ -3908,14 +2854,6 @@
 							"_x" : 10,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 10,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 10,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -3937,7 +2875,7 @@
 						},{
 							"_x" : 11,
 							"_y" : 4,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 11,
 							"_y" : 5,
@@ -3949,7 +2887,7 @@
 						},{
 							"_x" : 11,
 							"_y" : 7,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 11,
 							"_y" : 8,
@@ -3982,14 +2920,6 @@
 							"_x" : 11,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 11,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 11,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -4011,11 +2941,11 @@
 						},{
 							"_x" : 12,
 							"_y" : 4,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 12,
 							"_y" : 5,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 12,
 							"_y" : 6,
@@ -4031,7 +2961,7 @@
 						},{
 							"_x" : 12,
 							"_y" : 9,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 12,
 							"_y" : 10,
@@ -4056,14 +2986,6 @@
 							"_x" : 12,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 12,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 12,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -4089,7 +3011,7 @@
 						},{
 							"_x" : 13,
 							"_y" : 5,
-							"_textureIndex" : 0
+							"_textureIndex" : -1
 						},{
 							"_x" : 13,
 							"_y" : 6,
@@ -4129,14 +3051,6 @@
 						},{
 							"_x" : 13,
 							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 13,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 13,
-							"_y" : 17,
 							"_textureIndex" : -1
 						}
 					],[
@@ -4204,14 +3118,6 @@
 							"_x" : 14,
 							"_y" : 15,
 							"_textureIndex" : -1
-						},{
-							"_x" : 14,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 14,
-							"_y" : 17,
-							"_textureIndex" : -1
 						}
 					],[
 						{
@@ -4277,384 +3183,6 @@
 						},{
 							"_x" : 15,
 							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 15,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 15,
-							"_y" : 17,
-							"_textureIndex" : -1
-						}
-					],[
-						{
-							"_x" : 16,
-							"_y" : 0,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 1,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 2,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 3,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 4,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 5,
-							"_textureIndex" : 0
-						},{
-							"_x" : 16,
-							"_y" : 6,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 7,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 8,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 9,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 10,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 11,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 12,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 13,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 14,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 16,
-							"_y" : 17,
-							"_textureIndex" : -1
-						}
-					],[
-						{
-							"_x" : 17,
-							"_y" : 0,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 1,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 2,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 3,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 4,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 5,
-							"_textureIndex" : 0
-						},{
-							"_x" : 17,
-							"_y" : 6,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 7,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 8,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 9,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 10,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 11,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 12,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 13,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 14,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 17,
-							"_y" : 17,
-							"_textureIndex" : -1
-						}
-					],[
-						{
-							"_x" : 18,
-							"_y" : 0,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 1,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 2,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 3,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 4,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 5,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 6,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 7,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 8,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 9,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 10,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 11,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 12,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 13,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 14,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 18,
-							"_y" : 17,
-							"_textureIndex" : -1
-						}
-					],[
-						{
-							"_x" : 19,
-							"_y" : 0,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 1,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 2,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 3,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 4,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 5,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 6,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 7,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 8,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 9,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 10,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 11,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 12,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 13,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 14,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 19,
-							"_y" : 17,
-							"_textureIndex" : -1
-						}
-					],[
-						{
-							"_x" : 20,
-							"_y" : 0,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 1,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 2,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 3,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 4,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 5,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 6,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 7,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 8,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 9,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 10,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 11,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 12,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 13,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 14,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 15,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 16,
-							"_textureIndex" : -1
-						},{
-							"_x" : 20,
-							"_y" : 17,
 							"_textureIndex" : -1
 						}
 					]
@@ -4664,2133 +3192,27 @@
 			}
 		}
 	},
+	"Key_GridPosition_OriginPosition_0" : {
+		"__type" : "UnityEngine.Vector3,UnityEngine.CoreModule",
+		"value" : {
+			"x" : 0,
+			"y" : 0,
+			"z" : 0
+		}
+	},
 	"Key_LayerMode_GridHeight_0" : {
 		"__type" : "System.Int32",
-		"value" : 18
+		"value" : 16
 	},
 	"Key_LayerMode_GridWidth_0" : {
 		"__type" : "System.Int32",
-		"value" : 21
-	},
-	"Key_LayerModel_LayerDictionary_1" : {
-		"__type" : "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[CustomTilemap.Layer, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
-		"value" : {0:{
-				"__type" : "CustomTilemap.EntityLayer,Assembly-CSharp",
-				"_entityModel" : {
-					"_ES3Ref" : "705095939798897409"
-				},
-				"_entityEditWindow" : {
-					"_ES3Ref" : "6226023818683823518"
-				},
-				"_entityVisual" : {
-					"_ES3Ref" : "5380550445281627193"
-				},
-				"_gridArray" : [
-					[
-						{
-							"_x" : 0,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 0,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 1,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 1,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 2,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 2,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 3,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 3,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 4,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 4,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 5,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 5,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 6,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 6,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 7,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 7,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 8,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 8,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 9,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 9,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 10,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 10,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 11,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 11,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 12,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 12,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 13,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 13,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 14,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 14,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					],[
-						{
-							"_x" : 15,
-							"_y" : 0,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 1,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 2,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 3,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 4,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 5,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 6,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 7,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 8,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 9,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 10,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 11,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 12,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 13,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 14,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						},{
-							"_x" : 15,
-							"_y" : 15,
-							"_textureIndex" : -1,
-							"<EntityName>k__BackingField" : null,
-							"<EntityID>k__BackingField" : 0,
-							"_fields" : {
-							}
-						}
-					]
-				],
-				"<LayerName>k__BackingField" : "Entity Layer",
-				"<LayerID>k__BackingField" : 0
-			}
-		}
-	},
-	"Key_EntityModel_Dictionary_1" : {
-		"__type" : "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[CustomTilemap.Entity, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
-		"value" : {
-		}
-	},
-	"Key_EntityModel_Dictionary_0" : {
-		"__type" : "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[CustomTilemap.Entity, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
-		"value" : {
-		}
+		"value" : 16
 	},
 	"Key_LevelModel" : {
 		"__type" : "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[CustomTilemap.Level, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],mscorlib",
 		"value" : {0:{
 				"<LevelID>k__BackingField" : 0,
 				"<LevelName>k__BackingField" : "Default Level 0"
-			},1:{
-				"<LevelID>k__BackingField" : 1,
-				"<LevelName>k__BackingField" : "Default Level"
 			}
 		}
 	}

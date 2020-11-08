@@ -11,6 +11,7 @@ namespace CustomTilemap {
         public int SelectedIndex { get; set; } = -1;
         static string DictionarySaveKey = "Key_EntityModel_Dictionary";
         ProjectEntityWindow _projectEntityWindow;
+        List<string> _deletedKeys = new List<string>();
 
         void Awake() {
             _pickerWindow = GameObject.Find("EntityPickerRect").GetComponent<EntityPickerWindow>();
@@ -31,12 +32,15 @@ namespace CustomTilemap {
 
         public void DeleteEntitySaves() {
             string keyName = DictionarySaveKey + "_" + LevelModel.CurrentLevelID;
-            ES3.DeleteKey(keyName);
+            _deletedKeys.Add(keyName);
         }
 
-        public void SaveEntites() {
-            string keyName = DictionarySaveKey + "_" + LevelModel.CurrentLevelID;
-            ES3.Save(keyName, _entityDictionary);
+        public void SaveEntites(int id) {
+            string keyName = DictionarySaveKey + "_" +  id.ToString();
+            foreach (var key in _deletedKeys) {
+                ES3.DeleteKey(key);
+            }
+            _deletedKeys.Clear();
         }
 
         public bool IsEntityEmpty() => (_entityDictionary.Count == 0);
@@ -44,7 +48,6 @@ namespace CustomTilemap {
         public void AddEntity(Entity entity, int id) {
             _entityDictionary.Add(id, entity);
             _pickerWindow.AddButton(entity);
-            SaveEntites();
         }
 
         public Entity GetEntityByID(int id) {
@@ -57,7 +60,6 @@ namespace CustomTilemap {
         public void DeleteEntityByID(int entityID) {
             _entityDictionary.Remove(entityID);
             _pickerWindow.DeleteButton(entityID);
-            SaveEntites();
         }
     }
 }

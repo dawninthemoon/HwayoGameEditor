@@ -91,6 +91,5 @@ public class ProjectLevelWindow : SlideableUI {
         var level = _levelModel.GetLevelByID(_selectedLevelID);
         level.LevelName = _inputField.text;
         _buttons[level.LevelID].GetComponentInChildren<Text>().text = level.LevelName;
-        _levelModel.SaveLevel();
     }
 }

@@ -69,7 +69,6 @@ public class ProjectEntityWindow : SlideableUI {
         ++entity.FieldSequence;
 
         entity.AddField(fieldName);
-        _entityModel.SaveEntites();
     }
 
     public void RemoveField() {
@@ -82,8 +81,6 @@ public class ProjectEntityWindow : SlideableUI {
 
         var entity = _entityModel.GetEntityByID(_selectedEntityID);
         entity.Fields.RemoveAt(_selectedFieldID);
-        
-        _entityModel.SaveEntites();
     }
 
     void SetField(string fieldName) {

@@ -27,7 +27,6 @@ namespace CustomTilemap {
 
         public void AddLevel(Level level) {
             _levelDictionary.Add(level.LevelID, level);
-            SaveLevel();
         }
 
         public void SaveLevel() {
@@ -36,9 +35,6 @@ namespace CustomTilemap {
 
         public void ChangeLevel(int id) {
             if (id == CurrentLevelID) return;
-
-            _entityModel.SaveEntites();
-            _layerModel.SaveLayer();
 
             CurrentLevelID = id;
             if (_levelDictionary.TryGetValue(id, out Level level)) {
@@ -59,7 +55,6 @@ namespace CustomTilemap {
                 _entityModel.DeleteEntitySaves();
                 _layerModel.DeleteLayerSaves();
                 _levelDictionary.Remove(id);
-                SaveLevel();
             }
             else {
                 Debug.Log("Level ID not exist");

@@ -10,7 +10,6 @@ namespace CustomTilemap {
         [SerializeField] float _rectWidth = 1f;
         [SerializeField] LayerModel _layerModel = null;
         float _cellSize = 16;
-        Vector3 _originPosition;
         Vector3[] _vertexes = new Vector3[8];
         Vector3[] _gridScalerPos = new Vector3[8];
         Vector3[] _units;
@@ -37,18 +36,18 @@ namespace CustomTilemap {
         }
 
         void Start() {
-            DrawGridLine();
             UpdateGridScalers();
+            DrawGridLine();
         }
 
         void UpdateGridScalers() {
             int width = LayerModel.CurrentGridWidth;
             int height = LayerModel.CurrentGridHeight;
 
-            _vertexes[0] = GridUtility.GetWorldPosition(0, height, _cellSize, _originPosition);
-            _vertexes[1] = GridUtility.GetWorldPosition(width, height, _cellSize, _originPosition);
-            _vertexes[2] = GridUtility.GetWorldPosition(width, 0, _cellSize, _originPosition);
-            _vertexes[3] = GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition);
+            _vertexes[0] = GridUtility.GetWorldPosition(0, height, _cellSize, LayerModel.CurrentOriginPosition);
+            _vertexes[1] = GridUtility.GetWorldPosition(width, height, _cellSize, LayerModel.CurrentOriginPosition);
+            _vertexes[2] = GridUtility.GetWorldPosition(width, 0, _cellSize, LayerModel.CurrentOriginPosition);
+            _vertexes[3] = GridUtility.GetWorldPosition(0, 0, _cellSize, LayerModel.CurrentOriginPosition);
 
             for (int i = 0; i < _vertexes.Length / 2; ++i) {
                 _vertexes[i + 4] = (_vertexes[(i + 1) % 4] - _vertexes[i]) * 0.5f + _vertexes[i];
@@ -86,7 +85,6 @@ namespace CustomTilemap {
             int curWidth = Mathf.FloorToInt(Mathf.Abs((p10 - p01).x) / 16f);
             int curHeight = Mathf.FloorToInt(Mathf.Abs((p10 - p01).y) / 16f);
 
-            _originPosition = p01;
             _layerModel.ResizeAllLayers(p01, curWidth - LayerModel.CurrentGridWidth, curHeight - LayerModel.CurrentGridHeight);
         }
 
@@ -95,7 +93,7 @@ namespace CustomTilemap {
             int width = LayerModel.CurrentGridWidth, height = LayerModel.CurrentGridHeight;
 
             int x, y;
-            GridUtility.GetXY(cur, out x, out y, _cellSize, _originPosition);
+            GridUtility.GetXY(cur, out x, out y, _cellSize, LayerModel.CurrentOriginPosition);
 
             bool[] canResizeGridArr = new bool[8] {
                 (x < width - 1) && (y > 0),
@@ -118,8 +116,8 @@ namespace CustomTilemap {
                 else cur.y = _vertexes[index].y;
             }
             int x, y;
-            GridUtility.GetXY(cur, out x, out y, _cellSize, _originPosition);
-            Vector2 cursorPos = GridUtility.GetWorldPosition(x, y, _cellSize, _originPosition);
+            GridUtility.GetXY(cur, out x, out y, _cellSize, LayerModel.CurrentOriginPosition);
+            Vector2 cursorPos = GridUtility.GetWorldPosition(x, y, _cellSize, LayerModel.CurrentOriginPosition);
 
             if (index < 4) {
                 int diagonalIndex = (index + 2) % 4;
@@ -132,11 +130,11 @@ namespace CustomTilemap {
                 int parallelIndex = (index + 2) % 4 + 4;
                 Vector2 p = _vertexes[parallelIndex];
                 float halfWidth = 
-                    (GridUtility.GetWorldPosition(LayerModel.CurrentGridWidth, 0, _cellSize, _originPosition).x - 
-                    GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition).x) * 0.5f;
+                    (GridUtility.GetWorldPosition(LayerModel.CurrentGridWidth, 0, _cellSize, LayerModel.CurrentOriginPosition).x - 
+                    GridUtility.GetWorldPosition(0, 0, _cellSize, LayerModel.CurrentOriginPosition).x) * 0.5f;
                 float halfHeight = 
-                    (GridUtility.GetWorldPosition(0, LayerModel.CurrentGridHeight, _cellSize, _originPosition).y -
-                    GridUtility.GetWorldPosition(0, 0, _cellSize, _originPosition).y) * 0.5f;
+                    (GridUtility.GetWorldPosition(0, LayerModel.CurrentGridHeight, _cellSize,LayerModel.CurrentOriginPosition).y -
+                    GridUtility.GetWorldPosition(0, 0, _cellSize, LayerModel.CurrentOriginPosition).y) * 0.5f;
 
                 if (index % 2 == 0) {
                     p00 = new Vector2(p.x - halfWidth, p.y);
@@ -155,8 +153,8 @@ namespace CustomTilemap {
 
         public void UpdateGridLine() {
             Aroma.LineUtility.GetInstance().ClearAllLines();
-            DrawGridLine();
             UpdateGridScalers();
+            DrawGridLine();
         }
 
         public void DrawGridLine() {
@@ -165,13 +163,13 @@ namespace CustomTilemap {
             int height = LayerModel.CurrentGridHeight;
             
             for (int i = 0; i <= height; ++i) {
-                Vector2 p1 = GridUtility.GetWorldPosition(0, i, _cellSize, _originPosition);
-                Vector2 p2 = GridUtility.GetWorldPosition(width, i, _cellSize, _originPosition);
+                Vector2 p1 = GridUtility.GetWorldPosition(0, i, _cellSize, LayerModel.CurrentOriginPosition);
+                Vector2 p2 = GridUtility.GetWorldPosition(width, i, _cellSize, LayerModel.CurrentOriginPosition);
                 lineUtility.DrawLine(p1, p2, Color.white);
             }
             for (int i = 0; i <= width; ++i) {
-                Vector2 p1 = GridUtility.GetWorldPosition(i, 0, _cellSize, _originPosition);
-                Vector2 p2 = GridUtility.GetWorldPosition(i, height, _cellSize, _originPosition);
+                Vector2 p1 = GridUtility.GetWorldPosition(i, 0, _cellSize, LayerModel.CurrentOriginPosition);
+                Vector2 p2 = GridUtility.GetWorldPosition(i, height, _cellSize, LayerModel.CurrentOriginPosition);
                 lineUtility.DrawLine(p1, p2, Color.white);
             }
         }
