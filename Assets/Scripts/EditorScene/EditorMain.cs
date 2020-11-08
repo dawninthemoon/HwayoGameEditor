@@ -73,4 +73,15 @@ public class EditorMain : MonoBehaviour {
     bool CheckMousePositionIsOnUI() {
         return EventSystem.current.IsPointerOverGameObject();
     }
+
+    public void ExportAll() {
+        var levelDictionary = ES3.Load(LevelModel.LevelDictionaryKey, new Dictionary<int, Level>());
+        foreach (var pair in levelDictionary) {
+            int id = pair.Key;
+            var layerDictionary = ES3.Load(LayerModel.LayerDictionaryKey + "_" + id,ToString(), new Dictionary<int, Layer>());
+            int defaultGridSize = PlayerPrefs.HasKey(GridUtility.DefaultGridSizeKey) ? PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey) : 16;
+            var width = ES3.Load(LayerModel.GridWidthKey + "_" + id.ToString(), defaultGridSize);
+            var height = ES3.Load(LayerModel.GridHeightKey + "_" + id.ToString(), defaultGridSize);
+        }
+    }
 }

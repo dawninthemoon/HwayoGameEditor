@@ -9,7 +9,7 @@ namespace CustomTilemap {
         public static int CurrentLevelID;
         Dictionary<int, Level> _levelDictionary;
         public Dictionary<int, Level> LevelDictionary { get { return _levelDictionary; } }
-        static string LevelDictionaryKey = "Key_LevelModel";
+        public static string LevelDictionaryKey = "Key_LevelModel";
 
         void Awake() {
             _levelDictionary = ES3.Load(LevelDictionaryKey, new Dictionary<int, Level>());

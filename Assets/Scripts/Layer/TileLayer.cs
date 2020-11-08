@@ -37,6 +37,7 @@ namespace CustomTilemap {
 
         public override void ResizeGrid(Vector3 originPosition, int widthDelta, int heightDelta) {
             _grid.ResizeGrid(originPosition, widthDelta, heightDelta);
+            _gridArray = _grid.GridArray;
         }
 
         public class TileObject : IGridObject {

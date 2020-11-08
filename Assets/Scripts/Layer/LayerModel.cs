@@ -17,9 +17,9 @@ namespace CustomTilemap {
         OnGridResized _onGridResized;
         ProjectLayerWindow _projectLayerWindow;
         public bool _check;
-        static string LayerDictionaryKey = "Key_LayerModel_LayerDictionary";
-        static string GridWidthKey = "Key_LayerMode_GridWidth";
-        static string GridHeightKey = "Key_LayerMode_GridHeight";
+        public static string LayerDictionaryKey = "Key_LayerModel_LayerDictionary";
+        public static string GridWidthKey = "Key_LayerMode_GridWidth";
+        public static string GridHeightKey = "Key_LayerMode_GridHeight";
 
         void Awake() {
             int defaultGridSize = PlayerPrefs.HasKey(GridUtility.DefaultGridSizeKey) ? PlayerPrefs.GetInt(GridUtility.DefaultGridSizeKey) : 16;
@@ -74,7 +74,7 @@ namespace CustomTilemap {
         public int NumOfLayers() => _currentLayerDictionary.Count;
 
         public void SaveLayer() {
-            string keyName = LayerDictionaryKey + "_" + LevelModel.CurrentLevelID;
+            string keyName = LayerDictionaryKey + "_" + LevelModel.CurrentLevelID.ToString();
             ES3.Save(keyName, _currentLayerDictionary);
         }
 

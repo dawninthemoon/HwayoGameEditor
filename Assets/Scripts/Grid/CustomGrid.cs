@@ -125,7 +125,8 @@ namespace CustomTilemap {
         public T GetGridObject(int x, int y) {
             if (x >= 0 && y >= 0 && x < LayerModel.CurrentGridWidth && y < LayerModel.CurrentGridHeight) {
                 return _gridArray[x, y];
-            } else {
+            } 
+            else {
                 return default(T);
             }
         }
