@@ -140,7 +140,7 @@ public class EditorMain : MonoBehaviour {
             ++index;
         }
         string jsonText = JsonHelper.ToJson<LevelInfo>(levelInformations, true);
-        File.WriteAllText(Application.dataPath + "/Saves/HwayoGameLevel.json", jsonText);
+        File.WriteAllText(Application.dataPath + "/HwayoGameLevel.json", jsonText);
     }
 
     void SaveAll() {

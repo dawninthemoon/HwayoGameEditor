@@ -10,7 +10,11 @@ public class ProjectLevelWindow : SlideableUI {
     [SerializeField] Button _levelButtonPrefab = null;
     [SerializeField] LevelModel _levelModel = null;
     [SerializeField] InputField _inputField = null;
+    [SerializeField] EntityEditWindow _entityEditWindow = null;
+    [SerializeField] GameObject _warningTextObj = null;
     Dictionary<int, Button> _buttons = new Dictionary<int, Button>();
+    Level _tempLevel;
+    Button _tempButton;
     static string DefaultLevelName = "Default Level";
     int _numOfLevels;
     int _selectedLevelID = -1;
@@ -27,16 +31,33 @@ public class ProjectLevelWindow : SlideableUI {
         }
         _numOfLevels = max + 1;
 
+        _selectedLevelID = LevelModel.CurrentLevelID;
         HighlightButton(_buttons[LevelModel.CurrentLevelID]);
+        _inputFieldObject.SetActive(true);
         gameObject.SetActive(false);
     }
 
-    void OnLevelButtonDown(Level level) {
+    void OnLevelButtonDown(Level level, Button button) {
+        _tempLevel = level;
+        _tempButton = button;
+        _warningTextObj.SetActive(true);
+    }
+
+    public void OnContinueButtonDown() {
         _ignoreCallback = true;
-        _inputField.text = level.LevelName;
+        HighlightButton(_tempButton);
+        _inputField.text = _tempLevel.LevelName;
         _inputFieldObject.SetActive(true);
         _levelModel.ChangeLevel(_selectedLevelID);
+        _entityEditWindow.DisableWindow();
+        _warningTextObj.SetActive(false);
         _ignoreCallback = false;
+    }
+
+    public void OnCancelButtonDown() {
+        _tempLevel = null;
+        _tempButton = null;
+        _warningTextObj.SetActive(false);
     }
 
     public void CreateLevel() {
@@ -56,8 +77,7 @@ public class ProjectLevelWindow : SlideableUI {
 
         button.onClick.AddListener(() => {
             _selectedLevelID = level.LevelID;
-            OnLevelButtonDown(level);
-            HighlightButton(button);
+            OnLevelButtonDown(level, button);
         });
         _buttons.Add(level.LevelID, button);
     }
@@ -87,7 +107,7 @@ public class ProjectLevelWindow : SlideableUI {
         _selectedButtonImage.GetComponentInChildren<Text>().color = Color.black;
     }
 
-    public void OnLayerNameChanged() {
+    public void OnLevelNameChanged() {
         if (_ignoreCallback) return;
         var level = _levelModel.GetLevelByID(_selectedLevelID);
         level.LevelName = _inputField.text;

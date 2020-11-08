@@ -206,6 +206,7 @@ public class ProjectEntityWindow : SlideableUI {
         Entity entity = _entityModel.GetEntityByID(_selectedEntityID);
         entity.EntityName = inputField.text;
         _selectedEntityButtonImage.GetComponentInChildren<Text>().text = inputField.text;
+        _entityModel.OnEntityNameChanged(entity.EntityID, entity.EntityName);
     }
 
     public void OnEditorVisualDropdownChanged(Dropdown dropdown) {

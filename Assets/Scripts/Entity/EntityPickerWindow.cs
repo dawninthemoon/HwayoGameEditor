@@ -20,6 +20,12 @@ public class EntityPickerWindow : MonoBehaviour {
         _onPicked = callback;
     }
 
+    public void ChangeEntityName(int id, string name) {
+        if (_buttons.TryGetValue(id, out Button button)) {
+            button.GetComponentInChildren<Text>().text = name;
+        }
+    }
+
     public void AddButton(Entity entity) {
         var button = Instantiate(_buttonPrefab, _contentTrnasform);
         _buttons.Add(entity.EntityID, button);

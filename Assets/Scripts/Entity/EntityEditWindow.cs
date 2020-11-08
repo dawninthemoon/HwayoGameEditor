@@ -43,6 +43,7 @@ public class EntityEditWindow : MonoBehaviour {
 
     void AddField(EntityLayer.EntityObject selected, string fieldName) {
         var fieldObj = _fieldObjPool.GetObject();
+        fieldObj.SetParent(_contentParent);
         var inputField = fieldObj.GetComponentInChildren<InputField>();
         
         fieldObj.GetComponentInChildren<Text>().text = fieldName;

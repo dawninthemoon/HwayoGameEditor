@@ -30,6 +30,10 @@ namespace CustomTilemap {
             _projectEntityWindow.LoadEntites();
         }
 
+        public void OnEntityNameChanged(int id, string name) {
+            _pickerWindow.ChangeEntityName(id, name);
+        }
+
         public void DeleteEntitySaves() {
             string keyName = DictionarySaveKey + "_" + LevelModel.CurrentLevelID;
             _deletedKeys.Add(keyName);
