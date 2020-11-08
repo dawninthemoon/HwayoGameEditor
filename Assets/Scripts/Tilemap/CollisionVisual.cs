@@ -11,12 +11,14 @@ namespace CustomTilemap {
         public int LayerID { get; set; }
         public LayerModel _layerModel;
         LineRenderer _lineRenderer;
+        Transform _collisionRect;
         float _rectSize;
         public bool Complete { get; private set; }
 
         void Awake() {
             _rectSize = _cellSize / 4f;
             _lineRenderer = CreateLineRenderer();
+            _collisionRect = transform.GetChild(0);
         }
         public void SetPointsList(List<Vector2> list) {
             _points = list;
@@ -43,6 +45,8 @@ namespace CustomTilemap {
         }
 
         void Update() {
+            DrawCollisionRect();
+
             if (_points == null) return;
             _lineRenderer.positionCount = _points.Count;
             for (int i = 0; i < _points.Count; ++i) {
@@ -85,9 +89,13 @@ namespace CustomTilemap {
             }
         }
 
-        void OnDrawGizmos() {
-            if (_layerModel.SelectedLayerID != LayerID) return;
-            if (EventSystem.current.IsPointerOverGameObject()) return;
+        void DrawCollisionRect() {
+            if (_layerModel.SelectedLayerID != LayerID || 
+                EventSystem.current.IsPointerOverGameObject() ||
+                Complete) {
+                _collisionRect.gameObject.SetActive(false);
+                return;
+            }
 
             Vector2 mousePosition = Utility.GetMouseWorldPosition();
             mousePosition = GridUtility.ClampPosition(mousePosition, _cellSize);
@@ -96,8 +104,8 @@ namespace CustomTilemap {
                 GridUtility.GetXY(mousePosition, out x, out y, _cellSize, LayerModel.CurrentOriginPosition);
                 mousePosition = GridUtility.GetWorldPosition(x, y, _cellSize, LayerModel.CurrentOriginPosition);
             }
-            Gizmos.color = Color.green;
-            Gizmos.DrawCube(mousePosition, Vector3.one * _rectSize);
+            _collisionRect.gameObject.SetActive(true);
+            _collisionRect.position = mousePosition;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace CustomTilemap {
         [SerializeField] LayerModel _layerModel = null;
         [SerializeField] TilesetVisual _tilesetVisualPrefab = null;
         [SerializeField] EntityVisual _entityVisualPrefab = null;
+        [SerializeField] CollisionVisual _collisionVisualPrefab = null;
         [SerializeField] EntityModel _entityModel = null;
         [SerializeField] EntityEditWindow _entityEditWindow = null;
         TileLayerWindow _tileLayerWindow;
@@ -157,7 +158,7 @@ namespace CustomTilemap {
         }
 
         void CreateButtonByCollisionLayer(CollisionLayer collisionLayer) {
-            CollisionVisual visual = new GameObject("CollisionVisual").AddComponent<CollisionVisual>();
+            CollisionVisual visual = Instantiate(_collisionVisualPrefab);
             visual.SetLayerModel(_layerModel);
             visual.LayerID = collisionLayer.LayerID;
             collisionLayer.SetCollisionVisual(visual);
