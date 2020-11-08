@@ -52,6 +52,7 @@ public class ProjectLevelWindow : SlideableUI {
     void CreateButtonByLevel(Level level) {
         var button = Instantiate(_levelButtonPrefab, _contentTransform);
         button.GetComponentInChildren<Text>().text = level.LevelName;
+        button.gameObject.name = level.LevelName;
 
         button.onClick.AddListener(() => {
             _selectedLevelID = level.LevelID;
@@ -91,5 +92,6 @@ public class ProjectLevelWindow : SlideableUI {
         var level = _levelModel.GetLevelByID(_selectedLevelID);
         level.LevelName = _inputField.text;
         _buttons[level.LevelID].GetComponentInChildren<Text>().text = level.LevelName;
+        _buttons[level.LevelID].gameObject.name = level.LevelName;
     }
 }
